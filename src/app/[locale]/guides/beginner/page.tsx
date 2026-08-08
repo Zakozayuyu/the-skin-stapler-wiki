@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import GuideArticlePage from '@/components/GuideArticlePage';
-import { isLocale, type Locale } from '@/lib/i18n';
+import { isLocale, locales, type Locale } from '@/lib/i18n';
 import { pageAlternates } from '@/lib/seo';
 
 const metadataCopy: Record<Locale, { title: string; description: string }> = {
@@ -11,6 +11,7 @@ const metadataCopy: Record<Locale, { title: string; description: string }> = {
   es: { title: 'Guía para principiantes de The Skin Stapler', description: 'Información inicial verificada; los datos no confirmados se indican como pendientes.' }
 };
 
+export function generateStaticParams() { return locales.filter((locale) => locale !== 'en').map((locale) => ({ locale })); }
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};

@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next';
 import { localeMeta, locales, localizePath } from '@/lib/i18n';
 import { absoluteUrl } from '@/lib/seo';
 import { keywordArticleSlugs } from '@/lib/articles';
+export const dynamic = 'force-static';
 
 const paths = ['/', '/guides', '/guides/beginner', '/privacy', '/terms'] as const;
 
