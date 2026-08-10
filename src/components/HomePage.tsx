@@ -71,7 +71,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
 
       <div className="container home-layout section">
         <div className="home-primary">
-          <section><div className="section-heading left-heading"><span className="eyebrow">{t.startEyebrow}</span><h2 className="section-title">{t.startTitle}</h2></div><div className="start-grid">{startCards[locale].map((card) => <Link className="card start-card" key={card.number} href={card.number === '1' ? localizePath(locale, '/guides/beginner') : localizePath(locale, `/guides#${card.id}`)}><span>{card.number}</span><h3>{card.title}</h3><p>{card.description}</p></Link>)}</div></section>
+          <section><div className="section-heading left-heading"><span className="eyebrow">{t.startEyebrow}</span><h2 className="section-title">{t.startTitle}</h2></div><div className="start-grid">{startCards[locale].map((card) => { const englishRoute = card.id === 'walkthrough' ? '/walkthrough' : card.id === 'achievements' ? '/ending' : null; const href = card.number === '1' ? localizePath(locale, '/guides/beginner') : locale === 'en' && englishRoute ? englishRoute : localizePath(locale, `/guides#${card.id}`); return <Link className="card start-card" key={card.number} href={href}><span>{card.number}</span><h3>{card.title}</h3><p>{card.description}</p></Link>; })}</div></section>
 
           <section className="about-section"><h2 className="section-title">{t.about}</h2><div className="home-mdx"><Intro /></div><div className="facts-grid">{t.facts.map(([label, value]) => <div className="card fact-card" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><Link href={localizePath(locale, '/guides')} className="btn-secondary">{t.explore}</Link></section>
         </div>

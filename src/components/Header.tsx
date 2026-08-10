@@ -14,7 +14,13 @@ export default function Header({ locale }: { locale: Locale }) {
   const cleanPath = pathname.replace(/^\/(de|pt-br|es)(?=\/|$)/, '') || '/';
 
   function changeLocale(nextLocale: Locale) {
-    window.location.assign(localizePath(nextLocale, cleanPath));
+    const englishOnly = ['/wiki', '/walkthrough', '/ending'].includes(cleanPath)
+      || /^\/guides\/the-skin-stapler-(fefe|hot-dog|release-date|voice-actors)$/.test(cleanPath);
+    window.location.assign(nextLocale !== 'en' && englishOnly ? localizePath(nextLocale, '/guides') : localizePath(nextLocale, cleanPath));
+  }
+
+  function navHref(item: (typeof navItems)[number]) {
+    return item.localized === false ? item.href : localizePath(locale, item.href);
   }
 
   return (
@@ -26,7 +32,7 @@ export default function Header({ locale }: { locale: Locale }) {
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
-          {navItems.map((item) => <Link key={item.href} href={localizePath(locale, item.href)}>{item.label[locale]}</Link>)}
+          {navItems.filter((item) => locale === 'en' || !item.englishOnly).map((item) => <Link key={item.href} href={navHref(item)}>{item.label[locale]}</Link>)}
         </nav>
 
         <div className="header-actions">
@@ -47,7 +53,7 @@ export default function Header({ locale }: { locale: Locale }) {
       {open && (
         <nav className="mobile-nav" aria-label="Mobile navigation">
           <div className="container">
-            {navItems.map((item) => <Link onClick={() => setOpen(false)} key={item.href} href={localizePath(locale, item.href)}>{item.label[locale]}</Link>)}
+            {navItems.filter((item) => locale === 'en' || !item.englishOnly).map((item) => <Link onClick={() => setOpen(false)} key={item.href} href={navHref(item)}>{item.label[locale]}</Link>)}
             <a href={siteConfig.steam} target="_blank" rel="noreferrer">Steam →</a>
             <a href={siteConfig.discord} target="_blank" rel="noreferrer">Discord →</a>
           </div>
