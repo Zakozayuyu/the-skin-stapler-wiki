@@ -24,7 +24,7 @@ export default function Footer({ locale }: { locale: Locale }) {
           <p>{t.about}</p>
           <small>{t.disclaimer}</small>
         </div>
-        <FooterLinks title={t.guides} links={[[t.wiki, '/wiki'], [t.walkthrough, '/walkthrough'], [t.ending, '/ending'], [t.all, '/guides'], [t.beginner, '/guides/beginner']]} locale={locale} englishPaths={['/wiki', '/walkthrough', '/ending']} />
+        <FooterLinks title={t.guides} links={[[t.wiki, '/wiki'], [t.walkthrough, '/walkthrough'], [t.ending, '/ending'], [t.all, '/guides'], [t.beginner, '/guides/beginner']]} locale={locale} />
         <div className="footer-links"><h3>{t.official}</h3><a href={siteConfig.steam} target="_blank" rel="noreferrer">Steam</a><a href={siteConfig.discord} target="_blank" rel="noreferrer">Discord</a><a href={siteConfig.youtube} target="_blank" rel="noreferrer">YouTube</a><a href={siteConfig.discussions} target="_blank" rel="noreferrer">Steam Discussions</a></div>
         <FooterLinks title={t.legal} links={[[t.privacy, '/privacy'], [t.terms, '/terms']]} locale={locale} />
       </div>
@@ -33,6 +33,6 @@ export default function Footer({ locale }: { locale: Locale }) {
   );
 }
 
-function FooterLinks({ title, links, locale, englishPaths = [] }: { title: string; links: string[][]; locale: Locale; englishPaths?: string[] }) {
-  return <div className="footer-links"><h3>{title}</h3>{links.filter(([, href]) => locale === 'en' || !englishPaths.includes(href)).map(([label, href]) => <Link key={href} href={englishPaths.includes(href) ? href : localizePath(locale, href)}>{label}</Link>)}</div>;
+function FooterLinks({ title, links, locale }: { title: string; links: string[][]; locale: Locale }) {
+  return <div className="footer-links"><h3>{title}</h3>{links.map(([label, href]) => <Link key={href} href={localizePath(locale, href)}>{label}</Link>)}</div>;
 }

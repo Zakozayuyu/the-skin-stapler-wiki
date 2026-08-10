@@ -2,11 +2,11 @@ import type { Locale } from './i18n';
 
 type LocalText = Record<Locale, string>;
 
-export const navItems: Array<{ label: LocalText; href: string; localized?: boolean; englishOnly?: boolean }> = [
+export const navItems: Array<{ label: LocalText; href: string }> = [
   { label: { en: 'Home', de: 'Startseite', 'pt-br': 'Início', es: 'Inicio' }, href: '/' },
-  { label: { en: 'Wiki', de: 'Wiki', 'pt-br': 'Wiki', es: 'Wiki' }, href: '/wiki', localized: false, englishOnly: true },
-  { label: { en: 'Walkthrough', de: 'Komplettlösung', 'pt-br': 'Detonado', es: 'Guía completa' }, href: '/walkthrough', localized: false, englishOnly: true },
-  { label: { en: 'Ending', de: 'Ende', 'pt-br': 'Final', es: 'Final' }, href: '/ending', localized: false, englishOnly: true },
+  { label: { en: 'Wiki', de: 'Wiki', 'pt-br': 'Wiki', es: 'Wiki' }, href: '/wiki' },
+  { label: { en: 'Walkthrough', de: 'Komplettlösung', 'pt-br': 'Detonado', es: 'Guía completa' }, href: '/walkthrough' },
+  { label: { en: 'Ending', de: 'Ende', 'pt-br': 'Final', es: 'Final' }, href: '/ending' },
   { label: { en: 'Guides', de: 'Guides', 'pt-br': 'Guias', es: 'Guías' }, href: '/guides' },
   { label: { en: 'Beginner Guide', de: 'Einsteiger-Guide', 'pt-br': 'Guia para iniciantes', es: 'Guía para principiantes' }, href: '/guides/beginner' }
 ];
