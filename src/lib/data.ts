@@ -45,5 +45,3 @@ export const startCards = {
     { number: '4', id: 'achievements', title: 'Logros y finales', description: 'Sigue los 16 logros de Steam, identifica objetivos perdibles y comprende las decisiones y hallazgos relacionados con el final.' }
   ]
 } satisfies Record<Locale, Array<{ number: string; id: string; title: string; description: string }>>;
-
-export const sidebarCodes = ['暂无', '暂无'] as const;

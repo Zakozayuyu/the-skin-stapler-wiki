@@ -112,7 +112,6 @@ export default function WikiHubPage() {
               <section className="card"><h3>Is this an official wiki?</h3><p>No. This is an independent fan guide. Official game information is linked to Steam, itch.io, Tainted Pact, or Assemble Entertainment where available.</p></section>
               <section className="card"><h3>Is the full game released?</h3><p>Yes. The Windows PC version released on August 6, 2026, through Steam and GOG. Some regional pages displayed August 7 because of timezone handling.</p></section>
               <section className="card"><h3>Does The Skin Stapler have multiplayer?</h3><p>No multiplayer mode is listed by the official stores. The released game is a single-player story with several playable viewpoints.</p></section>
-              <section className="card"><h3>Are there redeem codes?</h3><p>No official redeem-code system is documented. This wiki does not invent codes or copy unrelated code lists from other games.</p></section>
               <section className="card"><h3>Is there a PS5 or mobile version?</h3><p>No console or mobile version is confirmed in the supplied official material. The verified release is for Windows PC; other platforms are Pending confirmation.</p></section>
               <section className="card"><h3>How often is the wiki updated?</h3><p>Pages are checked against the August 2026 version 1.0 research set. Later patches, new platforms, or revised credits need a fresh official source before being added.</p></section>
             </div>

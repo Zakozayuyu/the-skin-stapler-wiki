@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { localeMeta, locales, localizePath, type Locale } from './i18n';
 
-const developmentUrl = 'http://localhost:3000';
-const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
+const productionUrl = 'https://theskinstapler.com';
+const vercelUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL;
 const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ?? (vercelUrl ? `https://${vercelUrl}` : developmentUrl);
+  ?? (vercelUrl ? `https://${vercelUrl}` : productionUrl);
 
 export const siteUrl = configuredUrl.replace(/\/$/, '');
 export const hasPublicSiteUrl = siteUrl.startsWith('https://') && !siteUrl.includes('localhost');

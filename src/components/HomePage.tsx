@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n';
 import { localeMeta, localizePath } from '@/lib/i18n';
-import { officialLinks, sidebarCodes, startCards } from '@/lib/data';
+import { officialLinks, startCards } from '@/lib/data';
 import { homeContent } from '@/lib/content';
 import { siteConfig } from '@/lib/seo';
 import NativeBannerAd from './NativeBannerAd';
@@ -15,7 +15,7 @@ const copy = {
     primary: 'Start Spoiler-Free Guide', secondary: 'View Puzzle Solutions', tertiary: 'Find All Achievements', trailer: 'Official Gameplay Trailer',
     stats: ['Released Aug 6, 2026', '54 Players Online', '121 Steam Reviews', '94.21% Positive', '16 Achievements'],
     startEyebrow: 'Start Here', startTitle: 'Your The Skin Stapler Investigation', about: 'What is The Skin Stapler?', explore: 'Explore All Guides',
-    codeTitle: 'Redeem Codes', codeText: 'No official redeem-code system was found for The Skin Stapler.', official: 'Official Links', steam: 'Official game page', discord: 'Tainted Pact Games Discord', youtube: 'Assemble Entertainment YouTube', twitter: 'Tainted Pact on X', community: 'Steam Discussions',
+    official: 'Official Links', steam: 'Official game page', discord: 'Tainted Pact Games Discord', youtube: 'Assemble Entertainment YouTube', twitter: 'Tainted Pact on X', community: 'Steam Discussions',
     facts: [['Developer', 'Tainted Pact'], ['Publisher', 'Assemble Entertainment'], ['Platform', 'Windows PC / Steam'], ['Genre', 'Action / Indie Horror'], ['User Reviews', '121'], ['Positive Rating', '94.21%'], ['Achievements', '16']],
     ready: 'Ready to Solve the Carrion City Case?', readyText: "From your first crime scene to the final revelation, use our walkthroughs and puzzle guides to stay on the killer's trail without missing key evidence.", readyPrimary: 'Read the Beginner Guide', readySecondary: 'Play on Steam', language: 'Game language note'
   },
@@ -25,7 +25,7 @@ const copy = {
     primary: 'Spoilerarmen Guide starten', secondary: 'Rätsellösungen ansehen', tertiary: 'Alle Erfolge finden', trailer: 'Offizieller Gameplay-Trailer',
     stats: ['Veröffentlicht am 6. Aug. 2026', '54 Spieler online', '121 Steam-Rezensionen', '94,21 % positiv', '16 Erfolge'],
     startEyebrow: 'Hier starten', startTitle: 'Deine Ermittlung in The Skin Stapler', about: 'Was ist The Skin Stapler?', explore: 'Alle Guides ansehen',
-    codeTitle: 'Einlösecodes', codeText: 'Für The Skin Stapler wurde kein offizielles Einlösecode-System gefunden.', official: 'Offizielle Links', steam: 'Offizielle Spielseite', discord: 'Tainted Pact Games Discord', youtube: 'Assemble Entertainment YouTube', twitter: 'Tainted Pact auf X', community: 'Steam-Diskussionen',
+    official: 'Offizielle Links', steam: 'Offizielle Spielseite', discord: 'Tainted Pact Games Discord', youtube: 'Assemble Entertainment YouTube', twitter: 'Tainted Pact auf X', community: 'Steam-Diskussionen',
     facts: [['Entwickler', 'Tainted Pact'], ['Publisher', 'Assemble Entertainment'], ['Plattform', 'Windows PC / Steam'], ['Genre', 'Action / Indie-Horror'], ['Nutzerrezensionen', '121'], ['Positive Wertung', '94,21 %'], ['Erfolge', '16']],
     ready: 'Bereit, den Fall von Carrion City zu lösen?', readyText: 'Nutze unsere Komplettlösungen und Rätsel-Guides vom ersten Tatort bis zur letzten Enthüllung, ohne wichtige Beweise zu verpassen.', readyPrimary: 'Einsteiger-Guide lesen', readySecondary: 'Auf Steam spielen', language: 'Hinweis zur Spielsprache'
   },
@@ -35,7 +35,7 @@ const copy = {
     primary: 'Começar guia sem spoilers', secondary: 'Ver soluções de puzzles', tertiary: 'Encontrar todas as conquistas', trailer: 'Trailer oficial de gameplay',
     stats: ['Lançado em 6 ago. 2026', '54 jogadores online', '121 avaliações na Steam', '94,21% positivas', '16 conquistas'],
     startEyebrow: 'Comece aqui', startTitle: 'Sua investigação de The Skin Stapler', about: 'O que é The Skin Stapler?', explore: 'Explorar todos os guias',
-    codeTitle: 'Códigos de resgate', codeText: 'Nenhum sistema oficial de códigos de resgate foi encontrado para The Skin Stapler.', official: 'Links oficiais', steam: 'Página oficial do jogo', discord: 'Discord da Tainted Pact Games', youtube: 'YouTube da Assemble Entertainment', twitter: 'Tainted Pact no X', community: 'Discussões da Steam',
+    official: 'Links oficiais', steam: 'Página oficial do jogo', discord: 'Discord da Tainted Pact Games', youtube: 'YouTube da Assemble Entertainment', twitter: 'Tainted Pact no X', community: 'Discussões da Steam',
     facts: [['Desenvolvedora', 'Tainted Pact'], ['Publicadora', 'Assemble Entertainment'], ['Plataforma', 'Windows PC / Steam'], ['Gênero', 'Ação / Horror indie'], ['Avaliações de usuários', '121'], ['Avaliação positiva', '94,21%'], ['Conquistas', '16']],
     ready: 'Pronto para resolver o caso de Carrion City?', readyText: 'Da primeira cena do crime à revelação final, use nossos detonados e guias de puzzles para seguir o rastro do assassino sem perder provas importantes.', readyPrimary: 'Ler o guia para iniciantes', readySecondary: 'Jogar na Steam', language: 'Nota sobre o idioma do jogo'
   },
@@ -45,7 +45,7 @@ const copy = {
     primary: 'Empezar guía sin spoilers', secondary: 'Ver soluciones de puzles', tertiary: 'Encontrar todos los logros', trailer: 'Tráiler oficial de jugabilidad',
     stats: ['Lanzamiento: 6 ago. 2026', '54 jugadores conectados', '121 reseñas de Steam', '94,21% positivas', '16 logros'],
     startEyebrow: 'Empieza aquí', startTitle: 'Tu investigación de The Skin Stapler', about: '¿Qué es The Skin Stapler?', explore: 'Explorar todas las guías',
-    codeTitle: 'Códigos de canje', codeText: 'No se encontró ningún sistema oficial de códigos de canje para The Skin Stapler.', official: 'Enlaces oficiales', steam: 'Página oficial del juego', discord: 'Discord de Tainted Pact Games', youtube: 'YouTube de Assemble Entertainment', twitter: 'Tainted Pact en X', community: 'Discusiones de Steam',
+    official: 'Enlaces oficiales', steam: 'Página oficial del juego', discord: 'Discord de Tainted Pact Games', youtube: 'YouTube de Assemble Entertainment', twitter: 'Tainted Pact en X', community: 'Discusiones de Steam',
     facts: [['Desarrolladora', 'Tainted Pact'], ['Editora', 'Assemble Entertainment'], ['Plataforma', 'Windows PC / Steam'], ['Género', 'Acción / Terror indie'], ['Reseñas de usuarios', '121'], ['Valoración positiva', '94,21%'], ['Logros', '16']],
     ready: '¿Listo para resolver el caso de Carrion City?', readyText: 'Desde la primera escena del crimen hasta la revelación final, usa nuestras guías y soluciones de puzles para seguir el rastro del asesino sin perder pruebas importantes.', readyPrimary: 'Leer la guía para principiantes', readySecondary: 'Jugar en Steam', language: 'Nota sobre el idioma del juego'
   }
@@ -80,7 +80,6 @@ export default function HomePage({ locale }: { locale: Locale }) {
         </div>
 
         <aside className="home-sidebar" aria-label="The Skin Stapler resources">
-          <section className="card sidebar-card codes-card"><span className="eyebrow">{t.codeTitle}</span><p>{t.codeText}</p><div className="code-list">{sidebarCodes.map((code, index) => <div key={index}><code>{code}</code></div>)}</div></section>
           <section className="card sidebar-card"><h2>{t.official}</h2><div className="official-links">{officialLinks.map((link) => <a key={link.key} href={link.href} target="_blank" rel="noreferrer"><span>{officialLabels[link.key]}</span><b>↗</b></a>)}</div></section>
           <section className="card sidebar-card language-note"><h2>{t.language}</h2><p>{localeMeta[locale].gameLanguageNote}</p></section>
         </aside>
