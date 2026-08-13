@@ -9,6 +9,7 @@ const withMDX = createMDX({
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  experimental: { cpus: 4 },
   images: { unoptimized: true },
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   async redirects() {
