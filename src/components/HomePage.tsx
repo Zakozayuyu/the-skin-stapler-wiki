@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Locale } from '@/lib/i18n';
 import { localeMeta, localizePath } from '@/lib/i18n';
 import { officialLinks, startCards } from '@/lib/data';
+import { gameFacts } from '@/lib/game-facts';
 import { homeContent } from '@/lib/content';
 import { siteConfig } from '@/lib/seo';
 import NativeBannerAd from './NativeBannerAd';
@@ -13,42 +14,75 @@ const copy = {
     eyebrow: 'Independent Fan-Made Horror Guide', title: 'The Skin Stapler',
     hero: "Hunt a serial killer through the neon-lit decay of Carrion City as Detective Dick Slater and a cast of doomed civilians. Investigate grisly scenes, solve puzzles, survive dangerous encounters, and uncover the truth behind the killer's tapes.",
     primary: 'Start Spoiler-Free Guide', secondary: 'View Puzzle Solutions', tertiary: 'Find All Achievements', trailer: 'Official Gameplay Trailer',
-    stats: ['Released Aug 6, 2026', '54 Players Online', '121 Steam Reviews', '94.21% Positive', '16 Achievements'],
     startEyebrow: 'Start Here', startTitle: 'Your The Skin Stapler Investigation', about: 'What is The Skin Stapler?', explore: 'Explore All Guides',
     official: 'Official Links', steam: 'Official game page', discord: 'Tainted Pact Games Discord', youtube: 'Assemble Entertainment YouTube', twitter: 'Tainted Pact on X', community: 'Steam Discussions',
-    facts: [['Developer', 'Tainted Pact'], ['Publisher', 'Assemble Entertainment'], ['Platform', 'Windows PC / Steam'], ['Genre', 'Action / Indie Horror'], ['User Reviews', '121'], ['Positive Rating', '94.21%'], ['Achievements', '16']],
     ready: 'Ready to Solve the Carrion City Case?', readyText: "From your first crime scene to the final revelation, use our walkthroughs and puzzle guides to stay on the killer's trail without missing key evidence.", readyPrimary: 'Read the Beginner Guide', readySecondary: 'Play on Steam', language: 'Game language note'
   },
   de: {
     eyebrow: 'Unabhängiger, fanerstellter Horror-Guide', title: 'The Skin Stapler',
     hero: 'Jage als Detective Dick Slater und mit einer Gruppe dem Untergang geweihter Zivilisten einen Serienmörder durch das neonbeleuchtete, verfallende Carrion City. Untersuche grausige Tatorte, löse Rätsel, überlebe gefährliche Begegnungen und decke die Wahrheit hinter den Bändern des Mörders auf.',
     primary: 'Spoilerarmen Guide starten', secondary: 'Rätsellösungen ansehen', tertiary: 'Alle Erfolge finden', trailer: 'Offizieller Gameplay-Trailer',
-    stats: ['Veröffentlicht am 6. Aug. 2026', '54 Spieler online', '121 Steam-Rezensionen', '94,21 % positiv', '16 Erfolge'],
     startEyebrow: 'Hier starten', startTitle: 'Deine Ermittlung in The Skin Stapler', about: 'Was ist The Skin Stapler?', explore: 'Alle Guides ansehen',
     official: 'Offizielle Links', steam: 'Offizielle Spielseite', discord: 'Tainted Pact Games Discord', youtube: 'Assemble Entertainment YouTube', twitter: 'Tainted Pact auf X', community: 'Steam-Diskussionen',
-    facts: [['Entwickler', 'Tainted Pact'], ['Publisher', 'Assemble Entertainment'], ['Plattform', 'Windows PC / Steam'], ['Genre', 'Action / Indie-Horror'], ['Nutzerrezensionen', '121'], ['Positive Wertung', '94,21 %'], ['Erfolge', '16']],
     ready: 'Bereit, den Fall von Carrion City zu lösen?', readyText: 'Nutze unsere Komplettlösungen und Rätsel-Guides vom ersten Tatort bis zur letzten Enthüllung, ohne wichtige Beweise zu verpassen.', readyPrimary: 'Einsteiger-Guide lesen', readySecondary: 'Auf Steam spielen', language: 'Hinweis zur Spielsprache'
   },
   'pt-br': {
     eyebrow: 'Guia de horror independente feito por fãs', title: 'The Skin Stapler',
     hero: 'Cace um assassino em série pela decadência iluminada por neon de Carrion City como o detetive Dick Slater e um elenco de civis condenados. Investigue cenas macabras, resolva puzzles, sobreviva a encontros perigosos e descubra a verdade por trás das fitas do assassino.',
     primary: 'Começar guia sem spoilers', secondary: 'Ver soluções de puzzles', tertiary: 'Encontrar todas as conquistas', trailer: 'Trailer oficial de gameplay',
-    stats: ['Lançado em 6 ago. 2026', '54 jogadores online', '121 avaliações na Steam', '94,21% positivas', '16 conquistas'],
     startEyebrow: 'Comece aqui', startTitle: 'Sua investigação de The Skin Stapler', about: 'O que é The Skin Stapler?', explore: 'Explorar todos os guias',
     official: 'Links oficiais', steam: 'Página oficial do jogo', discord: 'Discord da Tainted Pact Games', youtube: 'YouTube da Assemble Entertainment', twitter: 'Tainted Pact no X', community: 'Discussões da Steam',
-    facts: [['Desenvolvedora', 'Tainted Pact'], ['Publicadora', 'Assemble Entertainment'], ['Plataforma', 'Windows PC / Steam'], ['Gênero', 'Ação / Horror indie'], ['Avaliações de usuários', '121'], ['Avaliação positiva', '94,21%'], ['Conquistas', '16']],
     ready: 'Pronto para resolver o caso de Carrion City?', readyText: 'Da primeira cena do crime à revelação final, use nossos detonados e guias de puzzles para seguir o rastro do assassino sem perder provas importantes.', readyPrimary: 'Ler o guia para iniciantes', readySecondary: 'Jogar na Steam', language: 'Nota sobre o idioma do jogo'
   },
   es: {
     eyebrow: 'Guía de terror independiente hecha por fans', title: 'The Skin Stapler',
     hero: 'Da caza a un asesino en serie por la decadencia iluminada con neón de Carrion City como el detective Dick Slater y un grupo de civiles condenados. Investiga escenas macabras, resuelve puzles, sobrevive a encuentros peligrosos y descubre la verdad tras las cintas del asesino.',
     primary: 'Empezar guía sin spoilers', secondary: 'Ver soluciones de puzles', tertiary: 'Encontrar todos los logros', trailer: 'Tráiler oficial de jugabilidad',
-    stats: ['Lanzamiento: 6 ago. 2026', '54 jugadores conectados', '121 reseñas de Steam', '94,21% positivas', '16 logros'],
     startEyebrow: 'Empieza aquí', startTitle: 'Tu investigación de The Skin Stapler', about: '¿Qué es The Skin Stapler?', explore: 'Explorar todas las guías',
     official: 'Enlaces oficiales', steam: 'Página oficial del juego', discord: 'Discord de Tainted Pact Games', youtube: 'YouTube de Assemble Entertainment', twitter: 'Tainted Pact en X', community: 'Discusiones de Steam',
-    facts: [['Desarrolladora', 'Tainted Pact'], ['Editora', 'Assemble Entertainment'], ['Plataforma', 'Windows PC / Steam'], ['Género', 'Acción / Terror indie'], ['Reseñas de usuarios', '121'], ['Valoración positiva', '94,21%'], ['Logros', '16']],
     ready: '¿Listo para resolver el caso de Carrion City?', readyText: 'Desde la primera escena del crimen hasta la revelación final, usa nuestras guías y soluciones de puzles para seguir el rastro del asesino sin perder pruebas importantes.', readyPrimary: 'Leer la guía para principiantes', readySecondary: 'Jugar en Steam', language: 'Nota sobre el idioma del juego'
   }
+} as const;
+
+const heroStats: Record<Locale, Array<[string, string]>> = {
+  en: [['Released', 'Aug 6, 2026'], [gameFacts.platform.value, 'Platform'], [gameFacts.developer.value, 'Developer'], [gameFacts.stores.value.join(' + '), 'Official Stores'], [String(gameFacts.steamAchievements.value), 'Achievements']],
+  de: [['Veröffentlicht', '6. Aug. 2026'], [gameFacts.platform.value, 'Plattform'], [gameFacts.developer.value, 'Entwickler'], [gameFacts.stores.value.join(' + '), 'Offizielle Shops'], [String(gameFacts.steamAchievements.value), 'Erfolge']],
+  'pt-br': [['Lançado', '6 ago. 2026'], [gameFacts.platform.value, 'Plataforma'], [gameFacts.developer.value, 'Desenvolvedora'], [gameFacts.stores.value.join(' + '), 'Lojas oficiais'], [String(gameFacts.steamAchievements.value), 'Conquistas']],
+  es: [['Lanzamiento', '6 ago. 2026'], [gameFacts.platform.value, 'Plataforma'], [gameFacts.developer.value, 'Desarrolladora'], [gameFacts.stores.value.join(' + '), 'Tiendas oficiales'], [String(gameFacts.steamAchievements.value), 'Logros']]
+};
+
+const stableFacts: Record<Locale, Array<[string, string]>> = {
+  en: [['Developer', gameFacts.developer.value], ['Publisher', gameFacts.publisher.value], ['Platform', gameFacts.platform.value], ['Stores', gameFacts.stores.value.join(' and ')], ['Mode', gameFacts.mode.value], ['Achievements', String(gameFacts.steamAchievements.value)]],
+  de: [['Entwickler', gameFacts.developer.value], ['Publisher', gameFacts.publisher.value], ['Plattform', gameFacts.platform.value], ['Stores', gameFacts.stores.value.join(' und ')], ['Modus', 'Einzelspieler'], ['Erfolge', String(gameFacts.steamAchievements.value)]],
+  'pt-br': [['Desenvolvedora', gameFacts.developer.value], ['Publicadora', gameFacts.publisher.value], ['Plataforma', gameFacts.platform.value], ['Lojas', gameFacts.stores.value.join(' e ')], ['Modo', 'Um jogador'], ['Conquistas', String(gameFacts.steamAchievements.value)]],
+  es: [['Desarrolladora', gameFacts.developer.value], ['Editora', gameFacts.publisher.value], ['Plataforma', gameFacts.platform.value], ['Tiendas', gameFacts.stores.value.join(' y ')], ['Modo', 'Un jugador'], ['Logros', String(gameFacts.steamAchievements.value)]]
+};
+
+const popularGuides = {
+  en: { eyebrow: 'Popular guides', title: 'Characters, Cast & Story', links: [
+    ['/guides/the-skin-stapler-voice-actors', 'The Skin Stapler voice actors', 'Match every confirmed performer to their character and role.'],
+    ['/guides/the-skin-stapler-fefe', 'Who is Fefe?', 'Meet the opening playable character and her voice actor.'],
+    ['/guides/the-skin-stapler-layna', 'Nurse Layna', "Learn who runs Lazar's Blood Bank and who voices her."],
+    ['/ending', 'The Skin Stapler ending', 'Understand the final confrontation with spoilers clearly marked.']
+  ] },
+  de: { eyebrow: 'Beliebte Guides', title: 'Figuren, Besetzung & Geschichte', links: [
+    ['/guides/the-skin-stapler-voice-actors', 'Sprecher und Rollen', 'Bestätigte englische Stimmen und ihre Figuren.'],
+    ['/guides/the-skin-stapler-fefe', 'Wer ist Fefe?', 'Die erste spielbare Figur und ihre Sprecherin.'],
+    ['/walkthrough', 'Kompletter Spielweg', 'Alle bestätigten Kapitel in der richtigen Reihenfolge.'],
+    ['/ending', 'Das Ende erklärt', 'Das Finale mit deutlich markierten Spoilern.']
+  ] },
+  'pt-br': { eyebrow: 'Guias populares', title: 'Personagens, elenco e história', links: [
+    ['/guides/the-skin-stapler-voice-actors', 'Elenco de voz', 'As vozes em inglês e seus papéis confirmados.'],
+    ['/guides/the-skin-stapler-fefe', 'Quem é Fefe?', 'A personagem jogável da abertura e sua dubladora.'],
+    ['/walkthrough', 'Detonado completo', 'Todos os capítulos confirmados na ordem certa.'],
+    ['/ending', 'Final explicado', 'O confronto final com spoilers bem sinalizados.']
+  ] },
+  es: { eyebrow: 'Guías populares', title: 'Personajes, reparto e historia', links: [
+    ['/guides/the-skin-stapler-voice-actors', 'Reparto de voces', 'Las voces en inglés y sus papeles confirmados.'],
+    ['/guides/the-skin-stapler-fefe', '¿Quién es Fefe?', 'El personaje jugable de la apertura y su actriz de voz.'],
+    ['/walkthrough', 'Guía completa', 'Todos los capítulos confirmados en el orden correcto.'],
+    ['/ending', 'Final explicado', 'El enfrentamiento final con spoilers bien señalados.']
+  ] }
 } as const;
 
 export default function HomePage({ locale }: { locale: Locale }) {
@@ -66,17 +100,19 @@ export default function HomePage({ locale }: { locale: Locale }) {
           <p>{t.hero}</p>
           <div className="button-row hero-buttons"><Link href={localizePath(locale, '/guides/beginner')} className="btn-primary">{t.primary}</Link><Link href={localizePath(locale, '/guides#puzzles')} className="btn-secondary">{t.secondary}</Link><Link href={localizePath(locale, '/guides#achievements')} className="btn-ghost">{t.tertiary}</Link></div>
           <a className="trailer-link" href={siteConfig.trailer} target="_blank" rel="noreferrer">▶ {t.trailer}</a>
-          <div className="stats-grid skin-stats">{t.stats.map((stat) => <div key={stat}><strong>{stat.split(' ')[0]}</strong><span>{stat.substring(stat.indexOf(' ') + 1)}</span></div>)}</div>
+          <div className="stats-grid skin-stats">{heroStats[locale].map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
         </div>
       </section>
 
       <div className="container home-layout section">
         <div className="home-primary">
-          <section><div className="section-heading left-heading"><span className="eyebrow">{t.startEyebrow}</span><h2 className="section-title">{t.startTitle}</h2></div><div className="start-grid">{startCards[locale].map((card) => { const englishRoute = card.id === 'walkthrough' ? '/walkthrough' : card.id === 'achievements' ? '/ending' : null; const href = card.number === '1' ? localizePath(locale, '/guides/beginner') : locale === 'en' && englishRoute ? englishRoute : localizePath(locale, `/guides#${card.id}`); return <Link className="card start-card" key={card.number} href={href}><span>{card.number}</span><h3>{card.title}</h3><p>{card.description}</p></Link>; })}</div></section>
+          <section><div className="section-heading left-heading"><span className="eyebrow">{t.startEyebrow}</span><h2 className="section-title">{t.startTitle}</h2></div><div className="start-grid">{startCards[locale].map((card) => { const primaryRoute = card.id === 'walkthrough' ? '/walkthrough' : card.id === 'achievements' ? '/ending' : card.id === 'beginner' ? '/guides/beginner' : null; const href = primaryRoute ? localizePath(locale, primaryRoute) : localizePath(locale, `/guides#${card.id}`); return <Link className="card start-card" key={card.number} href={href}><span>{card.number}</span><h3>{card.title}</h3><p>{card.description}</p></Link>; })}</div></section>
+
+          <section className="popular-guides"><div className="section-heading left-heading"><span className="eyebrow">{popularGuides[locale].eyebrow}</span><h2 className="section-title">{popularGuides[locale].title}</h2></div><div className="start-grid">{popularGuides[locale].links.map(([href, title, description]) => <Link className="card popular-guide-card" key={href} href={localizePath(locale, href)}><h3>{title}</h3><p>{description}</p><b>→</b></Link>)}</div></section>
 
           <NativeBannerAd />
 
-          <section className="about-section"><h2 className="section-title">{t.about}</h2><div className="home-mdx"><Intro /></div><div className="facts-grid">{t.facts.map(([label, value]) => <div className="card fact-card" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><Link href={localizePath(locale, '/guides')} className="btn-secondary">{t.explore}</Link></section>
+          <section className="about-section"><h2 className="section-title">{t.about}</h2><div className="home-mdx"><Intro /></div><div className="facts-grid">{stableFacts[locale].map(([label, value]) => <div className="card fact-card" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><Link href={localizePath(locale, '/guides')} className="btn-secondary">{t.explore}</Link></section>
         </div>
 
         <aside className="home-sidebar" aria-label="The Skin Stapler resources">

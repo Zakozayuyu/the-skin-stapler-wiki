@@ -3,7 +3,10 @@ import type { Locale } from '@/lib/i18n';
 import { localeMeta, localizePath } from '@/lib/i18n';
 import { getLocalizedArticle, getLocalizedArticlePath, localizedArticleIds } from '@/lib/localized-articles';
 import type { LocalizedArticle } from '@/lib/localized-articles/types';
+import type { ArticleImageKey } from '@/lib/article-media';
+import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, siteConfig } from '@/lib/seo';
+import ArticleFigure from './ArticleFigure';
 import SiteShell from './SiteShell';
 
 type ContentLocale = Exclude<Locale, 'en'>;
@@ -26,16 +29,23 @@ const ui = {
   }
 } as const;
 
+const articleImages: Record<LocalizedArticle['id'], ArticleImageKey> = {
+  walkthrough: 'police', ending: 'killer', wiki: 'promo', fefe: 'chase',
+  'hot-dog': 'customer', 'release-date': 'promo', 'voice-cast': 'interview'
+};
+
 export default function LocalizedArticlePage({ locale, article }: { locale: ContentLocale; article: LocalizedArticle }) {
   const t = ui[locale];
   const path = getLocalizedArticlePath(locale, article.id);
   const isGuide = !['walkthrough', 'ending', 'wiki'].includes(article.id);
+  const image = articleImages[article.id];
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'Article', headline: article.title, description: article.description,
-        inLanguage: localeMeta[locale].language, mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), keywords: article.keyword
+        inLanguage: localeMeta[locale].language, mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), keywords: article.keyword,
+        image: absoluteUrl(articleMedia[image].src)
       },
       {
         '@type': 'FAQPage', mainEntity: article.faq.map((item) => ({
@@ -71,6 +81,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
             <h2>{t.answer}</h2>
             <p>{article.directAnswer}</p>
           </section>
+          <ArticleFigure image={image} locale={locale} />
           {article.sections.map((section) => (
             <section key={section.title}>
               <h2>{section.title}</h2>

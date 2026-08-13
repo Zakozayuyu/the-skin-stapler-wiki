@@ -23,6 +23,7 @@ export default function WalkthroughPage() {
       description="The Skin Stapler walkthrough follows the complete full-game route from Fefe’s apartment through CCPD, workplace chapters, Closing In, and The Flesh Pit."
       keyword="the skin stapler walkthrough"
       label="Walkthrough"
+      image="police"
     >
       <aside className="card answer-box">
         <strong>Quick answer</strong>
@@ -41,7 +42,7 @@ export default function WalkthroughPage() {
 
       <h2 id="chapter-order">The Skin Stapler full walkthrough chapter order</h2>
       <p>The table below uses the chapter names and timestamps published with a complete no-commentary playthrough. Select a time to jump to that part of the video. The four <strong>Aftermath</strong> interludes and the <strong>Final Aftermath</strong> connect the playable locations, so do not skip them if you are following the story.</p>
-      <p>Two independent full-game videos support the same broad route: opening apartment, CCPD, Quick Fix, Gutters End, later workplace viewpoints, the final investigation, and the Flesh Pit confrontation. Exact timestamp length varies by player, but the location order is stable across the collected material.</p>
+      <p>Two independent full-game videos show the same broad route: opening apartment, CCPD, Quick Fix, Gutters End, later workplace viewpoints, the final investigation, and the Flesh Pit confrontation. Exact timestamps vary by player, but the location order is consistent.</p>
 
       <div className="table-scroll">
         <table className="walkthrough-table">
@@ -66,23 +67,23 @@ export default function WalkthroughPage() {
       <blockquote><p>You do not need to grind levels, collect ammunition for a final boss, or explore an open world. The game is built around observation, dialogue, light puzzles, and scripted danger.</p></blockquote>
 
       <h2>What each part of the route is doing</h2>
-      <p>Fefe’s apartment is the full-game opening and is not listed as part of the free demo. The police-station chapter then establishes Dick Slater, Robbie Knox, and the investigation. Quick Fix and Gutters End shift control to Hexy and Blair, showing the danger from the civilian side before the detectives review what happened.</p>
-      <p>Luna’s shop, Underworld VHS, and Lazar’s Blood Bank extend that pattern with additional locations and cast members. Each workplace is a story chapter, not an optional side business or a separate game mode. The Aftermath scenes reconnect those events to the case and move Slater closer to the killer.</p>
+      <p><Link href="/guides/the-skin-stapler-fefe">Fefe’s apartment opening</Link> is part of the full game and is not listed in the free demo. The police-station chapter then establishes Dick Slater, Robbie Knox, and the investigation. Quick Fix shifts control to Hexy and contains the <Link href="/guides/the-skin-stapler-hot-dog">hot dog scene</Link>, while Gutters End follows Blair before the detectives review what happened.</p>
+      <p>Luna’s shop, <Link href="/guides/the-skin-stapler-scaroline">Scaroline’s Underworld VHS</Link>, and <Link href="/guides/the-skin-stapler-layna">Nurse Layna at Lazar’s Blood Bank</Link> extend that pattern with additional locations and cast members. Each workplace is a story chapter, not an optional side business or separate game mode. The Aftermath scenes reconnect those events to the case and move Slater closer to the killer.</p>
       <p>Closing In is the last investigation section before the ending. By this point, the detectives have the killer’s name, location, and revenge motive. The Flesh Pit resolves that thread in a linear confrontation rather than opening a new area for free exploration.</p>
 
       <h2>Crime scenes, tapes, and shift tasks</h2>
       <p>The official store description separates the game into crime-scene investigation, grisly puzzles, and unusual work shifts. Those activities are also the practical progression gates. If an objective does not update, the most likely cause is an unfinished conversation, an unchecked piece of evidence, a tape interaction, or one missing step in the current shift.</p>
-      <p>Collected walkthrough research repeatedly mentions damaged tapes that need to be fixed or reviewed. The sources do not provide one reusable code that solves every tape or puzzle. A page claiming a master password, secret redeem code, or universal chapter skip would be unsupported.</p>
+      <p>Damaged tapes must be fixed or reviewed during the route, but there is no verified reusable code that solves every tape or puzzle. Claims about a master password, secret redeem code, or universal chapter skip are not supported by the game footage checked for this guide.</p>
       <p>During workplace scenes, complete the task in the order shown by the game. The Quick Fix demo, for example, uses a serving sequence before the scene can advance. The exact interactions change by location, so follow the objective text instead of assuming every chapter uses the same checklist.</p>
 
       <h2 id="demo-vs-full-game">Demo walkthrough vs. full game</h2>
-      <p>The free demo samples three verified locations: <strong>Carrion City Police Department</strong>, <strong>The Quick Fix</strong>, and <strong>Gutters End Bowling Alley</strong>. The released full game adds the Burrows Apartments opening, Luna's shop, Underworld VHS, Lazar's Blood Bank, the later detective sequence, and The Flesh Pit finale.</p>
-      <p>If you have only played the demo, start the full game from the beginning. The full release has a broader story order and additional perspectives; the demo's three scenes are not the whole investigation. See the <Link href="/guides/the-skin-stapler-demo">demo guide</Link> for download and save-transfer notes.</p>
+      <p>The free demo samples three verified locations: <strong>Carrion City Police Department</strong>, <strong>The Quick Fix</strong>, and <strong>Gutters End Bowling Alley</strong>. The released full game adds the Burrows Apartments opening, Luna’s shop, Underworld VHS, Lazar’s Blood Bank, the later detective sequence, and The Flesh Pit finale.</p>
+      <p>If you have only played the demo, start the full game from the beginning. The full release has a broader story order and additional perspectives; the demo’s three scenes are not the whole investigation. See the <Link href="/guides/the-skin-stapler-demo">demo guide</Link> for download and save-transfer notes.</p>
 
       <h2 id="playtime">How long the full walkthrough takes</h2>
-      <p>Tainted Pact describes The Skin Stapler as a short horror game designed for one sitting. The two collected no-commentary or complete-story runs last about 2 hours 46 minutes and 3 hours 5 minutes. Those are observed video lengths, not a guaranteed completion time for every player.</p>
-      <p>A first run can take longer if you inspect every room, pause during dialogue, retry a dangerous scene, or hunt achievements. A streamer estimate of five to six hours appears in the research, but it is not supported by a clean timed run. A careful description is “about three hours for a direct route, longer with exploration.”</p>
-      <p>Steam lists <strong>16 achievements</strong> for the released game. The supplied sources do not map every achievement to a chapter, so this walkthrough does not invent missable requirements. Finish the story first, then use an achievement-specific checklist once each condition has been verified.</p>
+      <p>Tainted Pact describes The Skin Stapler as a short horror game designed for one sitting. The two no-commentary or complete-story runs checked for this guide last about 2 hours 46 minutes and 3 hours 5 minutes. Those are observed video lengths, not a guaranteed completion time for every player.</p>
+      <p>A first run can take longer if you inspect every room, pause during dialogue, retry a dangerous scene, or hunt achievements. One streamer estimated five to six hours, but clean recorded runs are closer to three hours. A careful description is “about three hours for a direct route, longer with exploration.”</p>
+      <p>Steam lists <strong>16 achievements</strong> for the released game. Not every unlock condition has been verified chapter by chapter, so this walkthrough does not label achievements as missable without proof.</p>
 
       <h2 id="finale">How to reach The Flesh Pit ending</h2>
       <p>Complete the <strong>Final Aftermath</strong> and <strong>Closing In</strong> chapters without quitting to the menu. The final named section is <strong>The Flesh Pit (Ending)</strong>. It begins at 02:34:00 in the referenced full playthrough and contains the final story reveals.</p>
@@ -90,18 +91,18 @@ export default function WalkthroughPage() {
 
       <h2>What this walkthrough can and cannot confirm</h2>
       <p>The route, named locations, principal viewpoints, Steam achievement count, and final confrontation are supported by official store information or full-game footage. The chapter timestamps come from a published playthrough and are provided as navigation aids. They should not be treated as target speedrun splits.</p>
-      <p>Minor epilogue differences based on collected tapes are reported by a fan wiki, but the research did not obtain matched runs showing those variants. Multiple ending routes, secret moral choices, and a fixed collectible threshold are therefore <strong>Pending confirmation</strong>. The walkthrough follows the single main route that can be verified.</p>
+      <p>A fan wiki reports minor epilogue differences based on the tapes heard, but matched runs showing those variants were not available. Multiple ending routes, secret moral choices, and a fixed collectible threshold have not been confirmed. This walkthrough therefore follows the single verified main route.</p>
       <p>Spelling also varies in automated captions, especially Fefe/Fifi and Kain/Kane. Cast-poster spelling is used for Fefe, while Silus Kain is used for the killer’s brother. Any future patch that changes chapter order or adds scenes will require a fresh check.</p>
 
       <h2 id="faq">The Skin Stapler walkthrough FAQ</h2>
       <div className="faq-cards">
-        <section className="card"><h3>How long is The Skin Stapler?</h3><p>The creator describes it as a short game designed for one sitting. Collected full runs last 2:46–3:05, while player time varies with exploration, dialogue pacing, and retries.</p></section>
+        <section className="card"><h3>How long is The Skin Stapler?</h3><p>The creator describes it as a short game designed for one sitting. The full runs checked here last 2:46–3:05, while player time varies with exploration, dialogue pacing, and retries.</p></section>
         <section className="card"><h3>How many chapters are in the full game?</h3><p>The complete reference playthrough labels nine major playable scene chapters, plus five Aftermath story sections, an introduction, and a short beginning segment.</p></section>
         <section className="card"><h3>Does the game have chapter select?</h3><p>The game records unlocked chapters, but community reports around the demo noted confusing chapter-menu behavior. Treat chapter select as a replay tool and finish the active run normally when possible.</p></section>
         <section className="card"><h3>Is this walkthrough for the demo?</h3><p>No. This is the August 2026 full-game route. The demo includes only the police station, Quick Fix, and Gutters End sample sections.</p></section>
       </div>
 
-      <p className="source-note">Route reference: <a href={video} target="_blank" rel="noreferrer">HollowPoiint's full-game chaptered walkthrough</a>. Official game details: <a href="https://store.steampowered.com/app/4310610/The_Skin_Stapler/" target="_blank" rel="noreferrer">The Skin Stapler on Steam</a>.</p>
+      <p className="source-note">Route reference: <a href={video} target="_blank" rel="noreferrer">HollowPoiint’s full-game chaptered walkthrough</a>. Official game details: <a href="https://store.steampowered.com/app/4310610/The_Skin_Stapler/" target="_blank" rel="noreferrer">The Skin Stapler on Steam</a>.</p>
     </PillarArticlePage>
   );
 }

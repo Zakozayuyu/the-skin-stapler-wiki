@@ -27,6 +27,70 @@ export const keywordArticles = {
 export type KeywordArticleSlug = keyof typeof keywordArticles;
 export const keywordArticleSlugs = Object.keys(keywordArticles) as KeywordArticleSlug[];
 
+type RelatedGuide = { href: string; label: string; description: string };
+
+export const keywordArticleRelations = {
+  'the-skin-stapler-gameplay': [
+    { href: '/walkthrough', label: 'full The Skin Stapler walkthrough', description: 'Follow the released chapters in order.' },
+    { href: '/guides/beginner', label: 'spoiler-aware beginner guide', description: 'Start with controls and interaction basics.' },
+    { href: '/guides/the-skin-stapler-demo', label: 'free demo chapters', description: 'See what the separate Steam demo includes.' }
+  ],
+  'the-skin-stapler-hot-dog': [
+    { href: '/walkthrough', label: 'Quick Fix in the full walkthrough', description: 'See where the scene appears in the full route.' },
+    { href: '/guides/the-skin-stapler-demo', label: 'The Skin Stapler demo', description: 'Check all three playable demo sections.' },
+    { href: '/guides/the-skin-stapler-voice-actors', label: 'Hexy in the voice cast', description: 'Find HexyIRL and the other confirmed performers.' }
+  ],
+  'the-skin-stapler-release-date': [
+    { href: '/guides/the-skin-stapler-steam', label: 'The Skin Stapler on Steam', description: 'Review Steam features, language support and requirements.' },
+    { href: '/guides/the-skin-stapler-pc-download', label: 'official PC download options', description: 'Compare the verified Windows storefronts.' },
+    { href: '/guides/the-skin-stapler-demo', label: 'free Steam demo', description: 'Check the demo date, length and chapters.' }
+  ],
+  'the-skin-stapler-demo': [
+    { href: '/walkthrough', label: 'full-game walkthrough', description: 'Continue beyond the three demo sections.' },
+    { href: '/guides/the-skin-stapler-hot-dog', label: 'Quick Fix hot dog scene', description: 'Follow Hexy’s verified serving sequence.' },
+    { href: '/guides/the-skin-stapler-fefe', label: 'Fefe’s full-game opening', description: 'Meet the character who opens the released game.' }
+  ],
+  'the-skin-stapler-steam': [
+    { href: '/guides/the-skin-stapler-release-date', label: 'release date and platforms', description: 'Check the confirmed launch timeline.' },
+    { href: '/guides/the-skin-stapler-demo', label: 'separate Steam demo', description: 'See its chapters and expected length.' },
+    { href: '/guides/the-skin-stapler-pc-download', label: 'safe PC download options', description: 'Use verified storefronts and developer channels.' }
+  ],
+  'the-skin-stapler-pc-download': [
+    { href: '/guides/the-skin-stapler-steam', label: 'Steam version details', description: 'Check features and requirements before downloading.' },
+    { href: '/guides/the-skin-stapler-release-date', label: 'release date and platforms', description: 'Review the confirmed PC launch.' },
+    { href: '/guides/the-skin-stapler-demo', label: 'free official demo', description: 'Try the three-section sample first.' }
+  ],
+  'the-skin-stapler-reddit': [
+    { href: '/guides/the-skin-stapler-gameplay', label: 'how The Skin Stapler plays', description: 'Separate gameplay facts from player opinion.' },
+    { href: '/guides/the-skin-stapler-voice-actors', label: 'voice actors and creator cast', description: 'See the confirmed performers behind the discussion.' },
+    { href: '/walkthrough', label: 'full chapter walkthrough', description: 'Check the route without relying on community summaries.' }
+  ],
+  'the-skin-stapler-voice-actors': [
+    { href: '/guides/the-skin-stapler-fefe', label: 'Fefe and her voice actor', description: 'Read about the opening playable character.' },
+    { href: '/guides/the-skin-stapler-layna', label: 'Nurse Layna and Layna Lazar', description: "Explore the character behind Lazar's Blood Bank." },
+    { href: '/guides/the-skin-stapler-scaroline', label: 'Scaroline and Underworld VHS', description: 'See the confirmed creator-to-character connection.' },
+    { href: '/guides/the-skin-stapler-hot-dog', label: 'Hexy’s Quick Fix scene', description: 'Follow the best-known scene featuring Hexy.' }
+  ],
+  'the-skin-stapler-layna': [
+    { href: '/guides/the-skin-stapler-voice-actors', label: 'full voice cast', description: 'See Layna Lazar beside every confirmed performer.' },
+    { href: '/walkthrough', label: "Lazar's Blood Bank walkthrough route", description: 'Find the chapter in the full-game order.' },
+    { href: '/guides/the-skin-stapler-fefe', label: 'Fefe character guide', description: 'Meet another playable creator-inspired character.' },
+    { href: '/guides/the-skin-stapler-scaroline', label: 'Scaroline character guide', description: 'Continue through the character cluster.' }
+  ],
+  'the-skin-stapler-fefe': [
+    { href: '/guides/the-skin-stapler-voice-actors', label: 'The Skin Stapler voice actors', description: 'See FeFe in the complete confirmed cast.' },
+    { href: '/walkthrough', label: 'Fefe’s opening chapter in the walkthrough', description: 'Follow the Burrows Apartments opening.' },
+    { href: '/guides/the-skin-stapler-layna', label: 'Nurse Layna character guide', description: 'Meet another playable cast member.' },
+    { href: '/ending', label: 'The Skin Stapler ending explained', description: 'Continue to the spoiler-marked finale.' }
+  ],
+  'the-skin-stapler-scaroline': [
+    { href: '/guides/the-skin-stapler-voice-actors', label: 'full voice cast', description: 'See Scaroline among the confirmed performers.' },
+    { href: '/walkthrough', label: 'Underworld VHS in the walkthrough', description: 'Find the video-store chapter in the full route.' },
+    { href: '/guides/the-skin-stapler-fefe', label: 'Fefe character guide', description: 'Read about the opening playable character.' },
+    { href: '/guides/the-skin-stapler-layna', label: 'Nurse Layna character guide', description: 'Explore another creator-inspired role.' }
+  ]
+} satisfies Record<KeywordArticleSlug, RelatedGuide[]>;
+
 export function getKeywordArticle(slug: string) {
   return keywordArticles[slug as KeywordArticleSlug];
 }

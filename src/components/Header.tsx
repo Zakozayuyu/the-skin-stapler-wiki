@@ -8,6 +8,7 @@ import { localeMeta, locales, localizePath, type Locale } from '@/lib/i18n';
 import { navItems } from '@/lib/data';
 import { localizedGuideSlugs } from '@/lib/localized-articles';
 import { siteConfig } from '@/lib/seo';
+import SiteSearch from './SiteSearch';
 
 const headerLabels = {
   en: { home: 'The Skin Stapler Wiki home', navigation: 'Main navigation', language: 'Language', menu: 'Toggle mobile menu', mobile: 'Mobile navigation' },
@@ -44,6 +45,7 @@ export default function Header({ locale }: { locale: Locale }) {
         </nav>
 
         <div className="header-actions">
+          <SiteSearch locale={locale} />
           <label className="language-select-wrap">
             <span className="sr-only">{labels.language}</span>
             <select className="language-select" value={locale} onChange={(event) => changeLocale(event.target.value as Locale)}>

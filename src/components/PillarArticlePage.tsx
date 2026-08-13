@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import type { ArticleImageKey } from '@/lib/article-media';
+import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl } from '@/lib/seo';
+import ArticleFigure from './ArticleFigure';
 import SiteShell from './SiteShell';
 
 type PillarArticlePageProps = {
@@ -9,10 +12,11 @@ type PillarArticlePageProps = {
   description: string;
   keyword: string;
   label: string;
+  image: ArticleImageKey;
   children: ReactNode;
 };
 
-export default function PillarArticlePage({ path, title, description, keyword, label, children }: PillarArticlePageProps) {
+export default function PillarArticlePage({ path, title, description, keyword, label, image, children }: PillarArticlePageProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -23,7 +27,8 @@ export default function PillarArticlePage({ path, title, description, keyword, l
         inLanguage: 'en',
         mainEntityOfPage: absoluteUrl(path),
         url: absoluteUrl(path),
-        keywords: keyword
+        keywords: keyword,
+        image: absoluteUrl(articleMedia[image].src)
       },
       {
         '@type': 'BreadcrumbList',
@@ -47,6 +52,7 @@ export default function PillarArticlePage({ path, title, description, keyword, l
           <h1>{title}</h1>
           <p>{description}</p>
         </header>
+        <ArticleFigure image={image} />
         <div className="mdx-article keyword-article pillar-copy">{children}</div>
         <nav className="card related-pillar-links" aria-label="Related guides">
           <h2>Continue your Carrion City investigation</h2>
