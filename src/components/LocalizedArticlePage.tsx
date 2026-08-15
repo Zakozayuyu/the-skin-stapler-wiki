@@ -1,9 +1,8 @@
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n';
 import { localeMeta, localizePath } from '@/lib/i18n';
-import { getLocalizedArticle, getLocalizedArticlePath, localizedArticleIds } from '@/lib/localized-articles';
+import { getLocalizedArticle, getLocalizedArticlePath, localizedArticleIds, localizedArticleImages } from '@/lib/localized-articles';
 import type { LocalizedArticle } from '@/lib/localized-articles/types';
-import type { ArticleImageKey } from '@/lib/article-media';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, siteConfig } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
@@ -29,16 +28,11 @@ const ui = {
   }
 } as const;
 
-const articleImages: Record<LocalizedArticle['id'], ArticleImageKey> = {
-  walkthrough: 'police', ending: 'killer', wiki: 'promo', fefe: 'chase',
-  'hot-dog': 'customer', 'release-date': 'promo', 'voice-cast': 'interview'
-};
-
 export default function LocalizedArticlePage({ locale, article }: { locale: ContentLocale; article: LocalizedArticle }) {
   const t = ui[locale];
   const path = getLocalizedArticlePath(locale, article.id);
   const isGuide = !['walkthrough', 'ending', 'wiki'].includes(article.id);
-  const image = articleImages[article.id];
+  const image = localizedArticleImages[article.id];
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [

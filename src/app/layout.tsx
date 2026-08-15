@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 import type { ReactNode } from 'react';
 import { gameFacts } from '@/lib/game-facts';
-import { siteConfig } from '@/lib/seo';
+import { heroOgImage, siteConfig } from '@/lib/seo';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }]
   },
-  openGraph: { type: 'website', siteName: siteConfig.name, title: siteConfig.name, description: siteConfig.description, images: [{ url: '/hero.jpg', width: 460, height: 215, alt: 'The Skin Stapler official promotional artwork' }] },
+  openGraph: { type: 'website', siteName: siteConfig.name, title: siteConfig.name, description: siteConfig.description, images: [heroOgImage] },
   twitter: { card: 'summary_large_image', title: siteConfig.name, description: siteConfig.description, images: ['/hero.jpg'] },
   verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined
 };

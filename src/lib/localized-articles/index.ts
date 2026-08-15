@@ -1,10 +1,17 @@
 import type { Locale } from '@/lib/i18n';
+import type { ArticleImageKey } from '@/lib/article-media';
 import { deArticles } from './de';
 import { esArticles } from './es';
 import { ptBrArticles } from './pt-br';
 import type { LocalizedArticle, LocalizedArticleId } from './types';
 
 export type { LocalizedArticle, LocalizedArticleId } from './types';
+
+/** Official Steam-gallery image used for each localized article (schema and social sharing). */
+export const localizedArticleImages: Record<LocalizedArticleId, ArticleImageKey> = {
+  walkthrough: 'police', ending: 'killer', wiki: 'promo', fefe: 'chase',
+  'hot-dog': 'customer', 'release-date': 'promo', 'voice-cast': 'interview'
+};
 
 export const localizedArticleIds: LocalizedArticleId[] = ['walkthrough', 'ending', 'wiki', 'fefe', 'hot-dog', 'release-date', 'voice-cast'];
 export const localizedPillarIds: LocalizedArticleId[] = ['walkthrough', 'ending', 'wiki'];

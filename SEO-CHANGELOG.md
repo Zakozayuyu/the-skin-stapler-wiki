@@ -99,3 +99,46 @@ Monitor Query and Page views together, especially:
 - `the skin stapler walkthrough`
 
 Use the next GSC cycle to identify queries in positions 4–15 with high impressions. Only then decide whether verified achievements or one to three chapter walkthroughs deserve their own URLs.
+
+---
+
+## Round 2 — 2026-08-15 (metadata completion, Ahrefs-driven)
+
+Implementation date: 2026-08-15
+Strategy: additive metadata-only fixes confirmed by the Ahrefs Site Audit (project 10238304, crawl 2026-08-15T06:13:20Z) and the local SEO audit
+Public pages created: none
+Content changes: none (titles, H1s, URLs, canonicals, schema, and page copy unchanged except the 404 title)
+
+### Modified URLs
+
+| Modified URL | What changed | Why | Risk |
+| --- | --- | --- | --- |
+| 11 English guides (`/guides/*`), `/walkthrough`, `/ending`, `/wiki`, 4 localized guides ×3 locales, 3 localized pillars ×3 locales, `/guides/beginner` ×4 locales | Added `og:image` (+width/height/localized alt), `og:site_name`, and `twitter:image` reusing the same verified official Steam-gallery artwork already used in each page's Article schema and in-page figure | 35 article/pillar pages had a schema image but no OG image, so social shares rendered without an image (Ahrefs "Open Graph tags incomplete", 55 pages) | Low |
+| `/`, `/guides`, `/guides/beginner`, `/privacy`, `/terms`, and their `/de`, `/pt-br`, `/es` equivalents | Added `og:url` (absolute canonical URL) and, on localized pages, `og:locale`; explicit `openGraph` blocks include `siteName` and the existing hero fallback image | 17 pages were missing `og:url`; 12 localized hub/legal pages were missing `og:locale` | Low |
+| `/guides` and `/{de,pt-br,es}/guides` | Extended meta descriptions (94→149, 84→144, 98→148, 83→153 chars) to cover what the hub actually lists: walkthrough, puzzles, achievements, endings, voice cast, characters, demo, release date, Steam | Ahrefs "Meta description too short" | Low |
+| `/guides/beginner` ×4 locales | Extended meta descriptions to 153–157 chars grounded in the page's verified facts (opening chapters, Steam, free demo, 16 achievements, walkthrough link) | Ahrefs "Meta description too short" | Low |
+| `/privacy`, `/terms` ×4 locales | Extended meta descriptions to 140–159 chars using only facts already stated in the legal pages (no forms/accounts, Google Analytics; unofficial fan guide, no affiliation) | Ahrefs "Meta description too short" | Low |
+| `404.html` / `_not-found.html` | Distinct title "Page Not Found | The Skin Stapler Wiki" and explicit noindex; was duplicating the homepage title | Duplicate-title hygiene; noindex pages only | Low |
+
+### Sitewide Changes
+
+| Change | Why | Risk |
+| --- | --- | --- |
+| Moved per-page article image maps to `src/lib/articles.ts` (`keywordArticleImages`) and `src/lib/localized-articles/index.ts` (`localizedArticleImages`); components now import the shared maps | One source of truth between schema image, in-page figure, and OG image | Low |
+| Added `openGraphImage()` helper and `heroOgImage` constant to `src/lib/seo.ts` | Reuse verified artwork with localized alt text; avoid duplicated image definitions | Low |
+| Added explicit metadata (distinct title, description, `noindex`) to `src/app/not-found.tsx` | Distinct 404 title; keep error pages out of the index | Low |
+
+### Verification
+
+- `npx tsc --noEmit`: passed
+- `npm run lint`: passed
+- `npm run build`: passed (60 static routes)
+- Regression diff against the pre-change build (title/H1/canonical per page): only the two 404 documents changed (title, intended); zero H1 and zero canonical changes
+- OG tag count per page: +`og:image`(+width/height/alt) and +`og:site_name` on 35 article/pillar pages; +`og:url` on 17 hub/legal pages; +`og:locale` on 12 localized hub/legal pages
+- All meta descriptions 110–170 chars on indexable pages (noindex 404 documents excluded)
+- Hreflang reciprocity: 0 issues; sitemap: 55 URLs, 0 missing files, 0 duplicates; JSON-LD: 96 blocks, 0 parse failures
+- Protected assets (/, Fefe, Layna, Ending, Walkthrough): titles, H1s, canonicals, and primary intent unchanged
+
+### Deferred to the next round
+
+- `<html lang="en">` on 33 localized pages (Ahrefs error, 36 pages). Runtime JS already patches the attribute for users; the build-time fix needs a root-layout change (route-group root layouts or a dynamic-segment root layout) with its own full regression pass and 404 regeneration check.

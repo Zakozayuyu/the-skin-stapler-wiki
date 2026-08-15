@@ -1,32 +1,17 @@
 import Link from 'next/link';
 import { absoluteUrl, siteConfig } from '@/lib/seo';
 import type { KeywordArticleSlug } from '@/lib/articles';
-import { keywordArticleRelations, keywordArticles } from '@/lib/articles';
-import type { ArticleImageKey } from '@/lib/article-media';
+import { keywordArticleImages, keywordArticleRelations, keywordArticles } from '@/lib/articles';
 import { articleMedia } from '@/lib/article-media';
 import ArticleFigure from './ArticleFigure';
 import SiteShell from './SiteShell';
-
-const articleImages: Record<KeywordArticleSlug, ArticleImageKey> = {
-  'the-skin-stapler-gameplay': 'carAttack',
-  'the-skin-stapler-hot-dog': 'customer',
-  'the-skin-stapler-release-date': 'promo',
-  'the-skin-stapler-demo': 'chase',
-  'the-skin-stapler-steam': 'tape',
-  'the-skin-stapler-pc-download': 'police',
-  'the-skin-stapler-reddit': 'stage',
-  'the-skin-stapler-voice-actors': 'interview',
-  'the-skin-stapler-layna': 'bloodBank',
-  'the-skin-stapler-fefe': 'chase',
-  'the-skin-stapler-scaroline': 'videoStore'
-};
 
 export default function KeywordArticlePage({ slug }: { slug: KeywordArticleSlug }) {
   const article = keywordArticles[slug];
   const Article = article.Component;
   const related = keywordArticleRelations[slug];
   const path = `/guides/${slug}`;
-  const image = articleImages[slug];
+  const image = keywordArticleImages[slug];
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',

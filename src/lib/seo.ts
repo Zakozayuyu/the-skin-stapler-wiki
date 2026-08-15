@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { articleMedia, type ArticleImageKey } from './article-media';
 import { localeMeta, locales, localizePath, type Locale } from './i18n';
 
 const productionUrl = 'https://theskinstapler.com';
@@ -36,3 +37,12 @@ export function pageAlternates(locale: Locale, path: string): NonNullable<Metada
 export function absoluteUrl(path: string) {
   return new URL(path, `${siteUrl}/`).toString();
 }
+
+/** OpenGraph image object reusing the verified official artwork with its localized description as alt text. */
+export function openGraphImage(key: ArticleImageKey, locale: Locale = 'en') {
+  const media = articleMedia[key];
+  return { url: media.src, width: media.width, height: media.height, alt: media.description[locale] };
+}
+
+/** Site-wide promotional hero artwork used as the fallback OG image. */
+export const heroOgImage = { url: '/hero.jpg', width: 460, height: 215, alt: 'The Skin Stapler official promotional artwork' };

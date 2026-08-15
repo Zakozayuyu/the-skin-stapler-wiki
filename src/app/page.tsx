@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import HomePage from '@/components/HomePage';
-import { localizedAlternates } from '@/lib/seo';
+import { absoluteUrl, heroOgImage, localizedAlternates, siteConfig } from '@/lib/seo';
 
 export const metadata: Metadata = {
   title: 'The Skin Stapler Wiki — Walkthrough, Puzzles & Endings',
   description: 'Explore The Skin Stapler with a spoiler-aware walkthrough, puzzle solutions, achievement help, character guides, endings, demo details, and Carrion City clues.',
   keywords: ['The Skin Stapler', 'Steam', 'wiki', 'walkthrough', 'puzzles', 'achievements', 'endings', 'horror', 'Carrion City'],
-  alternates: localizedAlternates('/')
+  alternates: localizedAlternates('/'),
+  openGraph: { type: 'website', siteName: siteConfig.name, title: siteConfig.name, description: 'Spoiler-aware walkthrough, puzzle solutions, achievement help, character guides, endings, demo details, and Carrion City clues.', url: absoluteUrl('/'), images: [heroOgImage] }
 };
 
 export default function Page() { return <HomePage locale="en" />; }

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import HomePage from '@/components/HomePage';
-import { isLocale, locales } from '@/lib/i18n';
-import { pageAlternates } from '@/lib/seo';
+import { isLocale, locales, localizePath } from '@/lib/i18n';
+import { absoluteUrl, heroOgImage, pageAlternates, siteConfig } from '@/lib/seo';
 
 const meta = {
   en: ['The Skin Stapler Wiki — Walkthrough, Puzzles & Endings', 'Explore The Skin Stapler with a spoiler-aware walkthrough, puzzle solutions, achievement help, character guides, endings, demo details, and Carrion City clues.'],
@@ -15,7 +15,10 @@ export function generateStaticParams() { return locales.filter((locale) => local
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return { title: meta[locale][0], description: meta[locale][1], alternates: pageAlternates(locale, '/') };
+  return {
+    title: meta[locale][0], description: meta[locale][1], alternates: pageAlternates(locale, '/'),
+    openGraph: { type: 'website', siteName: siteConfig.name, title: meta[locale][0], description: meta[locale][1], url: absoluteUrl(localizePath(locale, '/')), locale, images: [heroOgImage] }
+  };
 }
 
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) {

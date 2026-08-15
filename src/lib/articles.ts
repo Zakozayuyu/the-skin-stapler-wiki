@@ -9,6 +9,7 @@ import VoiceActors from '@/content/en/guides/the-skin-stapler-voice-actors.mdx';
 import Layna from '@/content/en/guides/the-skin-stapler-layna.mdx';
 import Fefe from '@/content/en/guides/the-skin-stapler-fefe.mdx';
 import Scaroline from '@/content/en/guides/the-skin-stapler-scaroline.mdx';
+import type { ArticleImageKey } from './article-media';
 
 export const keywordArticles = {
   'the-skin-stapler-gameplay': { keyword: 'the skin stapler gameplay', title: 'The Skin Stapler Gameplay: How It Actually Plays', description: 'The Skin Stapler gameplay centers on first-person investigation, exploration, puzzles, dialogue, and multiple playable viewpoints rather than constant combat.', category: 'Guide', summary: 'A grounded look at the investigation loop, playable viewpoints, combat, length, and demo.', Component: Gameplay },
@@ -26,6 +27,21 @@ export const keywordArticles = {
 
 export type KeywordArticleSlug = keyof typeof keywordArticles;
 export const keywordArticleSlugs = Object.keys(keywordArticles) as KeywordArticleSlug[];
+
+/** Official Steam-gallery image used for each keyword guide (schema and social sharing). */
+export const keywordArticleImages: Record<KeywordArticleSlug, ArticleImageKey> = {
+  'the-skin-stapler-gameplay': 'carAttack',
+  'the-skin-stapler-hot-dog': 'customer',
+  'the-skin-stapler-release-date': 'promo',
+  'the-skin-stapler-demo': 'chase',
+  'the-skin-stapler-steam': 'tape',
+  'the-skin-stapler-pc-download': 'police',
+  'the-skin-stapler-reddit': 'stage',
+  'the-skin-stapler-voice-actors': 'interview',
+  'the-skin-stapler-layna': 'bloodBank',
+  'the-skin-stapler-fefe': 'chase',
+  'the-skin-stapler-scaroline': 'videoStore'
+};
 
 type RelatedGuide = { href: string; label: string; description: string };
 
