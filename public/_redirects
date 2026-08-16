@@ -1,0 +1,7 @@
+# Legacy URL structure: before the static-export restructure (2026-08-09),
+# English pages lived under the /en locale prefix. next.config.mjs redirects
+# are ignored in static export, so these old URLs 404'd (serving the noindex
+# 404 page) instead of redirecting. Cloudflare Pages applies this file at the
+# edge, returning a 301 so Google updates the old URLs in its index.
+/en / 301
+/en/* /:splat 301
