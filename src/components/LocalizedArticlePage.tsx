@@ -6,6 +6,7 @@ import type { LocalizedArticle } from '@/lib/localized-articles/types';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, siteConfig } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
+import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
 
 type ContentLocale = Exclude<Locale, 'en'>;
@@ -23,7 +24,7 @@ const ui = {
   },
   es: {
     home: 'Inicio', guides: 'Guías', answer: 'Respuesta directa', checked: 'Fuentes contrastadas', pending: 'Dudas marcadas con claridad',
-    faq: 'Preguntas frecuentes', related: 'Otros temas verificados', sources: 'Fuentes oficiales', sourceText: 'Los datos del juego y su lanzamiento pueden comprobarse en las páginas oficiales de las tiendas.',
+    faq: 'Preguntas frecuentes', related: 'Otros temas verificados', sources: 'Fuentes oficiais', sourceText: 'Los datos del juego y su lanzamiento pueden comprobarse en las páginas oficiales de las tiendas.',
     fullGame: 'Juego completo en Steam', demo: 'Demo gratuita de Steam'
   }
 } as const;
@@ -76,6 +77,10 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
             <p>{article.directAnswer}</p>
           </section>
           <ArticleFigure image={image} locale={locale} />
+
+          {/* Native Banner — after answer box + hero image, ~15-20% into the page */}
+          <NativeBannerAd slotId="localized-top" />
+
           {article.sections.map((section) => (
             <section key={section.title}>
               <h2>{section.title}</h2>

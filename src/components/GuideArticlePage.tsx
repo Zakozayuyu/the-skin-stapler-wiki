@@ -5,6 +5,7 @@ import { beginnerContent } from '@/lib/content';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, siteConfig } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
+import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
 
 const copy = {
@@ -19,5 +20,10 @@ export default function GuideArticlePage({ locale }: { locale: Locale }) {
   const labels = copy[locale];
   const path = localizePath(locale, '/guides/beginner');
   const jsonLd = { '@context': 'https://schema.org', '@type': 'Article', headline: labels.title, description: labels.description, inLanguage: localeMeta[locale].language, mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), image: absoluteUrl(articleMedia.evidence.src) };
-  return <SiteShell locale={locale}><article className="container article-page"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><nav className="breadcrumbs"><Link href={localizePath(locale, '/')}>{labels.home}</Link><span>/</span><Link href={localizePath(locale, '/guides')}>{labels.guides}</Link><span>/</span><b>{labels.title}</b></nav><header className="article-header"><div><span className="badge tier-badge">{labels.eyebrow}</span><span className="badge floor-badge">{labels.spoiler}</span></div><h1>{labels.title}</h1><p>{labels.description}</p></header><ArticleFigure image="evidence" locale={locale} /><div className="mdx-article"><Article /></div><div className="card article-cta"><h2>{labels.demoTitle}</h2><p>{labels.demoText}</p><div className="button-row"><a href={siteConfig.demo} target="_blank" rel="noreferrer" className="btn-primary">{labels.demo}</a><Link href={localizePath(locale, '/guides')} className="btn-secondary">{labels.guides}</Link></div></div></article></SiteShell>;
+  return <SiteShell locale={locale}><article className="container article-page"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><nav className="breadcrumbs"><Link href={localizePath(locale, '/')}>{labels.home}</Link><span>/</span><Link href={localizePath(locale, '/guides')}>{labels.guides}</Link><span>/</span><b>{labels.title}</b></nav><header className="article-header"><div><span className="badge tier-badge">{labels.eyebrow}</span><span className="badge floor-badge">{labels.spoiler}</span></div><h1>{labels.title}</h1><p>{labels.description}</p></header><ArticleFigure image="evidence" locale={locale} />
+
+  {/* Native Banner — after hero image, ~15-20% into the page */}
+  <NativeBannerAd slotId="beginner-top" />
+
+  <div className="mdx-article"><Article /></div><div className="card article-cta"><h2>{labels.demoTitle}</h2><p>{labels.demoText}</p><div className="button-row"><a href={siteConfig.demo} target="_blank" rel="noreferrer" className="btn-primary">{labels.demo}</a><Link href={localizePath(locale, '/guides')} className="btn-secondary">{labels.guides}</Link></div></div></article></SiteShell>;
 }
