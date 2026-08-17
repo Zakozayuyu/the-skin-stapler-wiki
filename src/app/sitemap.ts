@@ -6,7 +6,7 @@ import { localizedGuideSlugs } from '@/lib/localized-articles';
 export const dynamic = 'force-static';
 
 const commonPaths = [
-  '/', '/guides', '/guides/beginner', '/privacy', '/terms', '/wiki', '/walkthrough', '/ending',
+  '/', '/guides', '/guides/beginner', '/privacy', '/terms', '/wiki', '/walkthrough', '/ending', '/characters',
   ...Object.keys(localizedGuideSlugs).map((slug) => `/guides/${slug}`)
 ] as const;
 

@@ -60,27 +60,27 @@ const stableFacts: Record<Locale, Array<[string, string]>> = {
 
 const popularGuides = {
   en: { eyebrow: 'Popular guides', title: 'Characters, Cast & Story', links: [
+    ['/characters', 'All characters', 'Browse every confirmed character: role, location, and playable status.'],
+    ['/guides/who-is-the-skin-stapler', 'Who is the Skin Stapler?', "Learn the killer's identity, motive, and evidence."],
     ['/guides/the-skin-stapler-voice-actors', 'The Skin Stapler voice actors', 'Match every confirmed performer to their character and role.'],
-    ['/guides/the-skin-stapler-fefe', 'Who is Fefe?', 'Meet the opening playable character and her voice actor.'],
-    ['/guides/the-skin-stapler-layna', 'Nurse Layna', "Learn who runs Lazar's Blood Bank and who voices her."],
     ['/ending', 'The Skin Stapler ending', 'Understand the final confrontation with spoilers clearly marked.']
   ] },
   de: { eyebrow: 'Beliebte Guides', title: 'Figuren, Besetzung & Geschichte', links: [
+    ['/characters', 'Alle Charaktere', 'Jeden bestätigten Charakter: Rolle, Ort und Spielbarkeit.'],
     ['/guides/the-skin-stapler-voice-actors', 'Sprecher und Rollen', 'Bestätigte englische Stimmen und ihre Figuren.'],
     ['/guides/the-skin-stapler-fefe', 'Wer ist Fefe?', 'Die erste spielbare Figur und ihre Sprecherin.'],
-    ['/walkthrough', 'Kompletter Spielweg', 'Alle bestätigten Kapitel in der richtigen Reihenfolge.'],
     ['/ending', 'Das Ende erklärt', 'Das Finale mit deutlich markierten Spoilern.']
   ] },
   'pt-br': { eyebrow: 'Guias populares', title: 'Personagens, elenco e história', links: [
+    ['/characters', 'Todos os personagens', 'Navegue por cada personagem: papel, local e status jogável.'],
     ['/guides/the-skin-stapler-voice-actors', 'Elenco de voz', 'As vozes em inglês e seus papéis confirmados.'],
     ['/guides/the-skin-stapler-fefe', 'Quem é Fefe?', 'A personagem jogável da abertura e sua dubladora.'],
-    ['/walkthrough', 'Detonado completo', 'Todos os capítulos confirmados na ordem certa.'],
     ['/ending', 'Final explicado', 'O confronto final com spoilers bem sinalizados.']
   ] },
   es: { eyebrow: 'Guías populares', title: 'Personajes, reparto e historia', links: [
+    ['/characters', 'Todos los personajes', 'Navegue por cada personaje: papel, ubicación y estado jugable.'],
     ['/guides/the-skin-stapler-voice-actors', 'Reparto de voces', 'Las voces en inglés y sus papeles confirmados.'],
     ['/guides/the-skin-stapler-fefe', '¿Quién es Fefe?', 'El personaje jugable de la apertura y su actriz de voz.'],
-    ['/walkthrough', 'Guía completa', 'Todos los capítulos confirmados en el orden correcto.'],
     ['/ending', 'Final explicado', 'El enfrentamiento final con spoilers bien señalados.']
   ] }
 } as const;

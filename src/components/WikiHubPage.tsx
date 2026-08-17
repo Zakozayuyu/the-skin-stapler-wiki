@@ -18,10 +18,12 @@ const sections = [
   {
     title: 'Characters & Cast', eyebrow: 'Who is who',
     links: [
+      ['/characters', 'All Characters', 'Every confirmed character: role, location, and playable status.'],
+      ['/guides/who-is-the-skin-stapler', 'Who Is The Skin Stapler?', 'The killer\'s identity, motive, and evidence.'],
       ['/guides/the-skin-stapler-voice-actors', 'Voice Actors & Full Cast', 'Confirmed roles and the official English voice cast.'],
-      ['/guides/the-skin-stapler-fefe', 'Fefe', 'Opening playable character and voice performer.'],
-      ['/guides/the-skin-stapler-layna', 'Nurse Layna', "The character behind Lazar's Blood Bank."],
-      ['/guides/the-skin-stapler-scaroline', 'Scaroline', 'Underworld VHS owner and cast credit.']
+      ['/guides/the-skin-stapler-hexy', 'Hexy', 'Quick Fix clerk, hot dog scene, and voice actor.'],
+      ['/guides/the-skin-stapler-blair', 'Blair', 'Gutters End bowling employee and demo victim.'],
+      ['/guides/the-skin-stapler-luna', 'Luna', 'Donut shop owner and Luna Arcana voice credit.']
     ]
   },
   {
@@ -66,7 +68,7 @@ export default function WikiHubPage() {
             <span className="eyebrow">Carrion City case files</span>
             <h1>The Skin Stapler Wiki</h1>
             <p>The Skin Stapler wiki is an independent English guide to the full walkthrough, ending, characters, voice cast, release details, and Carrion City locations.</p>
-            <div className="wiki-quick-links"><Link href="/walkthrough">Start the walkthrough</Link><Link href="/ending">Ending explained</Link><Link href="/guides">All guides</Link></div>
+            <div className="wiki-quick-links"><Link href="/walkthrough">Start the walkthrough</Link><Link href="/ending">Ending explained</Link><Link href="/characters">All characters</Link><Link href="/guides">All guides</Link></div>
           </div>
         </section>
 

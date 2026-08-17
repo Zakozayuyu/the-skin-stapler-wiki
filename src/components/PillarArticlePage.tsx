@@ -81,6 +81,7 @@ export default function PillarArticlePage({ path, title, description, keyword, l
           <div>
             {path !== '/walkthrough' && <Link href="/walkthrough">Full walkthrough</Link>}
             {path !== '/ending' && <Link href="/ending">Ending explained</Link>}
+            <Link href="/characters">All characters</Link>
             <Link href="/wiki">Browse the wiki</Link>
             <Link href="/guides">All guides</Link>
           </div>
