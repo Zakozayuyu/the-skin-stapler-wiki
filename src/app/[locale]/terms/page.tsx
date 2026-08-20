@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import LegalPage from '@/components/LegalPage';
 import { isLocale, locales, localizePath } from '@/lib/i18n';
-import { absoluteUrl, heroOgImage, pageAlternates, siteConfig } from '@/lib/seo';
+import { absoluteUrl, heroOgImage, openGraphLocale, pageAlternates, siteConfig } from '@/lib/seo';
 const copy = {
   de: { title: 'Nutzungsbedingungen', description: 'Nutzungsbedingungen von The Skin Stapler Wiki: ein unabhängiger, inoffizieller Fan-Guide zu Informationszwecken, ohne Verbindung zu Entwicklern oder Publishern.' },
   'pt-br': { title: 'Termos de serviço', description: 'Termos de serviço da The Skin Stapler Wiki: um guia de fãs independente e não oficial, para fins informativos, sem vínculo com desenvolvedores ou publicadores.' },
@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const path = localizePath(locale, '/terms');
   return {
     ...copy[locale], alternates: pageAlternates(locale, '/terms'),
-    openGraph: { type: 'website', siteName: siteConfig.name, title: copy[locale].title, description: copy[locale].description, url: absoluteUrl(path), locale, images: [heroOgImage] }
+    openGraph: { type: 'website', siteName: siteConfig.name, title: copy[locale].title, description: copy[locale].description, url: absoluteUrl(path), locale: openGraphLocale(locale), images: [heroOgImage] }
   };
 }
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) { const { locale } = await params; if (!isLocale(locale)) notFound(); return <LegalPage locale={locale} type="terms" />; }

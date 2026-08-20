@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import LocalizedArticlePage from '@/components/LocalizedArticlePage';
 import { isLocale, locales, type Locale } from '@/lib/i18n';
 import { getLocalizedArticle, localizedArticleImages, localizedPillarIds, type LocalizedArticleId } from '@/lib/localized-articles';
-import { openGraphImage, pageAlternates, siteConfig } from '@/lib/seo';
+import { openGraphImage, openGraphLocale, pageAlternates, siteConfig } from '@/lib/seo';
 
 type ContentLocale = Exclude<Locale, 'en'>;
 type Props = { params: Promise<{ locale: string; pillar: string }> };
@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: { absolute: resolved.article.title }, description: resolved.article.description,
     keywords: [resolved.article.keyword, 'The Skin Stapler'], alternates: pageAlternates(resolved.locale, basePath),
-    openGraph: { title: resolved.article.title, description: resolved.article.description, url: `/${resolved.locale}${basePath}`, type: 'article', locale: resolved.locale, siteName: siteConfig.name, images: [image] },
+    openGraph: { title: resolved.article.title, description: resolved.article.description, url: `/${resolved.locale}${basePath}`, type: 'article', locale: openGraphLocale(resolved.locale), siteName: siteConfig.name, images: [image] },
     twitter: { card: 'summary_large_image', title: resolved.article.title, description: resolved.article.description, images: [image.url] }
   };
 }

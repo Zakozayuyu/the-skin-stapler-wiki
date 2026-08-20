@@ -4,7 +4,7 @@ import { localeMeta, localizePath } from '@/lib/i18n';
 import { getLocalizedArticle, getLocalizedArticlePath, localizedArticleIds, localizedArticleImages } from '@/lib/localized-articles';
 import type { LocalizedArticle } from '@/lib/localized-articles/types';
 import { articleMedia } from '@/lib/article-media';
-import { absoluteUrl, siteConfig } from '@/lib/seo';
+import { absoluteUrl, articleAuthor, articlePublisher, siteConfig } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
 import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
@@ -24,7 +24,7 @@ const ui = {
   },
   es: {
     home: 'Inicio', guides: 'Guías', answer: 'Respuesta directa', checked: 'Fuentes contrastadas', pending: 'Dudas marcadas con claridad',
-    faq: 'Preguntas frecuentes', related: 'Otros temas verificados', sources: 'Fuentes oficiais', sourceText: 'Los datos del juego y su lanzamiento pueden comprobarse en las páginas oficiales de las tiendas.',
+    faq: 'Preguntas frecuentes', related: 'Otros temas verificados', sources: 'Fuentes oficiales', sourceText: 'Los datos del juego y su lanzamiento pueden comprobarse en las páginas oficiales de las tiendas.',
     fullGame: 'Juego completo en Steam', demo: 'Demo gratuita de Steam'
   }
 } as const;
@@ -32,7 +32,7 @@ const ui = {
 export default function LocalizedArticlePage({ locale, article }: { locale: ContentLocale; article: LocalizedArticle }) {
   const t = ui[locale];
   const path = getLocalizedArticlePath(locale, article.id);
-  const isGuide = !['walkthrough', 'ending', 'wiki'].includes(article.id);
+  const isGuide = !['walkthrough', 'ending', 'wiki', 'characters'].includes(article.id);
   const image = localizedArticleImages[article.id];
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -40,7 +40,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
       {
         '@type': 'Article', headline: article.title, description: article.description,
         inLanguage: localeMeta[locale].language, mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), keywords: article.keyword,
-        image: absoluteUrl(articleMedia[image].src)
+        image: absoluteUrl(articleMedia[image].src), author: articleAuthor, publisher: articlePublisher
       },
       {
         '@type': 'FAQPage', mainEntity: article.faq.map((item) => ({
@@ -76,7 +76,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
             <h2>{t.answer}</h2>
             <p>{article.directAnswer}</p>
           </section>
-          <ArticleFigure image={image} locale={locale} />
+          <ArticleFigure image={image} locale={locale} preload />
 
           {/* Native Banner — after answer box + hero image, ~15-20% into the page */}
           <NativeBannerAd slotId="localized-top" />
@@ -97,6 +97,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
         </div>
         <aside className="card article-cta">
           <h2>{t.sources}</h2><p>{t.sourceText}</p>
+          {article.sources && <ul>{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></li>)}</ul>}
           <div className="button-row"><a href={siteConfig.steam} target="_blank" rel="noreferrer" className="btn-primary">{t.fullGame}</a><a href={siteConfig.demo} target="_blank" rel="noreferrer" className="btn-secondary">{t.demo}</a></div>
         </aside>
         <nav className="card related-pillar-links" aria-label={t.related}>

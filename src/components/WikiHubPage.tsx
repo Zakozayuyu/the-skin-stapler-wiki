@@ -49,13 +49,17 @@ const sections = [
 export default function WikiHubPage() {
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: 'The Skin Stapler Wiki',
-    description: 'The Skin Stapler wiki covers the verified walkthrough, ending, cast, characters, release date, demo scenes, official links, and facts awaiting confirmation.',
-    url: absoluteUrl('/wiki'),
-    inLanguage: 'en',
-    image: absoluteUrl(articleMedia.promo.src),
-    hasPart: sections.flatMap((section) => section.links.map(([href, name]) => ({ '@type': 'WebPage', name, url: absoluteUrl(href) })))
+    '@graph': [{
+      '@type': 'CollectionPage', name: 'The Skin Stapler Wiki',
+      description: 'The Skin Stapler wiki covers the verified walkthrough, ending, cast, characters, release date, demo scenes, official links, and facts awaiting confirmation.',
+      url: absoluteUrl('/wiki'), inLanguage: 'en', image: absoluteUrl(articleMedia.promo.src),
+      hasPart: sections.flatMap((section) => section.links.map(([href, name]) => ({ '@type': 'WebPage', name, url: absoluteUrl(href) })))
+    }, {
+      '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
+        { '@type': 'ListItem', position: 2, name: 'Wiki', item: absoluteUrl('/wiki') }
+      ]
+    }]
   };
 
   return (
@@ -64,7 +68,7 @@ export default function WikiHubPage() {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
         <section className="wiki-hero">
           <div className="container">
-            <nav className="breadcrumbs"><Link href="/">Home</Link><span>/</span><b>Wiki</b></nav>
+            <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><b>Wiki</b></nav>
             <span className="eyebrow">Carrion City case files</span>
             <h1>The Skin Stapler Wiki</h1>
             <p>The Skin Stapler wiki is an independent English guide to the full walkthrough, ending, characters, voice cast, release details, and Carrion City locations.</p>

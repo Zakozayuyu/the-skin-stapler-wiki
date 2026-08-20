@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import GuideArticlePage from '@/components/GuideArticlePage';
 import { isLocale, locales, localizePath, type Locale } from '@/lib/i18n';
-import { absoluteUrl, openGraphImage, pageAlternates, siteConfig } from '@/lib/seo';
+import { absoluteUrl, openGraphImage, openGraphLocale, pageAlternates, siteConfig } from '@/lib/seo';
 
 const metadataCopy: Record<Locale, { title: string; description: string }> = {
   en: { title: 'The Skin Stapler Beginner Guide', description: 'Verified starting information for The Skin Stapler: confirmed opening chapters, Steam and free demo availability, 16 achievements, and the full walkthrough.' },
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const image = openGraphImage('evidence', locale);
   return {
     ...copy, alternates: pageAlternates(locale, '/guides/beginner'),
-    openGraph: { title: copy.title, description: copy.description, url: absoluteUrl(path), type: 'article', locale, siteName: siteConfig.name, images: [image] },
+    openGraph: { title: copy.title, description: copy.description, url: absoluteUrl(path), type: 'article', locale: openGraphLocale(locale), siteName: siteConfig.name, images: [image] },
     twitter: { card: 'summary_large_image', title: copy.title, description: copy.description, images: [image.url] }
   };
 }

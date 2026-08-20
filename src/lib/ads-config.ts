@@ -15,6 +15,9 @@ export const adsConfig = {
     /** Maximum Native Banner slots per content page. */
     maxPerPage: 2,
 
+    /** Keep the reserved slot while the network decides whether to fill it. */
+    noFillTimeoutMs: 15_000,
+
     /** Show ad on the homepage. */
     homeEnabled: true,
 

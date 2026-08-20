@@ -1,4 +1,10 @@
-export type LocalizedArticleId = 'walkthrough' | 'ending' | 'wiki' | 'fefe' | 'hot-dog' | 'release-date' | 'voice-cast';
+export type LocalizedArticleId =
+  | 'walkthrough' | 'ending' | 'wiki' | 'characters'
+  | 'fefe' | 'hot-dog' | 'release-date' | 'voice-cast'
+  | 'gameplay' | 'who-is' | 'reddit' | 'achievements' | 'puzzle-solutions';
+
+export type BaseLocalizedArticleId = Exclude<LocalizedArticleId,
+  'characters' | 'gameplay' | 'who-is' | 'reddit' | 'achievements' | 'puzzle-solutions'>;
 
 export type LocalizedArticle = {
   id: LocalizedArticleId;
@@ -13,4 +19,5 @@ export type LocalizedArticle = {
     bullets?: string[];
   }>;
   faq: Array<{ question: string; answer: string }>;
+  sources?: Array<{ label: string; url: string }>;
 };

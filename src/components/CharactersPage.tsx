@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl } from '@/lib/seo';
-import ArticleFigure from './ArticleFigure';
 import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
 
@@ -34,8 +33,8 @@ const characters = [
     location: 'Flesh Pit / Carrion City',
     chapter: 'Late-game reveal',
     playable: false,
-    status: 'Dies (finale)',
-    description: 'Owner of the Flesh Pit barbecue restaurant. The real identity of the Skin Stapler, driven by revenge.',
+    status: 'Shot; fate unclear',
+    description: 'Owner of the Flesh Pit barbecue restaurant and the real identity of the Skin Stapler. Dick shoots him in the finale, but the footage does not clearly establish death or arrest.',
     href: '/guides/who-is-the-skin-stapler',
     hrefLabel: 'Identity & motive'
   },
@@ -56,7 +55,7 @@ const characters = [
     location: 'Quick Fix Convenience Store',
     chapter: 'Quick Fix',
     playable: true,
-    status: 'Survives (implied)',
+    status: 'Survives encounter',
     description: 'Overworked convenience store clerk who serves hot dogs and encounters the Skin Stapler.',
     href: '/guides/the-skin-stapler-hexy',
     hrefLabel: 'Hexy guide'
@@ -96,12 +95,12 @@ const characters = [
   },
   {
     name: 'Scaroline',
-    role: 'Store owner',
+    role: 'Playable store owner',
     location: 'Underworld VHS',
     chapter: 'Underworld VHS',
-    playable: 'Unknown',
+    playable: true,
     status: 'Not confirmed',
-    description: 'Owner of Underworld VHS, a grimy old-school video rental store in Carrion City.',
+    description: 'Playable owner of Underworld VHS, a grimy old-school video rental store in Carrion City. Her performer published a first-person gameplay video confirming the role.',
     href: '/guides/the-skin-stapler-scaroline',
     hrefLabel: 'Scaroline guide'
   },
@@ -134,7 +133,7 @@ const characters = [
     chapter: 'CCPD scenes',
     playable: false,
     status: 'Not confirmed',
-    description: 'A officer at the Carrion City Police Department.',
+    description: 'An officer at the Carrion City Police Department.',
     href: '/guides/the-skin-stapler-voice-actors',
     hrefLabel: 'Voice actors'
   },
@@ -148,6 +147,39 @@ const characters = [
     description: 'A character at Gutters End, voiced by the same actor as Blair.',
     href: '/guides/the-skin-stapler-blair',
     hrefLabel: 'Blair guide'
+  },
+  {
+    name: 'Elmer',
+    role: 'CCPD clerk',
+    location: 'CCPD',
+    chapter: 'CCPD scenes',
+    playable: false,
+    status: 'Not confirmed',
+    description: 'A CCPD staff member who appears during the police-station investigation.',
+    href: '/walkthrough',
+    hrefLabel: 'Walkthrough'
+  },
+  {
+    name: 'Lucas',
+    role: 'Bowling-alley coworker',
+    location: 'Gutters End Bowling Alley',
+    chapter: 'Gutters End',
+    playable: false,
+    status: 'Not confirmed',
+    description: 'Blair’s coworker at Gutters End, seen around the graveyard-shift handoff.',
+    href: '/guides/the-skin-stapler-blair',
+    hrefLabel: 'Blair guide'
+  },
+  {
+    name: 'Bee',
+    role: 'Cast-poster character',
+    location: 'Not confirmed',
+    chapter: 'Not confirmed',
+    playable: 'Unknown',
+    status: 'Not confirmed',
+    description: 'A named role on the cast poster whose exact story function and playable status remain unconfirmed.',
+    href: '/guides/the-skin-stapler-voice-actors',
+    hrefLabel: 'Voice actors'
   },
   {
     name: 'Silus Kaine',
@@ -164,10 +196,11 @@ const characters = [
 
 const statusColors: Record<string, string> = {
   'Survives': 'badge green-badge',
-  'Survives (implied)': 'badge green-badge',
+  'Survives encounter': 'badge green-badge',
   'Dies': 'badge red-badge',
   'Dies (finale)': 'badge red-badge',
   'Dies (first victim)': 'badge red-badge',
+  'Shot; fate unclear': 'badge floor-badge',
   'Not confirmed': 'badge floor-badge',
   'Unknown': 'badge floor-badge'
 };
@@ -179,7 +212,7 @@ export default function CharactersPage() {
       {
         '@type': 'CollectionPage',
         name: 'The Skin Stapler Characters',
-        description: 'Every confirmed character in The Skin Stapler: who they are, where they appear, whether they are playable, and which voice actor portrays them.',
+        description: 'The Skin Stapler characters with roles, locations, playable status, known fates, and clearly marked unknowns.',
         url: absoluteUrl('/characters'),
         inLanguage: 'en',
         image: absoluteUrl(articleMedia.promo.src)
@@ -227,7 +260,7 @@ export default function CharactersPage() {
             </aside>
 
             <h2>Playable characters</h2>
-            <p>The Skin Stapler features multiple playable perspectives. Players control Dick Slater as the main detective, and several civilians in their respective locations. The official description promises "a hardened veteran detective and ordinary civilians in the final moments of their lives."</p>
+            <p>The Skin Stapler features multiple playable perspectives. Players control Dick Slater as the main detective, and several civilians in their respective locations. The official description promises &quot;a hardened veteran detective and ordinary civilians in the final moments of their lives.&quot;</p>
 
             <div className="wiki-card-grid">
               {characters.filter(c => c.playable === true).map((char) => (
@@ -262,13 +295,13 @@ export default function CharactersPage() {
             <div className="wiki-fact-grid">
               <div className="card">
                 <span>Total cast</span>
-                <strong>14 confirmed</strong>
+                <strong>17 listed</strong>
                 <p>Named characters with confirmed roles or credits.</p>
               </div>
               <div className="card">
                 <span>Playable</span>
-                <strong>7 confirmed</strong>
-                <p>Dick Slater, Robbie Knox, Fefe, Hexy, Blair, Luna, Nurse Layna.</p>
+                <strong>8 confirmed</strong>
+                <p>Dick Slater, Robbie Knox, Fefe, Hexy, Blair, Luna, Nurse Layna, Scaroline.</p>
               </div>
               <div className="card">
                 <span>Fully voiced</span>
@@ -293,7 +326,7 @@ export default function CharactersPage() {
               <Link className="card wiki-card" href="/guides/who-is-the-skin-stapler">
                 <span className="badge blue-badge">Identity</span>
                 <h3>Who Is The Skin Stapler?</h3>
-                <p>The killer's identity, motive, and evidence.</p>
+                <p>The killer&apos;s identity, motive, and evidence.</p>
                 <b>Open page →</b>
               </Link>
               <Link className="card wiki-card" href="/walkthrough">
@@ -305,7 +338,7 @@ export default function CharactersPage() {
               <Link className="card wiki-card" href="/ending">
                 <span className="badge tier-badge">Spoilers</span>
                 <h3>Ending Explained</h3>
-                <p>The finale, Robbie's fate, and Slater's final choice.</p>
+                <p>The finale, Robbie&apos;s fate, and Slater&apos;s final choice.</p>
                 <b>Open page →</b>
               </Link>
             </div>
@@ -313,7 +346,7 @@ export default function CharactersPage() {
 
           <section className="card wiki-about">
             <div><span className="eyebrow">About this page</span><h2>Source-aware character coverage</h2></div>
-            <p>Character facts come from the official cast poster, developer announcements, Steam descriptions, and full-game transcripts. Details not confirmed by those sources are marked as unconfirmed. This is a fan-made reference, not an official Tainted Pact or Assemble Entertainment site.</p>
+            <p>Character facts come from the official cast poster and <a href="https://store.steampowered.com/app/4310610/The_Skin_Stapler/" target="_blank" rel="noreferrer">Steam description</a>, a verified <a href="https://www.youtube.com/watch?v=EcgnRprUU5k" target="_blank" rel="noreferrer">complete-game playthrough</a>, and performer evidence such as <a href="https://www.youtube.com/watch?v=RmrnKkYjeqU" target="_blank" rel="noreferrer">BlairVA’s recorded run</a>. Details not confirmed by those sources are marked as unconfirmed. This is a fan-made reference, not an official Tainted Pact or Assemble Entertainment site.</p>
           </section>
         </div>
       </div>

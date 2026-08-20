@@ -3,7 +3,7 @@ import type { Locale } from '@/lib/i18n';
 import { articleMedia, officialSteamGallery, sourceLabels } from '@/lib/article-media';
 import type { ArticleImageKey } from '@/lib/article-media';
 
-export default function ArticleFigure({ image, locale = 'en' }: { image: ArticleImageKey; locale?: Locale }) {
+export default function ArticleFigure({ image, locale = 'en', preload = false }: { image: ArticleImageKey; locale?: Locale; preload?: boolean }) {
   const media = articleMedia[image];
 
   return (
@@ -14,6 +14,7 @@ export default function ArticleFigure({ image, locale = 'en' }: { image: Article
         width={media.width}
         height={media.height}
         sizes="(max-width: 928px) calc(100vw - 32px), 864px"
+        preload={preload}
       />
       <figcaption>
         <span>{media.description[locale]}</span>

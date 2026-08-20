@@ -1,6 +1,6 @@
-import type { LocalizedArticle, LocalizedArticleId } from './types';
+import type { BaseLocalizedArticleId, LocalizedArticle } from './types';
 
-export const deArticles: Record<LocalizedArticleId, LocalizedArticle> = {
+export const deArticles: Record<BaseLocalizedArticleId, LocalizedArticle> = {
   walkthrough: {
     id: 'walkthrough', keyword: 'The Skin Stapler Komplettlösung',
     title: 'The Skin Stapler Komplettlösung: Alle Kapitel',
@@ -26,12 +26,12 @@ export const deArticles: Record<LocalizedArticleId, LocalizedArticle> = {
     title: 'The Skin Stapler Ende erklärt: Die ganze Geschichte',
     description: 'Das Ende von The Skin Stapler enthüllt Elias Crow, sein Motiv, Robbies Schicksal und Slaters Abschied. Mögliche Epilogvarianten bleiben unbestätigt.',
     eyebrow: 'Achtung: massive Spoiler',
-    directAnswer: 'Der Skin Stapler ist Elias Crow, Besitzer des Restaurants Flesh Pit. Er will sich an Dick Slater rächen, weil Slater seinen Bruder Silus Kain getötet hat; im Finale fällt Robbie, Slater erschießt Elias mit Robbies Waffe und verlässt Carrion City.',
+    directAnswer: 'Der Skin Stapler ist Elias Crow, Besitzer des Restaurants Flesh Pit. Er will sich an Dick Slater rächen, weil Slater seinen Bruder Silus getötet hat; im Finale fällt Robbie, Slater schießt mit Robbies Waffe auf Elias und verlässt Carrion City. Ob Elias stirbt oder festgenommen wird, bleibt im geprüften Material uneindeutig.',
     sections: [
       { title: 'Wer ist der Skin Stapler?', paragraphs: ['Die Ermittlungen führen zu Elias Crow und zum Flesh Pit. Vollständige Spielmitschnitte nennen seinen Namen, seinen Aufenthaltsort und sein Motiv noch vor der letzten Konfrontation.', 'Die Identität stammt damit aus Dialogen der Vollversion und nicht aus einer Demo-Theorie. Zwei voneinander unabhängige Transkripte geben dieselbe Auflösung wieder.'] },
       { title: 'Warum jagt Elias Dick Slater?', paragraphs: ['Elias handelt aus Rache für seinen Bruder Silus Kain. Er sagt Slater, dieser habe ihm einen wichtigen Menschen genommen, und kündigt an, ihm nun ebenfalls jemanden zu nehmen.', 'Automatische Untertitel schreiben den Nachnamen teilweise als Kane. Ob Kain oder Kane im offiziellen Abspann steht, ist noch nicht bestätigt.'] },
       { title: 'Was passiert mit Robbie?', paragraphs: ['Elias überwältigt und fesselt beide Ermittler. Robbie wird im Verlauf der Auseinandersetzung niedergeschlagen und fordert Slater auf, seine Waffe zu benutzen.', 'Slater tötet Elias und verabschiedet sich anschließend von Robbie. Robbie erholt sich vor Szenenende nicht; Slaters Worte behandeln den Verlust als endgültig.'] },
-      { title: 'Warum verlässt Slater Carrion City?', paragraphs: ['Der Fall ist gelöst, aber Slater hat seinen neuen Partner verloren. Er erklärt, dass er nicht länger versuchen werde, die Stadt zu retten, und fährt davon.', 'Damit endet die Geschichte bitter statt triumphal. Elias ist tot, doch Slater glaubt nicht mehr daran, Carrion City reparieren zu können.'] },
+      { title: 'Warum verlässt Slater Carrion City?', paragraphs: ['Der Fall ist gelöst, aber Slater hat seinen neuen Partner verloren. Er erklärt, dass er nicht länger versuchen werde, die Stadt zu retten, und fährt davon.', 'Damit endet die Geschichte bitter statt triumphal. Dick schießt auf Elias; dessen endgültiger Zustand ist nicht eindeutig zu sehen. Slater glaubt nicht mehr daran, Carrion City reparieren zu können.'] },
       { title: 'Gibt es mehrere Enden?', paragraphs: ['Die ausgewerteten Vollversion-Videos zeigen ein bestätigtes Hauptende. Ein Fan-Bericht erwähnt kleine Unterschiede im Epilog abhängig von gehörten Tonbändern, doch ein direkter Vergleich fehlt.', 'Ein Demo-Video vom Februar 2026 trägt zwar „all endings“ im Titel, belegt aber keine Enden der August-Vollversion. Weitere Varianten bleiben deshalb noch nicht bestätigt.'] }
     ],
     faq: [

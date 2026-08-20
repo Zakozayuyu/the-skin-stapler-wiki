@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n';
-import { localeMeta, localizePath } from '@/lib/i18n';
+import { availableContentPath, localeMeta, localizePath } from '@/lib/i18n';
 import { officialLinks, startCards } from '@/lib/data';
 import { gameFacts } from '@/lib/game-facts';
 import { homeContent } from '@/lib/content';
@@ -92,13 +92,13 @@ export default function HomePage({ locale }: { locale: Locale }) {
   return (
     <SiteShell locale={locale}>
       <section className="hero skin-hero">
-        <Image src="/hero.jpg" alt="The Skin Stapler official promotional artwork" fill priority sizes="100vw" className="hero-image pixel-hero" />
+        <Image src="/hero-hd.webp" alt="The Skin Stapler promotional artwork featuring the killer, Dick Slater, and Robbie Knox" fill priority sizes="100vw" className="hero-image pixel-hero" />
         <div className="hero-overlay skin-overlay" />
         <div className="container hero-content">
           <div className="update-badge"><span />{t.eyebrow}</div>
           <h1>{t.title}<br /><em>Wiki</em></h1>
           <p>{t.hero}</p>
-          <div className="button-row hero-buttons"><Link href={localizePath(locale, '/guides/beginner')} className="btn-primary">{t.primary}</Link><Link href={localizePath(locale, '/guides#puzzles')} className="btn-secondary">{t.secondary}</Link><Link href={localizePath(locale, '/guides#achievements')} className="btn-ghost">{t.tertiary}</Link></div>
+          <div className="button-row hero-buttons"><Link href={localizePath(locale, '/guides/beginner')} className="btn-primary">{t.primary}</Link><Link href={localizePath(locale, '/guides/the-skin-stapler-puzzle-solutions')} className="btn-secondary">{t.secondary}</Link><Link href={localizePath(locale, '/guides/the-skin-stapler-achievements')} className="btn-ghost">{t.tertiary}</Link></div>
           <a className="trailer-link" href={siteConfig.trailer} target="_blank" rel="noreferrer">▶ {t.trailer}</a>
           <div className="stats-grid skin-stats">{heroStats[locale].map(([value, label]) => <div key={label}><strong>{value}</strong><span>{label}</span></div>)}</div>
         </div>
@@ -106,9 +106,9 @@ export default function HomePage({ locale }: { locale: Locale }) {
 
       <div className="container home-layout section">
         <div className="home-primary">
-          <section><div className="section-heading left-heading"><span className="eyebrow">{t.startEyebrow}</span><h2 className="section-title">{t.startTitle}</h2></div><div className="start-grid">{startCards[locale].map((card) => { const primaryRoute = card.id === 'walkthrough' ? '/walkthrough' : card.id === 'achievements' ? '/ending' : card.id === 'beginner' ? '/guides/beginner' : null; const href = primaryRoute ? localizePath(locale, primaryRoute) : localizePath(locale, `/guides#${card.id}`); return <Link className="card start-card" key={card.number} href={href}><span>{card.number}</span><h3>{card.title}</h3><p>{card.description}</p></Link>; })}</div></section>
+          <section><div className="section-heading left-heading"><span className="eyebrow">{t.startEyebrow}</span><h2 className="section-title">{t.startTitle}</h2></div><div className="start-grid">{startCards[locale].map((card) => { const primaryRoute = card.id === 'walkthrough' ? '/walkthrough' : card.id === 'achievements' ? '/guides/the-skin-stapler-achievements' : card.id === 'puzzles' ? '/guides/the-skin-stapler-puzzle-solutions' : card.id === 'beginner' ? '/guides/beginner' : null; const href = primaryRoute ? localizePath(locale, primaryRoute) : localizePath(locale, `/guides#${card.id}`); return <Link className="card start-card" key={card.number} href={href}><span>{card.number}</span><h3>{card.title}</h3><p>{card.description}</p></Link>; })}</div></section>
 
-          <section className="popular-guides"><div className="section-heading left-heading"><span className="eyebrow">{popularGuides[locale].eyebrow}</span><h2 className="section-title">{popularGuides[locale].title}</h2></div><div className="start-grid">{popularGuides[locale].links.map(([href, title, description]) => <Link className="card popular-guide-card" key={href} href={localizePath(locale, href)}><h3>{title}</h3><p>{description}</p><b>→</b></Link>)}</div></section>
+          <section className="popular-guides"><div className="section-heading left-heading"><span className="eyebrow">{popularGuides[locale].eyebrow}</span><h2 className="section-title">{popularGuides[locale].title}</h2></div><div className="start-grid">{popularGuides[locale].links.map(([href, title, description]) => <Link className="card popular-guide-card" key={href} href={availableContentPath(locale, href)}><h3>{title}</h3><p>{description}</p><b>→</b></Link>)}</div></section>
 
           <NativeBannerAd />
 

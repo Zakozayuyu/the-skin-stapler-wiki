@@ -1,6 +1,6 @@
-import type { LocalizedArticle, LocalizedArticleId } from './types';
+import type { BaseLocalizedArticleId, LocalizedArticle } from './types';
 
-export const ptBrArticles: Record<LocalizedArticleId, LocalizedArticle> = {
+export const ptBrArticles: Record<BaseLocalizedArticleId, LocalizedArticle> = {
   walkthrough: {
     id: 'walkthrough', keyword: 'detonado de The Skin Stapler',
     title: 'Detonado de The Skin Stapler: Todos os capítulos',
@@ -26,19 +26,19 @@ export const ptBrArticles: Record<LocalizedArticleId, LocalizedArticle> = {
     title: 'Final de The Skin Stapler explicado: História completa',
     description: 'O final de The Skin Stapler revela Elias Crow, sua vingança, o destino de Robbie e a decisão de Slater. Variações do epílogo seguem sem confirmação.',
     eyebrow: 'Spoilers pesados da história',
-    directAnswer: 'O Skin Stapler é Elias Crow, dono do restaurante Flesh Pit. Ele quer se vingar porque Dick Slater matou seu irmão, Silus Kain; no confronto final, Robbie cai, Slater usa a arma do parceiro para matar Elias e deixa Carrion City.',
+    directAnswer: 'O Skin Stapler é Elias Crow, dono do restaurante Flesh Pit. Ele quer se vingar porque Dick Slater matou seu irmão Silus; no confronto final, Robbie cai, Slater atira em Elias com a arma do parceiro e deixa Carrion City. As fontes verificadas não esclarecem se Elias morre ou é preso.',
     sections: [
       { title: 'Quem é o Skin Stapler?', paragraphs: ['A investigação identifica Elias Crow e aponta o Flesh Pit como seu esconderijo. O diálogo da versão completa revela nome, localização e motivo antes do último confronto.', 'A identidade não vem de uma teoria da demo. Duas transcrições independentes da campanha final apresentam a mesma revelação.'] },
       { title: 'Por que Elias persegue Slater?', paragraphs: ['Elias busca vingança por Silus Kain, seu irmão. Ele diz que Slater tirou alguém importante dele e promete fazer o detetive sofrer a mesma perda.', 'Legendas automáticas registram o sobrenome também como Kane. A grafia exata nos créditos finais continua com confirmação pendente.'] },
       { title: 'O que acontece com Robbie?', paragraphs: ['Elias domina e prende os dois investigadores. Robbie é derrubado durante a cena e manda Slater usar sua arma.', 'Slater mata Elias e se despede do parceiro. Robbie não volta a se levantar, e as falas de Slater tratam a perda como definitiva.'] },
-      { title: 'Por que Slater abandona Carrion City?', paragraphs: ['Resolver o caso não recupera a confiança de Slater na cidade. Depois de perder Robbie, ele diz que terminou de tentar salvar Carrion City e vai embora.', 'O encerramento é amargo, não uma vitória limpa. Elias morre, mas o detetive já não acredita que seu trabalho possa consertar aquele lugar.'] },
+      { title: 'Por que Slater abandona Carrion City?', paragraphs: ['Resolver o caso não recupera a confiança de Slater na cidade. Depois de perder Robbie, ele diz que terminou de tentar salvar Carrion City e vai embora.', 'O encerramento é amargo, não uma vitória limpa. Slater atira em Elias, mas o estado final do assassino permanece incerto; o detetive já não acredita que seu trabalho possa consertar aquele lugar.'] },
       { title: 'Existem vários finais?', paragraphs: ['Os vídeos completos consultados comprovam um final principal. Uma wiki de fãs menciona pequenas mudanças no epílogo de acordo com as fitas ouvidas, mas não há comparação direta entre duas rotas.', 'Um vídeo da demo publicado em fevereiro usa “all endings” no título, porém não documenta os finais da versão lançada em agosto. Qualquer variação adicional segue com confirmação pendente.'] }
     ],
     faq: [
       { question: 'Quem é o assassino?', answer: 'Elias Crow, proprietário do Flesh Pit, é o Skin Stapler.' },
       { question: 'Qual é o motivo de Elias?', answer: 'Ele quer vingar Silus Kain, seu irmão, morto por Dick Slater.' },
       { question: 'Robbie morre?', answer: 'Robbie é derrubado, entrega a arma a Slater e não retorna. A despedida de Slater trata seu destino como final.' },
-      { question: 'Slater continua em Carrion City?', answer: 'Não. Após matar Elias, ele desiste de salvar a cidade e vai embora.' }
+      { question: 'Slater continua em Carrion City?', answer: 'Não. Após atirar em Elias, ele desiste de salvar a cidade e vai embora.' }
     ]
   },
   wiki: {

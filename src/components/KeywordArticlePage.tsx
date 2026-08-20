@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { absoluteUrl, siteConfig } from '@/lib/seo';
+import { absoluteUrl, articleAuthor, articlePublisher, siteConfig } from '@/lib/seo';
 import type { KeywordArticleSlug } from '@/lib/articles';
 import { keywordArticleImages, keywordArticleRelations, keywordArticles } from '@/lib/articles';
 import { articleMedia } from '@/lib/article-media';
@@ -15,17 +15,20 @@ export default function KeywordArticlePage({ slug }: { slug: KeywordArticleSlug 
   const image = keywordArticleImages[slug];
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: article.title,
-    description: article.description,
-    inLanguage: 'en',
-    mainEntityOfPage: absoluteUrl(path),
-    url: absoluteUrl(path),
-    keywords: article.keyword,
-    image: absoluteUrl(articleMedia[image].src)
+    '@graph': [{
+      '@type': 'Article', headline: article.title, description: article.description, inLanguage: 'en',
+      mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), keywords: article.keyword,
+      image: absoluteUrl(articleMedia[image].src), author: articleAuthor, publisher: articlePublisher
+    }, {
+      '@type': 'BreadcrumbList', itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
+        { '@type': 'ListItem', position: 2, name: 'Guides', item: absoluteUrl('/guides') },
+        { '@type': 'ListItem', position: 3, name: article.keyword, item: absoluteUrl(path) }
+      ]
+    }]
   };
 
-  return <SiteShell locale="en"><article className="container article-page"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><nav className="breadcrumbs"><Link href="/">Home</Link><span>/</span><Link href="/guides">Guides</Link><span>/</span><b>{article.keyword}</b></nav><header className="article-header"><div><span className="badge tier-badge">Game guide</span><span className="badge floor-badge">Spoilers and unknowns clearly labeled</span></div><h1>{article.title}</h1><p>{article.description}</p></header><ArticleFigure image={image} />
+  return <SiteShell locale="en"><article className="container article-page"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><Link href="/guides">Guides</Link><span>/</span><b>{article.keyword}</b></nav><header className="article-header"><div><span className="badge tier-badge">Game guide</span><span className="badge floor-badge">Spoilers and unknowns clearly labeled</span></div><h1>{article.title}</h1><p>{article.description}</p></header><ArticleFigure image={image} preload />
 
   {/* Native Banner — after hero image, ~15-20% into the page */}
   <NativeBannerAd slotId="keyword-top" />

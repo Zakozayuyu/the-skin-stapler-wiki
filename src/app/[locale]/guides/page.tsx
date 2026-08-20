@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import GuidesPage from '@/components/GuidesPage';
 import { isLocale, locales, localizePath } from '@/lib/i18n';
-import { absoluteUrl, heroOgImage, pageAlternates, siteConfig } from '@/lib/seo';
+import { absoluteUrl, heroOgImage, openGraphLocale, pageAlternates, siteConfig } from '@/lib/seo';
 
 const meta = {
   en: ['The Skin Stapler Guides', 'All The Skin Stapler guides in one place: walkthrough, puzzles, achievements, endings, voice cast, characters, demo, release date, and Steam details.'],
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   if (!isLocale(locale)) return {};
   return {
     title: meta[locale][0], description: meta[locale][1], alternates: pageAlternates(locale, '/guides'),
-    openGraph: { type: 'website', siteName: siteConfig.name, title: meta[locale][0], description: meta[locale][1], url: absoluteUrl(localizePath(locale, '/guides')), locale, images: [heroOgImage] }
+    openGraph: { type: 'website', siteName: siteConfig.name, title: meta[locale][0], description: meta[locale][1], url: absoluteUrl(localizePath(locale, '/guides')), locale: openGraphLocale(locale), images: [heroOgImage] }
   };
 }
 export default async function Page({ params }: { params: Promise<{ locale: string }> }) { const { locale } = await params; if (!isLocale(locale)) notFound(); return <GuidesPage locale={locale} />; }

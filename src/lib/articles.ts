@@ -13,6 +13,8 @@ import WhoIs from '@/content/en/guides/who-is-the-skin-stapler.mdx';
 import Hexy from '@/content/en/guides/the-skin-stapler-hexy.mdx';
 import Blair from '@/content/en/guides/the-skin-stapler-blair.mdx';
 import Luna from '@/content/en/guides/the-skin-stapler-luna.mdx';
+import Achievements from '@/content/en/guides/the-skin-stapler-achievements.mdx';
+import PuzzleSolutions from '@/content/en/guides/the-skin-stapler-puzzle-solutions.mdx';
 import type { ArticleImageKey } from './article-media';
 
 export const keywordArticles = {
@@ -31,6 +33,8 @@ export const keywordArticles = {
   'the-skin-stapler-hexy': { keyword: 'the skin stapler hexy', title: 'The Skin Stapler Hexy: Quick Fix Clerk & Voice Actor', description: 'Hexy is a playable convenience store clerk at the Quick Fix in Carrion City. She serves hot dogs, owns the Jank Wagon, and encounters the Skin Stapler.', category: 'Cast', summary: 'Hexy\'s Quick Fix section, hot dog scene, Jank Wagon, and HexyIRL voice actor credit.', Component: Hexy },
   'the-skin-stapler-blair': { keyword: 'the skin stapler blair', title: 'The Skin Stapler Blair: Gutters End Bowling Employee', description: 'Blair is a playable graveyard-shift employee at Gutters End Bowling Alley, voiced by BlairVira. She is killed by the Skin Stapler in both the demo and full game.', category: 'Cast', summary: 'Blair\'s Gutters End section, Mr. Shrimp dual role, BlairVira voice credit, and confirmed fate.', Component: Blair },
   'the-skin-stapler-luna': { keyword: 'the skin stapler luna', title: 'The Skin Stapler Luna: Donut Shop Owner & Voice Actor', description: 'Luna is a playable character who runs a donut and coffee shop in Carrion City, voiced by Luna Arcana. She is killed at her shop alongside Chief O\'Brien.', category: 'Cast', summary: 'Luna\'s donut shop, Luna Arcana voice credit, shop name discrepancy, and confirmed fate.', Component: Luna }
+  , 'the-skin-stapler-achievements': { keyword: 'the skin stapler achievements', title: 'The Skin Stapler Achievements: All 16 Unlocks', description: 'See all 16 The Skin Stapler achievements, their Steam requirements, the missable Thank You note, tape repair unlock, and chapter order.', category: 'Guide', summary: 'All 16 Steam achievements, the missable office note, tape repair unlock, and chapter-linked progress.', Component: Achievements }
+  , 'the-skin-stapler-puzzle-solutions': { keyword: 'the skin stapler puzzle solutions', title: 'The Skin Stapler Puzzle Solutions and Codes', description: 'Solve The Skin Stapler puzzles with the verified 1979 code, Flesh Pit meat scale, tape guidance, and clearly marked tarot-card uncertainty.', category: 'Guide', summary: 'The verified 1979 code, Flesh Pit scale, damaged tapes, tarot evidence box, and Blood Puzzle search intent.', Component: PuzzleSolutions }
 } as const;
 
 export type KeywordArticleSlug = keyof typeof keywordArticles;
@@ -53,6 +57,8 @@ export const keywordArticleImages: Record<KeywordArticleSlug, ArticleImageKey> =
   'the-skin-stapler-hexy': 'customer',
   'the-skin-stapler-blair': 'chase',
   'the-skin-stapler-luna': 'promo'
+  , 'the-skin-stapler-achievements': 'evidence'
+  , 'the-skin-stapler-puzzle-solutions': 'tape'
 };
 
 type RelatedGuide = { href: string; label: string; description: string };
@@ -140,6 +146,16 @@ export const keywordArticleRelations = {
     { href: '/characters', label: 'all characters', description: 'Browse every confirmed character in the game.' },
     { href: '/guides/the-skin-stapler-voice-actors', label: 'voice actors', description: 'See Luna Arcana and the full cast.' },
     { href: '/ending', label: 'ending explained', description: 'How Luna\'s story connects to the finale.' }
+  ],
+  'the-skin-stapler-achievements': [
+    { href: '/guides/the-skin-stapler-puzzle-solutions', label: 'puzzle solutions and codes', description: 'Solve the verified investigation obstacles.' },
+    { href: '/walkthrough', label: 'full walkthrough', description: 'Follow the chapter route behind the progress achievements.' },
+    { href: '/guides/beginner', label: 'beginner guide', description: 'Start with spoiler-aware route advice.' }
+  ],
+  'the-skin-stapler-puzzle-solutions': [
+    { href: '/guides/the-skin-stapler-achievements', label: 'all Steam achievements', description: 'See the tape repair and missable note requirements.' },
+    { href: '/walkthrough', label: 'full walkthrough', description: 'Place each puzzle inside the complete route.' },
+    { href: '/guides/the-skin-stapler-gameplay', label: 'gameplay guide', description: 'Understand the investigation loop and puzzle focus.' }
   ]
 } satisfies Record<KeywordArticleSlug, RelatedGuide[]>;
 

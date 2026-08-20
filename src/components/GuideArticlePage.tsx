@@ -3,7 +3,7 @@ import type { Locale } from '@/lib/i18n';
 import { localeMeta, localizePath } from '@/lib/i18n';
 import { beginnerContent } from '@/lib/content';
 import { articleMedia } from '@/lib/article-media';
-import { absoluteUrl, siteConfig } from '@/lib/seo';
+import { absoluteUrl, articleAuthor, articlePublisher, siteConfig } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
 import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
@@ -19,8 +19,8 @@ export default function GuideArticlePage({ locale }: { locale: Locale }) {
   const Article = beginnerContent[locale];
   const labels = copy[locale];
   const path = localizePath(locale, '/guides/beginner');
-  const jsonLd = { '@context': 'https://schema.org', '@type': 'Article', headline: labels.title, description: labels.description, inLanguage: localeMeta[locale].language, mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), image: absoluteUrl(articleMedia.evidence.src) };
-  return <SiteShell locale={locale}><article className="container article-page"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><nav className="breadcrumbs"><Link href={localizePath(locale, '/')}>{labels.home}</Link><span>/</span><Link href={localizePath(locale, '/guides')}>{labels.guides}</Link><span>/</span><b>{labels.title}</b></nav><header className="article-header"><div><span className="badge tier-badge">{labels.eyebrow}</span><span className="badge floor-badge">{labels.spoiler}</span></div><h1>{labels.title}</h1><p>{labels.description}</p></header><ArticleFigure image="evidence" locale={locale} />
+  const jsonLd = { '@context': 'https://schema.org', '@graph': [{ '@type': 'Article', headline: labels.title, description: labels.description, inLanguage: localeMeta[locale].language, mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), image: absoluteUrl(articleMedia.evidence.src), author: articleAuthor, publisher: articlePublisher }, { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: labels.home, item: absoluteUrl(localizePath(locale, '/')) }, { '@type': 'ListItem', position: 2, name: labels.guides, item: absoluteUrl(localizePath(locale, '/guides')) }, { '@type': 'ListItem', position: 3, name: labels.title, item: absoluteUrl(path) }] }] };
+  return <SiteShell locale={locale}><article className="container article-page"><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /><nav className="breadcrumbs" aria-label="Breadcrumb"><Link href={localizePath(locale, '/')}>{labels.home}</Link><span>/</span><Link href={localizePath(locale, '/guides')}>{labels.guides}</Link><span>/</span><b>{labels.title}</b></nav><header className="article-header"><div><span className="badge tier-badge">{labels.eyebrow}</span><span className="badge floor-badge">{labels.spoiler}</span></div><h1>{labels.title}</h1><p>{labels.description}</p></header><ArticleFigure image="evidence" locale={locale} preload />
 
   {/* Native Banner — after hero image, ~15-20% into the page */}
   <NativeBannerAd slotId="beginner-top" />

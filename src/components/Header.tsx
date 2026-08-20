@@ -25,6 +25,10 @@ export default function Header({ locale }: { locale: Locale }) {
 
   function changeLocale(nextLocale: Locale) {
     const guideMatch = cleanPath.match(/^\/guides\/([^/]+)$/);
+    if (nextLocale !== 'en' && cleanPath === '/characters') {
+      window.location.assign(localizePath(nextLocale, '/wiki'));
+      return;
+    }
     if (nextLocale !== 'en' && guideMatch && !(guideMatch[1] in localizedGuideSlugs)) {
       window.location.assign(localizePath(nextLocale, '/guides'));
       return;
@@ -36,7 +40,7 @@ export default function Header({ locale }: { locale: Locale }) {
     <header className="site-header">
       <div className="container header-row">
         <Link href={localizePath(locale, '/')} className="brand" aria-label={labels.home}>
-          <Image src="/android-chrome-192x192.png" alt="The Skin Stapler Wiki" width={36} height={36} className="logo" />
+          <Image src="/android-chrome-192x192.png" alt="" width={36} height={36} className="logo" />
           <span className="brand-name">The Skin Stapler <span>Wiki</span></span>
         </Link>
 

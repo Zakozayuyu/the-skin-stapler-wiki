@@ -16,3 +16,7 @@ export function localizePath(locale: Locale, path = '') {
   const normalized = path.startsWith('/') ? path : `/${path}`;
   return locale === 'en' ? normalized : `/${locale}${normalized === '/' ? '' : normalized}`;
 }
+
+export function availableContentPath(locale: Locale, path = '') {
+  return localizePath(locale, path);
+}

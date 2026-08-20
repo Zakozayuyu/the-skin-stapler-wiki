@@ -27,6 +27,9 @@ export default function SiteSearch({ locale }: { locale: Locale }) {
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const dialogRef = useRef<HTMLElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const previousFocusRef = useRef<HTMLElement | null>(null);
   const t = labels[locale];
 
   const results = useMemo(() => {
@@ -69,9 +72,15 @@ export default function SiteSearch({ locale }: { locale: Locale }) {
   useEffect(() => {
     if (!open) return;
     const previousOverflow = document.body.style.overflow;
+    previousFocusRef.current = document.activeElement instanceof HTMLElement && document.activeElement !== document.body
+      ? document.activeElement
+      : triggerRef.current;
     document.body.style.overflow = 'hidden';
     window.requestAnimationFrame(() => inputRef.current?.focus());
-    return () => { document.body.style.overflow = previousOverflow; };
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      previousFocusRef.current?.focus();
+    };
   }, [open]);
 
   function closeSearch() {
@@ -97,13 +106,33 @@ export default function SiteSearch({ locale }: { locale: Locale }) {
     }
   }
 
+  function handleDialogKeyDown(event: ReactKeyboardEvent<HTMLElement>) {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeSearch();
+      return;
+    }
+    if (event.key !== 'Tab') return;
+    const focusable = Array.from(dialogRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])') ?? []);
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
   return (
     <>
-      <button type="button" className="site-search-trigger" aria-label={t.button} title={`${t.button} (/)`} onClick={() => setOpen(true)}>
+      <button ref={triggerRef} type="button" className="site-search-trigger" aria-label={t.button} title={`${t.button} (/)`} onClick={() => setOpen(true)}>
         <SearchIcon />
       </button>
       {open && createPortal(<div className="site-search-overlay" onMouseDown={handleBackdrop}>
-        <section className="site-search-panel" role="dialog" aria-modal="true" aria-labelledby="site-search-title">
+        <section ref={dialogRef} className="site-search-panel" role="dialog" aria-modal="true" aria-labelledby="site-search-title" onKeyDown={handleDialogKeyDown}>
           <h2 id="site-search-title" className="sr-only">{t.title}</h2>
           <div className="site-search-input-row">
             <SearchIcon />

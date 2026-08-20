@@ -34,9 +34,35 @@ export function pageAlternates(locale: Locale, path: string): NonNullable<Metada
   return { ...localizedAlternates(path), canonical: localizePath(locale, path) };
 }
 
+export function englishOnlyAlternates(path: string): NonNullable<Metadata['alternates']> {
+  return { canonical: path, languages: { en: path, 'x-default': path } };
+}
+
+export function openGraphLocale(locale: Locale) {
+  const language = localeMeta[locale].language;
+  return language.includes('-') ? language.replace('-', '_') : `${language}_${language.toUpperCase()}`;
+}
+
 export function absoluteUrl(path: string) {
   return new URL(path, `${siteUrl}/`).toString();
 }
+
+export const articleAuthor = {
+  '@type': 'Organization',
+  '@id': `${siteUrl}/#organization`,
+  name: siteConfig.name,
+  url: siteUrl
+} as const;
+
+export const articlePublisher = {
+  ...articleAuthor,
+  logo: {
+    '@type': 'ImageObject',
+    url: absoluteUrl('/favicon-512x512.png'),
+    width: 512,
+    height: 512
+  }
+} as const;
 
 /** OpenGraph image object reusing the verified official artwork with its localized description as alt text. */
 export function openGraphImage(key: ArticleImageKey, locale: Locale = 'en') {
@@ -44,5 +70,5 @@ export function openGraphImage(key: ArticleImageKey, locale: Locale = 'en') {
   return { url: media.src, width: media.width, height: media.height, alt: media.description[locale] };
 }
 
-/** Site-wide promotional hero artwork used as the fallback OG image. */
-export const heroOgImage = { url: '/hero.jpg', width: 460, height: 215, alt: 'The Skin Stapler official promotional artwork' };
+/** Site-wide 1200×630 promotional artwork used as the fallback social image. */
+export const heroOgImage = { url: '/og-default.webp', width: 1200, height: 630, alt: 'The Skin Stapler promotional artwork featuring the killer, Dick Slater, and Robbie Knox' };

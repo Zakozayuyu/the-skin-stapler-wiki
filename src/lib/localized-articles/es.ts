@@ -1,6 +1,6 @@
-import type { LocalizedArticle, LocalizedArticleId } from './types';
+import type { BaseLocalizedArticleId, LocalizedArticle } from './types';
 
-export const esArticles: Record<LocalizedArticleId, LocalizedArticle> = {
+export const esArticles: Record<BaseLocalizedArticleId, LocalizedArticle> = {
   walkthrough: {
     id: 'walkthrough', keyword: 'guía completa de The Skin Stapler',
     title: 'Guía completa de The Skin Stapler: Todos los capítulos',
@@ -30,8 +30,8 @@ export const esArticles: Record<LocalizedArticleId, LocalizedArticle> = {
     sections: [
       { title: '¿Quién es el Skin Stapler?', paragraphs: ['La investigación conduce hasta Elias Crow y The Flesh Pit. Los diálogos de la versión completa revelan su nombre, su escondite y su motivo antes del último enfrentamiento.', 'La identidad no procede de una teoría creada a partir de la demo. Dos transcripciones independientes de partidas completas presentan la misma revelación.'] },
       { title: 'Por qué Elias persigue a Dick Slater', paragraphs: ['Elias busca vengar a su hermano Silus Kain. Le recuerda a Slater que le arrebató a una persona importante y promete hacerle sufrir una pérdida equivalente.', 'Algunos subtítulos automáticos escriben el apellido como Kane. La grafía exacta de los créditos finales sigue pendiente de confirmar.'] },
-      { title: 'Qué ocurre con Robbie', paragraphs: ['Elias reduce y ata a los dos investigadores. Durante el forcejeo, Robbie queda derribado y le pide a Slater que use su arma.', 'Slater mata a Elias y se despide de su compañero. Robbie no vuelve a levantarse antes de que termine la escena, y las palabras de Slater tratan la pérdida como definitiva.'] },
-      { title: 'Por qué Slater deja Carrion City', paragraphs: ['Resolver el caso no devuelve a Slater la confianza en la ciudad. Después de perder a Robbie, afirma que ya no seguirá intentando salvar Carrion City y se marcha.', 'El cierre es amargo, no una victoria limpia. Elias muere, pero Slater deja de creer que su trabajo pueda arreglar aquel lugar.'] },
+      { title: 'Qué ocurre con Robbie', paragraphs: ['Elias reduce y ata a los dos investigadores. Durante el forcejeo, Robbie queda derribado y le pide a Slater que use su arma.', 'Slater dispara a Elias y se despide de su compañero. Robbie no vuelve a levantarse antes de que termine la escena, y las palabras de Slater tratan la pérdida como definitiva.'] },
+      { title: 'Por qué Slater deja Carrion City', paragraphs: ['Resolver el caso no devuelve a Slater la confianza en la ciudad. Después de perder a Robbie, afirma que ya no seguirá intentando salvar Carrion City y se marcha.', 'El cierre es amargo, no una victoria limpia. Slater dispara a Elias, pero su estado final no se ve con claridad; el detective deja de creer que su trabajo pueda arreglar aquel lugar.'] },
       { title: '¿Hay varios finales?', paragraphs: ['Las partidas completas consultadas confirman un desenlace principal. Una wiki de fans menciona cambios menores en el epílogo según las cintas escuchadas, aunque no aporta una comparación directa entre rutas.', 'Un vídeo de la demo publicado en febrero incluye “all endings” en el título, pero no documenta los finales de la versión completa de agosto. Cualquier variante adicional sigue pendiente de confirmar.'] }
     ],
     faq: [

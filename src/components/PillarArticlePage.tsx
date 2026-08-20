@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { Children } from 'react';
 import type { ArticleImageKey } from '@/lib/article-media';
 import { articleMedia } from '@/lib/article-media';
-import { absoluteUrl } from '@/lib/seo';
+import { absoluteUrl, articleAuthor, articlePublisher } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
 import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
@@ -30,7 +30,9 @@ export default function PillarArticlePage({ path, title, description, keyword, l
         mainEntityOfPage: absoluteUrl(path),
         url: absoluteUrl(path),
         keywords: keyword,
-        image: absoluteUrl(articleMedia[image].src)
+        image: absoluteUrl(articleMedia[image].src),
+        author: articleAuthor,
+        publisher: articlePublisher
       },
       {
         '@type': 'BreadcrumbList',
@@ -60,7 +62,7 @@ export default function PillarArticlePage({ path, title, description, keyword, l
           <h1>{title}</h1>
           <p>{description}</p>
         </header>
-        <ArticleFigure image={image} />
+        <ArticleFigure image={image} preload />
 
         {/* Native Banner #1 — after hero image, ~15-20% into the page */}
         <NativeBannerAd slotId="pillar-top" />
@@ -68,9 +70,6 @@ export default function PillarArticlePage({ path, title, description, keyword, l
         <div className="mdx-article keyword-article pillar-copy">
           {childArray.slice(0, midIndex)}
         </div>
-
-        {/* Native Banner #2 — mid-content, ~50-60% into the page */}
-        <NativeBannerAd slotId="pillar-mid" />
 
         <div className="mdx-article keyword-article pillar-copy">
           {childArray.slice(midIndex)}

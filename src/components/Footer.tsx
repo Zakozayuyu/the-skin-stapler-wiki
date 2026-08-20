@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import type { Locale } from '@/lib/i18n';
-import { localizePath } from '@/lib/i18n';
+import { availableContentPath, localizePath } from '@/lib/i18n';
 import { siteConfig } from '@/lib/seo';
 
 const labels = {
@@ -17,8 +17,8 @@ export default function Footer({ locale }: { locale: Locale }) {
     <footer className="site-footer">
       <div className="container footer-grid footer-grid-wide">
         <div className="footer-brand">
-          <Link href={localizePath(locale, '/')} className="brand">
-            <Image src="/android-chrome-192x192.png" alt="The Skin Stapler Wiki" width={40} height={40} className="logo" />
+          <Link href={localizePath(locale, '/')} className="brand" aria-label={`The Skin Stapler Wiki — ${t.home}`}>
+            <Image src="/android-chrome-192x192.png" alt="" width={40} height={40} className="logo" />
             <span className="brand-name">The Skin Stapler Wiki</span>
           </Link>
           <p>{t.about}</p>
@@ -34,5 +34,5 @@ export default function Footer({ locale }: { locale: Locale }) {
 }
 
 function FooterLinks({ title, links, locale }: { title: string; links: string[][]; locale: Locale }) {
-  return <div className="footer-links"><h3>{title}</h3>{links.map(([label, href]) => <Link key={href} href={localizePath(locale, href)}>{label}</Link>)}</div>;
+  return <div className="footer-links"><h3>{title}</h3>{links.map(([label, href]) => <Link key={href} href={availableContentPath(locale, href)}>{label}</Link>)}</div>;
 }
