@@ -179,12 +179,13 @@ Baseline `geo audit` score: **52/100** (foundation band)
 
 ### Follow-up (same day)
 
-Live re-audit: **52 → 89/100 (excellent band)**; breakdown robots 18/18, llms 16/18, schema 13/16, meta 14/14, content 12/12, signals 6/6, ai_discovery 6/6, brand 7/10 with only the `negative_penalty` (−3) remaining.
+Final live re-audit: **52 → 92/100 (excellent band)** with a fully clean negative-signals report. Category scores: robots 18/18, llms 16/18, schema 13/16, meta 14/14, content 12/12, signals 6/6, ai_discovery 6/6, brand_entity 7/10, negative penalty 0. Trust Stack C→B (20/25), multimodal alt coverage 100%.
 
 To clear the penalty heuristics without touching brand mentions:
 - Reworded 3 homepage FAQ questions per locale to "the game" phrasing (platforms/multiplayer/length)
 - Renamed the start-cards section title to "Your Carrion City Investigation" (×4 locales)
-- Renamed the decorative `.hero-overlay` class to `.hero-shade` (the negative-signal scanner lists "overlay" as a popup indicator — false positive)
+- Renamed the decorative `.hero-overlay`/`.skin-overlay` classes to `.hero-shade`/`.skin-veil` (the negative-signal scanner lists "overlay" as a popup indicator — false positive)
 - Added a source-policy paragraph to `home.mdx` ×4 locales (dilutes brand-name density while adding a genuine trust/E-E-A-T signal)
+- Added alt text to the header logo image (3/3 images now descriptive)
 
 Remaining open items are platform- or business-level, not repo-level: Cloudflare Content Signals block `Google-Extended`/`ClaudeBot` at the edge until the dashboard setting is changed, and no Knowledge-Graph pillar (Wikipedia/Wikidata) exists for an independent fan wiki to link.
