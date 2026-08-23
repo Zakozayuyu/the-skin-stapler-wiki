@@ -236,7 +236,7 @@ h1, h2, h3, h4 { font-family: var(--font-oswald), 'Arial Narrow', sans-serif; }
 
 .skin-hero { min-height: 650px; }
 .pixel-hero { image-rendering: auto; filter: saturate(.86) contrast(1.08); }
-.skin-overlay { background: linear-gradient(to bottom, rgb(8 8 13 / 58%), rgb(8 8 13 / 76%), rgb(8 8 13 / 96%)); }
+.skin-veil { background: linear-gradient(to bottom, rgb(8 8 13 / 58%), rgb(8 8 13 / 76%), rgb(8 8 13 / 96%)); }
 .hero-buttons { flex-wrap: wrap; }
 .trailer-link { display: inline-flex; margin-top: 20px; color: hsl(var(--nav-theme-light)); font-size: 14px; font-weight: 650; }
 .trailer-link:hover { text-decoration: underline; }

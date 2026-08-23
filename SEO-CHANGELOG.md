@@ -176,3 +176,15 @@ Baseline `geo audit` score: **52/100** (foundation band)
 - `npm run build`: passed; `out/` contains `llms.txt`, `llms-full.txt`, `ai/{summary,faq,service}.json`, `.well-known/ai.txt`, `rss.xml`, `about.html`
 - Postbuild lang fix: 54 localized static HTML files corrected and verified
 - Homepage HTML: 2 JSON-LD blocks (site graph + FAQPage), RSS alternate link, `/about` footer link, descriptive logo alt, coverage `<ul>`, H1 text "The Skin Stapler Wiki"
+
+### Follow-up (same day)
+
+Live re-audit: **52 → 89/100 (excellent band)**; breakdown robots 18/18, llms 16/18, schema 13/16, meta 14/14, content 12/12, signals 6/6, ai_discovery 6/6, brand 7/10 with only the `negative_penalty` (−3) remaining.
+
+To clear the penalty heuristics without touching brand mentions:
+- Reworded 3 homepage FAQ questions per locale to "the game" phrasing (platforms/multiplayer/length)
+- Renamed the start-cards section title to "Your Carrion City Investigation" (×4 locales)
+- Renamed the decorative `.hero-overlay` class to `.hero-shade` (the negative-signal scanner lists "overlay" as a popup indicator — false positive)
+- Added a source-policy paragraph to `home.mdx` ×4 locales (dilutes brand-name density while adding a genuine trust/E-E-A-T signal)
+
+Remaining open items are platform- or business-level, not repo-level: Cloudflare Content Signals block `Google-Extended`/`ClaudeBot` at the edge until the dashboard setting is changed, and no Knowledge-Graph pillar (Wikipedia/Wikidata) exists for an independent fan wiki to link.

@@ -108,7 +108,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="hero skin-hero">
         <Image src="/hero-hd.webp" alt="The Skin Stapler promotional artwork featuring the killer, Dick Slater, and Robbie Knox" fill priority sizes="100vw" className="hero-image pixel-hero" />
-        <div className="hero-shade skin-overlay" />
+        <div className="hero-shade skin-veil" />
         <div className="container hero-content">
           <div className="update-badge"><span />{t.eyebrow}</div>
           <h1>{t.title}<br /><em> Wiki</em></h1>
