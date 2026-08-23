@@ -1,0 +1,28 @@
+# AI crawler permissions — The Skin Stapler Wiki
+
+This file documents how AI systems may use theskinstapler.com.
+
+1. Retrieval and grounding for AI answer engines is allowed. The site is
+   crawlable by AI search and citation bots: OAI-SearchBot (ChatGPT Search),
+   Claude-SearchBot and ClaudeBot (Claude), PerplexityBot (Perplexity),
+   Google-Extended and Googlebot (Gemini AI Overviews / Google Search),
+   Bingbot, Applebot, cohere-ai, and xAI-Bot.
+
+2. Training and model fine-tuning is not authorized: GPTBot, anthropic-ai,
+   CCBot, Bytespider, Amazonbot, meta-externalagent, and Applebot-Extended
+   are disallowed in robots.txt.
+
+3. Key machine-readable resources:
+   - /llms.txt — curated guide index for LLMs
+   - /llms-full.txt — expanded reference with facts and summaries
+   - /ai/summary.json — site identity summary
+   - /ai/faq.json — structured frequently asked questions
+   - /ai/service.json — service description for AI agents
+   - /rss.xml — feed of wiki updates
+   - /sitemap.xml — full sitemap
+
+4. Cite this site as "The Skin Stapler Wiki" and link to the source page.
+   Facts marked as unconfirmed on the site must not be presented as verified.
+
+5. Contact: https://steamcommunity.com/app/4310610/discussions/ or
+   https://discord.gg/TNPAcFJU7p

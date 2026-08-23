@@ -1,0 +1,21 @@
+{
+  "name": "The Skin Stapler Wiki",
+  "url": "https://theskinstapler.com",
+  "type": "Independent fan-made game guide and reference wiki",
+  "languages": ["en", "de", "pt-br", "es"],
+  "capabilities": [
+    "Chapter-by-chapter walkthrough for The Skin Stapler with spoiler control",
+    "Ending explanation with the killer identity and final outcome",
+    "Verification of the 16 Steam achievements and their conditions",
+    "Puzzle solutions and codes, including the verified 1979 code",
+    "Character profiles with playable status and voice actor credits",
+    "Release details for the August 6, 2026 Windows PC launch on Steam and GOG",
+    "Free demo coverage (three sections, released January 30, 2026)",
+    "Official store links and developer community channels"
+  ],
+  "source_policy": "Facts are verified against official Steam and GOG store pages, developer Tainted Pact announcements, and published full-game playthroughs. Unconfirmed details are explicitly marked and must not be cited as verified.",
+  "contact": {
+    "steam_discussions": "https://steamcommunity.com/app/4310610/discussions/",
+    "discord": "https://discord.gg/TNPAcFJU7p"
+  }
+}

@@ -1,6 +1,13 @@
 import Link from 'next/link';
 import PillarArticlePage from './PillarArticlePage';
 
+const endingFaq = [
+  { question: 'Who is the killer?', answer: 'Elias Crow, owner of the Flesh Pit barbecue restaurant, is the Skin Stapler. The late-game investigation names him directly.' },
+  { question: 'Why did Elias become the Skin Stapler?', answer: 'He wants revenge because Dick Slater killed his brother, Silus Kain. The game does not fully explain the earlier circumstances of Silus’s death.' },
+  { question: 'Does Robbie die?', answer: 'Robbie is struck down, gives Slater access to his gun, and does not recover. Slater’s farewell treats the loss as final.' },
+  { question: 'Does Slater stay in Carrion City?', answer: 'No. After shooting Elias, Slater says he is finished trying to save the city and leaves.' }
+];
+
 export default function EndingPage() {
   return (
     <PillarArticlePage
@@ -10,6 +17,7 @@ export default function EndingPage() {
       keyword="the skin stapler ending"
       label="Ending"
       image="killer"
+      faq={endingFaq}
     >
       <div className="card warning-card ending-warning">
         <span aria-hidden="true">!</span>

@@ -142,3 +142,37 @@ Content changes: none (titles, H1s, URLs, canonicals, schema, and page copy unch
 ### Deferred to the next round
 
 - `<html lang="en">` on 33 localized pages (Ahrefs error, 36 pages). Runtime JS already patches the attribute for users; the build-time fix needs a root-layout change (route-group root layouts or a dynamic-segment root layout) with its own full regression pass and 404 regeneration check.
+
+---
+
+## Round 3 — 2026-08-23 (GEO / AI visibility)
+
+Implementation date: 2026-08-23
+Strategy: additive GEO groundwork — new AI-facing files and schema, no URL/H1/title/canonical changes
+Public pages created: `/about` (English only, sitemap-registered)
+Baseline `geo audit` score: **52/100** (foundation band)
+
+### Gaps closed
+
+| Change | GEO category | Why |
+| --- | --- | --- |
+| New `/llms.txt` (H1, blockquote, 11 H2 sections, 40+ links, ~1,030 words) plus `/llms-full.txt` expanded reference | llms (0/18) | LLM-friendly site index; structured, link-rich, depth-bonus content |
+| New `/.well-known/ai.txt`, `/ai/summary.json`, `/ai/faq.json` (8 Q&A), `/ai/service.json` | ai_discovery (0/6) | Standard AI discovery endpoints; all four pass validation |
+| `robots.txt`: explicit `Allow` for citation/search bots (OAI-SearchBot, ChatGPT-User, ClaudeBot, Claude-SearchBot, Claude-User, PerplexityBot, Perplexity-User, Google-Extended, DuckAssistBot, AI2Bot, cohere-ai, YouBot, PetalBot, Googlebot, Bingbot, Applebot, xAI-Bot, Meta-ExternalFetcher, facebookexternalhit) and explicit `Disallow` for training-only bots (GPTBot, anthropic-ai, CCBot, Bytespider, Amazonbot, meta-externalagent, Applebot-Extended) | robots | Citation bots explicitly allowed while model training stays blocked; replaces the implicit catch-all |
+| JSON-LD: Organization gained meta-matching `description`, `contactPoint` (editorial, Steam Discussions), extra `sameAs`; WebSite gained `description`; FAQPage added to `/` ×4 locales, `/walkthrough`, `/ending`, `/wiki`; Article schemas on guide/pillar/localized pages gained `datePublished` + `dateModified` | schema, brand entity, freshness | Rich schema types, FAQ depth, about/contact signals, freshness |
+| Visible homepage FAQ section (6 Q&A per locale) on `/`, `/de`, `/pt-br`, `/es` backed by `src/lib/home-faq.ts` | content, schema | Q&A markup matches visible content; answers are quick-extractable |
+| `home.mdx` ×4 locales: release/version/demo statistics and a coverage item list | content | Numbers/statistics (+40% citability research) and list markup |
+| New `src/app/rss.xml` statically exported feed (22 items) + `<link rel="alternate" type="application/rss+xml">` in the root-layout head | signals | RSS presence and head link for AI/discovery |
+| New `/about` page (AboutPage + Organization + BreadcrumbList schema), footer link on all locales, sitemap entry (English only, priority 0.4) | brand entity | Visible about link and contact channel for entity validation |
+| Footer logo image now has descriptive alt text; hero H1 whitespace fixed so text extraction reads "The Skin Stapler Wiki" | multimodal, content | Alt coverage for multimodal engines; cleaner H1 extraction |
+
+### Notes
+
+- The live site currently blocks `GPTBot`, `ClaudeBot`, `Google-Extended` etc. through the Cloudflare-managed robots.txt section (Content Signals) appended at the edge. The source rules now explicitly allow the citation bots; to fully unblock `Google-Extended` (Gemini AI Overviews) and `ClaudeBot`, the Cloudflare AI-crawler setting must be switched from block to monitor/allow in the dashboard — a platform setting, not a repo change.
+- No URLs, canonicals, titles, H1s, or redirects changed. Protected assets intact.
+
+### Verification
+
+- `npm run build`: passed; `out/` contains `llms.txt`, `llms-full.txt`, `ai/{summary,faq,service}.json`, `.well-known/ai.txt`, `rss.xml`, `about.html`
+- Postbuild lang fix: 54 localized static HTML files corrected and verified
+- Homepage HTML: 2 JSON-LD blocks (site graph + FAQPage), RSS alternate link, `/about` footer link, descriptive logo alt, coverage `<ul>`, H1 text "The Skin Stapler Wiki"

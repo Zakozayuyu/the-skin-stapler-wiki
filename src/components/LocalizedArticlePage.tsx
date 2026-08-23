@@ -40,6 +40,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
       {
         '@type': 'Article', headline: article.title, description: article.description,
         inLanguage: localeMeta[locale].language, mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), keywords: article.keyword,
+        datePublished: '2026-08-20T00:00:00Z', dateModified: '2026-08-20T00:00:00Z',
         image: absoluteUrl(articleMedia[image].src), author: articleAuthor, publisher: articlePublisher
       },
       {

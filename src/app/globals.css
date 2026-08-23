@@ -114,6 +114,7 @@ h1, h2, h3, h4 { font-family: var(--font-oswald), 'Arial Narrow', sans-serif; }
 
 .about-grid { display: grid; grid-template-columns: repeat(2, 1fr); align-items: center; gap: 40px; }
 .home-mdx p { margin: 0 0 16px; color: #d1d5db; line-height: 1.625; }
+.home-mdx ul { display: grid; gap: 8px; margin: 0 0 16px; padding-left: 22px; color: #d1d5db; line-height: 1.65; }
 .home-mdx strong { color: #fff; }
 .home-mdx p:first-child strong:last-child { color: var(--gold); }
 .gold-link { display: inline-block; margin-top: 8px; color: var(--gold); font-weight: 600; }

@@ -31,8 +31,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       alternates: { languages: { ...languages, 'x-default': absoluteUrl(path) } }
     }));
   });
-  const englishOnlyPages = keywordArticleSlugs.filter((slug) => !(slug in localizedGuideSlugs)).map((slug) => ({
-    url: absoluteUrl(`/guides/${slug}`), lastModified: contentLastModified, changeFrequency: 'monthly' as const, priority: 0.8
-  }));
+  const englishOnlyPages = [
+    { url: absoluteUrl('/about'), lastModified: contentLastModified, changeFrequency: 'yearly' as const, priority: 0.4 },
+    ...keywordArticleSlugs.filter((slug) => !(slug in localizedGuideSlugs)).map((slug) => ({
+      url: absoluteUrl(`/guides/${slug}`), lastModified: contentLastModified, changeFrequency: 'monthly' as const, priority: 0.8
+    }))
+  ];
   return [...localizedPages, ...englishOnlyPages];
 }

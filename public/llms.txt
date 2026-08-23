@@ -1,0 +1,85 @@
+# The Skin Stapler Wiki
+
+> The Skin Stapler Wiki is an independent fan guide to The Skin Stapler, the single-player PSX-style grindhouse horror game by Tainted Pact and Assemble Entertainment. Released August 6, 2026 for Windows PC (Steam + GOG), the game follows detective Dick Slater and rookie Robbie Knox through Carrion City. Our pages cover the full walkthrough chapter by chapter, the verified main ending, all 16 Steam achievements, puzzle solutions and codes, characters and voice actors, the free demo chapters (January 30, 2026), release date and PC requirements. Spoilers are contained on dedicated pages; unverified claims are always marked as unconfirmed.
+
+## How to use this wiki
+
+This is a reference site rather than a news blog. Every page answers one concrete player question with verified facts first, then explains the evidence behind them. Because the game reveals its killer late in the story, spoiler-sensitive pages (the ending and the identity guide) are kept separate from the general walkthrough so readers are not spoiled by accident. Pages follow the same structure: a short direct answer, detail sections, an FAQ for quick extraction, and official sources at the bottom. Facts supported only by fan pages, search snippets, or automated transcripts are labeled unconfirmed instead of being presented as canon. The wiki is maintained in English with full German, Brazilian Portuguese, and Spanish versions of the main hubs.
+
+## Start here
+
+- [The Skin Stapler Wiki](https://theskinstapler.com/): homepage with quick answers, verified release facts, and links to every section of the wiki.
+- [Full Game Walkthrough](https://theskinstapler.com/walkthrough): spoiler-aware chapter route from Fefe's apartment through CCPD, Quick Fix, Gutters End, Luna's donut shop, Underworld VHS, Lazar's Blood Bank, Closing In, and The Flesh Pit, including Aftermath sections.
+- [Beginner Guide](https://theskinstapler.com/guides/beginner): controls, interaction basics, settings, and first-run tips without major spoilers.
+- [Gameplay Guide](https://theskinstapler.com/guides/the-skin-stapler-gameplay): the investigation loop, playable viewpoints, light puzzles, combat, and playtime.
+- [Ending Explained](https://theskinstapler.com/ending): spoiler-marked finale guide naming the killer, the motive, and Robbie and Slater's fates.
+
+## Characters, cast and story
+
+- [All Characters](https://theskinstapler.com/characters): every confirmed character with role, location, and playable status.
+- [Who Is The Skin Stapler?](https://theskinstapler.com/guides/who-is-the-skin-stapler): the killer's identity as Elias Crow, the revenge motive involving Silus Kain, and the evidence trail.
+- [Voice Actors & Full Cast](https://theskinstapler.com/guides/the-skin-stapler-voice-actors): the official English cast and role mappings.
+- [Fefe](https://theskinstapler.com/guides/the-skin-stapler-fefe): the opening apartment chapter character and voice actor FeFe.
+- [Hexy](https://theskinstapler.com/guides/the-skin-stapler-hexy): Quick Fix convenience store clerk, hot dog scene, and Jank Wagon.
+- [Blair](https://theskinstapler.com/guides/the-skin-stapler-blair): Gutters End Bowling Alley graveyard-shift employee, voiced by BlairVira.
+- [Luna](https://theskinstapler.com/guides/the-skin-stapler-luna): donut and coffee shop owner, voiced by Luna Arcana.
+- [Nurse Layna](https://theskinstapler.com/guides/the-skin-stapler-layna): blood bank owner based on and voiced by Layna Lazar.
+- [Scaroline](https://theskinstapler.com/guides/the-skin-stapler-scaroline): Underworld VHS shop owner based on creator @Scarolinetv_.
+
+## Puzzles, achievements and famous scenes
+
+- [Puzzle Solutions and Codes](https://theskinstapler.com/guides/the-skin-stapler-puzzle-solutions): the verified 1979 code, Flesh Pit meat scale, tape guidance, and tarot-card uncertainty.
+- [All 16 Achievements](https://theskinstapler.com/guides/the-skin-stapler-achievements): every Steam achievement, the missable Thank You note, and tape repair unlock.
+- [Hot Dog Scene Explained](https://theskinstapler.com/guides/the-skin-stapler-hot-dog): Hexy's complete Quick Fix serving sequence and the viral customer animation.
+
+## Release, platforms and community
+
+- [Release Date, Price and Platforms](https://theskinstapler.com/guides/the-skin-stapler-release-date): the verified August 6, 2026 launch, Steam and GOG storefronts, demo timeline, and outdated third-party entries to ignore.
+- [Demo: Chapters, Length, Download](https://theskinstapler.com/guides/the-skin-stapler-demo): the free 30–45 minute Steam demo with CCPD, Quick Fix, and Gutters End playable sections.
+- [Steam Guide](https://theskinstapler.com/guides/the-skin-stapler-steam): verified features, English language support, system requirements, and store details.
+- [PC Download](https://theskinstapler.com/guides/the-skin-stapler-pc-download): official Windows download options including Steam, GOG offline installers, and the demo.
+- [Reddit and Player Discussion](https://theskinstapler.com/guides/the-skin-stapler-reddit): a careful summary of streamer reactions and community opinion without treating it as fact.
+- [Gameplay Details](https://theskinstapler.com/guides/the-skin-stapler-gameplay): chapter structure, viewpoint switching, and how the demo compares to version 1.0 content.
+
+## Wiki hubs and indexes
+
+- [Wiki Hub](https://theskinstapler.com/wiki): the full index with verified game facts at a glance, uncertainty policy, and quick links to every section.
+- [All Guides](https://theskinstapler.com/guides): every guide grouped by category, with one-line summaries.
+
+## About this site
+
+- [About The Skin Stapler Wiki](https://theskinstapler.com/about): who maintains this fan project, our source policy, and how to contact us.
+- [Privacy Policy](https://theskinstapler.com/privacy): hosting logs, Google Analytics, and Adsterra advertising disclosures.
+- [Terms of Service](https://theskinstapler.com/terms): usage terms and disclaimer: not affiliated with Tainted Pact, Assemble Entertainment, Valve, or GOG.
+
+## Localized versions
+
+- [Deutsch — Startseite](https://theskinstapler.com/de/), [Komplettlösung](https://theskinstapler.com/de/walkthrough), [Ende erklärt](https://theskinstapler.com/de/ending), [Wiki](https://theskinstapler.com/de/wiki), [Charaktere](https://theskinstapler.com/de/characters), [Guides](https://theskinstapler.com/de/guides), [Einsteiger-Guide](https://theskinstapler.com/de/guides/beginner).
+- [Português (Brasil) — Início](https://theskinstapler.com/pt-br/), [Detonado](https://theskinstapler.com/pt-br/walkthrough), [Final explicado](https://theskinstapler.com/pt-br/ending), [Wiki](https://theskinstapler.com/pt-br/wiki), [Personagens](https://theskinstapler.com/pt-br/characters), [Guias](https://theskinstapler.com/pt-br/guides), [Guia para iniciantes](https://theskinstapler.com/pt-br/guides/beginner).
+- [Español — Inicio](https://theskinstapler.com/es/), [Guía completa](https://theskinstapler.com/es/walkthrough), [Final explicado](https://theskinstapler.com/es/ending), [Wiki](https://theskinstapler.com/es/wiki), [Personajes](https://theskinstapler.com/es/characters), [Guías](https://theskinstapler.com/es/guides), [Guía para principiantes](https://theskinstapler.com/es/guides/beginner).
+
+## Official sources
+
+- [The Skin Stapler on Steam](https://store.steampowered.com/app/4310610/The_Skin_Stapler/): official store page, release date, achievements, and system requirements.
+- [The Skin Stapler Demo on Steam](https://store.steampowered.com/app/4343530/The_Skin_Stapler_Demo/): the separate free demo app launched January 30, 2026.
+- [The Skin Stapler on GOG](https://www.gog.com/en/game/the_skin_stapler): DRM-free store listing with an offline installer.
+- [Tainted Pact on X](https://x.com/TaintedPact): developer announcements, previously known as Twitter.
+- [Assemble Entertainment on YouTube](https://www.youtube.com/@assembleteam): publisher channel with the official gameplay trailer.
+- [Discord](https://discord.gg/TNPAcFJU7p): the developer's community server for reporting or verifying details.
+
+## Optional: verified key facts
+
+- Release date: August 6, 2026 (Windows PC, version 1.0). Developer: Tainted Pact. Publisher: Assemble Entertainment. Stores: Steam and GOG.
+- Platforms: Windows PC only; no console or mobile version has been announced by the official pages.
+- Language support: English interface, full audio, and subtitles.
+- Mode: single-player with multiple playable viewpoints. No co-op or multiplayer is listed.
+- Achievements: 16 on Steam. Demo: separate app released January 30, 2026 with three sections (CCPD, Quick Fix, Gutters End).
+- Game length: authored as a focused horror story designed to be completed in one sitting.
+- Walkthrough route: nine major playable locations plus five Aftermath sections connecting Slater's investigation.
+
+## Optional: quick answers
+
+- What is The Skin Stapler? A single-player PSX-style grindhouse horror adventure set in 1980s Carrion City, mixing investigation, puzzles, dark comedy, and slasher horror.
+- Who is the Skin Stapler? Elias Crow, owner of the Flesh Pit restaurant, seeking revenge against detective Dick Slater.
+- Does the game have multiple endings? One verified main ending is documented; small fan-reported epilogue differences remain unconfirmed.
+- Is there save transfer from the demo? Not promised by the official store pages; do not plan around it.

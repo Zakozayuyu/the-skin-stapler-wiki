@@ -15,6 +15,13 @@ const chapters = [
 
 const video = 'https://www.youtube.com/watch?v=7uZjD1LTOOc';
 
+const walkthroughFaq = [
+  { question: 'How long is The Skin Stapler?', answer: 'The creator describes it as a short game designed for one sitting. The full runs checked here last 2:46–3:05, while player time varies with exploration, dialogue pacing, and retries.' },
+  { question: 'How many chapters are in the full game?', answer: 'The complete reference playthrough labels nine major playable scene chapters, plus five Aftermath story sections, an introduction, and a short beginning segment.' },
+  { question: 'Does the game have chapter select?', answer: 'The game records unlocked chapters, but community reports around the demo noted confusing chapter-menu behavior. Treat chapter select as a replay tool and finish the active run normally when possible.' },
+  { question: 'Is this walkthrough for the demo?', answer: 'No. This is the August 2026 full-game route. The demo includes only the police station, Quick Fix, and Gutters End sample sections.' }
+];
+
 export default function WalkthroughPage() {
   return (
     <PillarArticlePage
@@ -24,6 +31,7 @@ export default function WalkthroughPage() {
       keyword="the skin stapler walkthrough"
       label="Walkthrough"
       image="police"
+      faq={walkthroughFaq}
     >
       <aside className="card answer-box">
         <strong>Quick answer</strong>

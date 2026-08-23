@@ -1,0 +1,87 @@
+# The Skin Stapler Wiki — Full Reference
+
+> Expanded companion to [llms.txt](https://theskinstapler.com/llms.txt). This document carries the detailed facts, chapter route, character notes, and answer summaries of The Skin Stapler Wiki. The Skin Stapler is a single-player PSX-style grindhouse horror game by Tainted Pact, published by Assemble Entertainment, released August 6, 2026 for Windows PC on Steam and GOG.
+
+## About the game
+
+The Skin Stapler is an authored horror feature set in and around Carrion City, a decaying 1980s American metropolis. Players first control detective Dick Slater and rookie Robbie Knox as they investigate a killer who removes victims' skin and staples it to walls, leaving distorted tapes at the scenes. Later chapters switch to other playable civilians hunted across homes, workplaces, and city streets: Fefe, Hexy, Blair, Luna, and Nurse Layna among them.
+
+Tainted Pact describes the game as designed to be completed in one sitting. It is not an open world: progression comes from investigating crime scenes, talking to characters, completing work-shift objectives, and using repaired tapes. The official tone is dark comedy mixed with slasher horror, presented with deliberate retro PSX-style visuals.
+
+## Verified key facts
+
+- Release date: August 6, 2026 (Windows PC, version 1.0).
+- Developer: Tainted Pact. Publisher: Assemble Entertainment.
+- Stores: Steam and GOG. The GOG release is listed as DRM-free with an offline installer.
+- Platforms: Windows PC only. No PlayStation, Xbox, Switch, mobile, or macOS version is announced on the official pages checked by this wiki.
+- Language: English interface, full audio, and subtitles.
+- Mode: single-player, several playable viewpoints; no co-op or multiplayer listed.
+- Achievements: 16 Steam achievements.
+- Free demo: separate Steam app released January 30, 2026, with three playable sections (CCPD, Quick Fix, Gutters End) and an estimated 30–45 minute length.
+- Demo save transfer to the full game: not promised by the official store pages.
+- Official gameplay trailer: https://www.youtube.com/watch?v=9cKUYGkAjyA
+
+## Walkthrough chapter order
+
+The released version follows a fixed narrative route. Between playable locations there are several Aftermath sections in which Slater and Robbie process the new clues.
+
+1. The Night Before at the Burrows Apartments — Fefe's opening.
+2. Carrion City Police Department (CCPD) — Dick Slater and Robbie Knox.
+3. The Quick Fix — Hexy's convenience store shift, including the hot dog scene.
+4. Gutters End Bowling Alley — Blair's graveyard shift.
+5. Luna's Cream Filled Donut Holes — Luna's donut and coffee shop.
+6. Underworld VHS — Scaroline's video store.
+7. Lazar's Blood Bank — Nurse Layna.
+8. Closing In — Dick Slater.
+9. The Flesh Pit — the finale.
+
+Related pages: [Full Game Walkthrough](https://theskinstapler.com/walkthrough) · [Chapter Order](https://theskinstapler.com/walkthrough#chapter-order) · [Walkthrough FAQ](https://theskinstapler.com/walkthrough#faq)
+
+## Ending summary (spoilers)
+
+The investigation leads to Elias Crow, owner of the Flesh Pit restaurant. Elias is the Skin Stapler. His motive is revenge: Dick Slater killed his brother Silus Kain, and Elias intends to take something equally important from Slater. In the final confrontation Elias overpowers and ties up both detectives; Robbie is struck down and hands Slater his weapon. Slater shoots Elias, then tells Robbie he will not try to save Carrion City anymore and drives away. Whether Elias dies or is arrested is ambiguous in the reviewed material. One verified main ending is documented; small fan-reported epilogue differences depending on heard tapes remain unconfirmed.
+
+Related page: [Ending Explained](https://theskinstapler.com/ending)
+
+## Characters
+
+- Dick Slater — detective protagonist, playable through CCPD, Closing In, and The Flesh Pit.
+- Robbie Knox — rookie partner; his fate is decided in the finale.
+- Fefe — opening playable character at the Burrows Apartments; voiced by FeFe.
+- Hexy — Quick Fix convenience store clerk, playable, owns the Jank Wagon; voiced by HexyIRL.
+- Blair — Gutters End Bowling Alley graveyard-shift employee, playable in the demo and full game; voiced by BlairVira.
+- Luna — donut and coffee shop owner, playable; voiced by Luna Arcana. She is killed at her shop alongside Chief O'Brien.
+- Nurse Layna — owner of Lazar's Blood Bank, based on and voiced by co-owner Layna Lazar.
+- Scaroline — owner of Underworld VHS, based on and voiced by creator @Scarolinetv_; her exact playable status remains pending.
+- Elias Crow — the Skin Stapler, owner of the Flesh Pit (spoiler).
+
+Related page: [All Characters](https://theskinstapler.com/characters)
+
+## Puzzles, codes and achievements
+
+- The verified code 1979 unlocks content in the Flesh Pit area. Other obstacles are solved through conversations, evidence collection, work-shift steps, and repaired tapes rather than a universal password.
+- The Flesh Pit meat scale puzzle is documented step by step; damaged tapes guide the player to the required playback order.
+- A tarot-card element is treated as unconfirmed because direct footage comparisons were not available.
+- The Steam achievement set (16 total) includes a missable Thank You note in the office and a tape repair unlock. Progress achievements are tied to chapter order. The full list with conditions is on the achievements page.
+
+Related pages: [Puzzle Solutions and Codes](https://theskinstapler.com/guides/the-skin-stapler-puzzle-solutions) · [All 16 Achievements](https://theskinstapler.com/guides/the-skin-stapler-achievements)
+
+## Source policy
+
+Official storefront pages and developer or publisher announcements are the primary sources for release date, platform, language, and availability. Full-game routes are cross-checked against multiple published playthroughs. Two independently operated fan wikis exist (theskinstapler.com and theskinstapler.wiki); their claims are only reused when they agree with official material or can be checked against released gameplay. Mobile, trainer, Cheat Engine, and save-download aggregator claims were excluded because they conflict with the verified Windows release. Facts supported only by fan pages, search snippets, or automated transcripts are explicitly marked as unconfirmed, including alternate endings, old cast listings, and exact chapter labels.
+
+## Localized guides
+
+- German: [Startseite](https://theskinstapler.com/de/) · [Komplettlösung](https://theskinstapler.com/de/walkthrough) · [Ende erklärt](https://theskinstapler.com/de/ending) · [Wiki](https://theskinstapler.com/de/wiki) · [Charaktere](https://theskinstapler.com/de/characters) · [Guides](https://theskinstapler.com/de/guides)
+- Portuguese (Brazil): [Início](https://theskinstapler.com/pt-br/) · [Detonado](https://theskinstapler.com/pt-br/walkthrough) · [Final explicado](https://theskinstapler.com/pt-br/ending) · [Wiki](https://theskinstapler.com/pt-br/wiki) · [Personagens](https://theskinstapler.com/pt-br/characters) · [Guias](https://theskinstapler.com/pt-br/guides)
+- Spanish: [Inicio](https://theskinstapler.com/es/) · [Guía completa](https://theskinstapler.com/es/walkthrough) · [Final explicado](https://theskinstapler.com/es/ending) · [Wiki](https://theskinstapler.com/es/wiki) · [Personajes](https://theskinstapler.com/es/characters) · [Guías](https://theskinstapler.com/es/guides)
+
+## Official sources
+
+- Steam: https://store.steampowered.com/app/4310610/The_Skin_Stapler/
+- Steam demo: https://store.steampowered.com/app/4343530/The_Skin_Stapler_Demo/
+- GOG: https://www.gog.com/en/game/the_skin_stapler
+- Steam Discussions: https://steamcommunity.com/app/4310610/discussions/
+- Discord: https://discord.gg/TNPAcFJU7p
+- YouTube (Assemble Entertainment): https://www.youtube.com/@assembleteam
+- X (Tainted Pact): https://x.com/TaintedPact

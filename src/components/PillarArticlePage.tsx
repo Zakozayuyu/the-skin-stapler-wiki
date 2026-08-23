@@ -15,10 +15,11 @@ type PillarArticlePageProps = {
   keyword: string;
   label: string;
   image: ArticleImageKey;
+  faq?: Array<{ question: string; answer: string }>;
   children: ReactNode;
 };
 
-export default function PillarArticlePage({ path, title, description, keyword, label, image, children }: PillarArticlePageProps) {
+export default function PillarArticlePage({ path, title, description, keyword, label, image, faq, children }: PillarArticlePageProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -30,6 +31,8 @@ export default function PillarArticlePage({ path, title, description, keyword, l
         mainEntityOfPage: absoluteUrl(path),
         url: absoluteUrl(path),
         keywords: keyword,
+        datePublished: '2026-08-20T00:00:00Z',
+        dateModified: '2026-08-20T00:00:00Z',
         image: absoluteUrl(articleMedia[image].src),
         author: articleAuthor,
         publisher: articlePublisher
@@ -40,7 +43,13 @@ export default function PillarArticlePage({ path, title, description, keyword, l
           { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
           { '@type': 'ListItem', position: 2, name: label, item: absoluteUrl(path) }
         ]
-      }
+      },
+      ...(faq ? [{
+        '@type': 'FAQPage',
+        name: `${label} FAQ`,
+        url: absoluteUrl(`${path}#faq`),
+        mainEntity: faq.map((item) => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } }))
+      }] : [])
     ]
   };
 

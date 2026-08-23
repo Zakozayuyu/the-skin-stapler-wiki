@@ -59,6 +59,15 @@ export default function WikiHubPage() {
         { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
         { '@type': 'ListItem', position: 2, name: 'Wiki', item: absoluteUrl('/wiki') }
       ]
+    }, {
+      '@type': 'FAQPage', name: 'The Skin Stapler wiki FAQ', url: absoluteUrl('/wiki#faq'),
+      mainEntity: [
+        { '@type': 'Question', name: 'Is this an official wiki?', acceptedAnswer: { '@type': 'Answer', text: 'No. This is an independent fan guide. Official game information is linked to Steam, itch.io, Tainted Pact, or Assemble Entertainment where available.' } },
+        { '@type': 'Question', name: 'Is the full game released?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. The Windows PC version released on August 6, 2026, through Steam and GOG. Some regional pages displayed August 7 because of timezone handling.' } },
+        { '@type': 'Question', name: 'Does The Skin Stapler have multiplayer?', acceptedAnswer: { '@type': 'Answer', text: 'No multiplayer mode is listed by the official stores. The released game is a single-player story with several playable viewpoints.' } },
+        { '@type': 'Question', name: 'Is there a PS5 or mobile version?', acceptedAnswer: { '@type': 'Answer', text: 'No console or mobile version has been announced on the official pages checked here. The confirmed release is for Windows PC.' } },
+        { '@type': 'Question', name: 'How often is the wiki updated?', acceptedAnswer: { '@type': 'Answer', text: 'The current guides cover the August 2026 version 1.0 release. Later patches, new platforms, or revised credits need an official source before being added.' } }
+      ]
     }]
   };
 
