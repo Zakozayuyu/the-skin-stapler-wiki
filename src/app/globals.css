@@ -91,7 +91,7 @@ h1, h2, h3, h4 { font-family: var(--font-oswald), 'Arial Narrow', sans-serif; }
 
 .hero { position: relative; min-height: 584px; overflow: hidden; padding: 96px 0 112px; }
 .hero-image { object-fit: cover; object-position: center; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgb(13 13 13 / 75%), rgb(13 13 13 / 65%), rgb(13 13 13 / 90%)); }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgb(13 13 13 / 75%), rgb(13 13 13 / 65%), rgb(13 13 13 / 90%)); }
 .hero-content { position: relative; text-align: center; }
 .update-badge { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 24px; border: 1px solid rgb(245 200 66 / 30%); border-radius: 999px; background: rgb(245 200 66 / 10%); padding: 6px 16px; color: var(--gold); font-size: 14px; font-weight: 600; }
 .update-badge span { width: 8px; height: 8px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }

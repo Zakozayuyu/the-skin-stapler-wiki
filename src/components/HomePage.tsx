@@ -15,7 +15,7 @@ const copy = {
     eyebrow: 'Independent Fan-Made Horror Guide', title: 'The Skin Stapler',
     hero: "Hunt a serial killer through the neon-lit decay of Carrion City as Detective Dick Slater and a cast of doomed civilians. Investigate grisly scenes, solve puzzles, survive dangerous encounters, and uncover the truth behind the killer's tapes.",
     primary: 'Start Spoiler-Free Guide', secondary: 'View Puzzle Solutions', tertiary: 'Find All Achievements', trailer: 'Official Gameplay Trailer',
-    startEyebrow: 'Start Here', startTitle: 'Your The Skin Stapler Investigation', about: 'What is The Skin Stapler?', explore: 'Explore All Guides',
+    startEyebrow: 'Start Here', startTitle: 'Your Carrion City Investigation', about: 'What is The Skin Stapler?', explore: 'Explore All Guides',
     official: 'Official Links', steam: 'Official game page', discord: 'Tainted Pact Games Discord', youtube: 'Assemble Entertainment YouTube', twitter: 'Tainted Pact on X', community: 'Steam Discussions',
     ready: 'Ready to Solve the Carrion City Case?', readyText: "From your first crime scene to the final revelation, use our walkthroughs and puzzle guides to stay on the killer's trail without missing key evidence.", readyPrimary: 'Read the Beginner Guide', readySecondary: 'Play on Steam', language: 'Game language note',
     faqEyebrow: 'Quick answers', faqTitle: 'The Skin Stapler FAQ'
@@ -24,7 +24,7 @@ const copy = {
     eyebrow: 'Unabhängiger, fanerstellter Horror-Guide', title: 'The Skin Stapler',
     hero: 'Jage als Detective Dick Slater und mit einer Gruppe dem Untergang geweihter Zivilisten einen Serienmörder durch das neonbeleuchtete, verfallende Carrion City. Untersuche grausige Tatorte, löse Rätsel, überlebe gefährliche Begegnungen und decke die Wahrheit hinter den Bändern des Mörders auf.',
     primary: 'Spoilerarmen Guide starten', secondary: 'Rätsellösungen ansehen', tertiary: 'Alle Erfolge finden', trailer: 'Offizieller Gameplay-Trailer',
-    startEyebrow: 'Hier starten', startTitle: 'Deine Ermittlung in The Skin Stapler', about: 'Was ist The Skin Stapler?', explore: 'Alle Guides ansehen',
+    startEyebrow: 'Hier starten', startTitle: 'Deine Ermittlung in Carrion City', about: 'Was ist The Skin Stapler?', explore: 'Alle Guides ansehen',
     official: 'Offizielle Links', steam: 'Offizielle Spielseite', discord: 'Tainted Pact Games Discord', youtube: 'Assemble Entertainment YouTube', twitter: 'Tainted Pact auf X', community: 'Steam-Diskussionen',
     ready: 'Bereit, den Fall von Carrion City zu lösen?', readyText: 'Nutze unsere Komplettlösungen und Rätsel-Guides vom ersten Tatort bis zur letzten Enthüllung, ohne wichtige Beweise zu verpassen.', readyPrimary: 'Einsteiger-Guide lesen', readySecondary: 'Auf Steam spielen', language: 'Hinweis zur Spielsprache',
     faqEyebrow: 'Kurze Antworten', faqTitle: 'The Skin Stapler FAQ'
@@ -33,7 +33,7 @@ const copy = {
     eyebrow: 'Guia de horror independente feito por fãs', title: 'The Skin Stapler',
     hero: 'Cace um assassino em série pela decadência iluminada por neon de Carrion City como o detetive Dick Slater e um elenco de civis condenados. Investigue cenas macabras, resolva puzzles, sobreviva a encontros perigosos e descubra a verdade por trás das fitas do assassino.',
     primary: 'Começar guia sem spoilers', secondary: 'Ver soluções de puzzles', tertiary: 'Encontrar todas as conquistas', trailer: 'Trailer oficial de gameplay',
-    startEyebrow: 'Comece aqui', startTitle: 'Sua investigação de The Skin Stapler', about: 'O que é The Skin Stapler?', explore: 'Explorar todos os guias',
+    startEyebrow: 'Comece aqui', startTitle: 'Sua investigação em Carrion City', about: 'O que é The Skin Stapler?', explore: 'Explorar todos os guias',
     official: 'Links oficiais', steam: 'Página oficial do jogo', discord: 'Discord da Tainted Pact Games', youtube: 'YouTube da Assemble Entertainment', twitter: 'Tainted Pact no X', community: 'Discussões da Steam',
     ready: 'Pronto para resolver o caso de Carrion City?', readyText: 'Da primeira cena do crime à revelação final, use nossos detonados e guias de puzzles para seguir o rastro do assassino sem perder provas importantes.', readyPrimary: 'Ler o guia para iniciantes', readySecondary: 'Jogar na Steam', language: 'Nota sobre o idioma do jogo',
     faqEyebrow: 'Respostas rápidas', faqTitle: 'FAQ sobre The Skin Stapler'
@@ -42,7 +42,7 @@ const copy = {
     eyebrow: 'Guía de terror independiente hecha por fans', title: 'The Skin Stapler',
     hero: 'Da caza a un asesino en serie por la decadencia iluminada con neón de Carrion City como el detective Dick Slater y un grupo de civiles condenados. Investiga escenas macabras, resuelve puzles, sobrevive a encuentros peligrosos y descubre la verdad tras las cintas del asesino.',
     primary: 'Empezar guía sin spoilers', secondary: 'Ver soluciones de puzles', tertiary: 'Encontrar todos los logros', trailer: 'Tráiler oficial de jugabilidad',
-    startEyebrow: 'Empieza aquí', startTitle: 'Tu investigación de The Skin Stapler', about: '¿Qué es The Skin Stapler?', explore: 'Explorar todas las guías',
+    startEyebrow: 'Empieza aquí', startTitle: 'Tu investigación en Carrion City', about: '¿Qué es The Skin Stapler?', explore: 'Explorar todas las guías',
     official: 'Enlaces oficiales', steam: 'Página oficial del juego', discord: 'Discord de Tainted Pact Games', youtube: 'YouTube de Assemble Entertainment', twitter: 'Tainted Pact en X', community: 'Discusiones de Steam',
     ready: '¿Listo para resolver el caso de Carrion City?', readyText: 'Desde la primera escena del crimen hasta la revelación final, usa nuestras guías y soluciones de puzles para seguir el rastro del asesino sin perder pruebas importantes.', readyPrimary: 'Leer la guía para principiantes', readySecondary: 'Jugar en Steam', language: 'Nota sobre el idioma del juego',
     faqEyebrow: 'Respuestas rápidas', faqTitle: 'FAQ de The Skin Stapler'
@@ -108,7 +108,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="hero skin-hero">
         <Image src="/hero-hd.webp" alt="The Skin Stapler promotional artwork featuring the killer, Dick Slater, and Robbie Knox" fill priority sizes="100vw" className="hero-image pixel-hero" />
-        <div className="hero-overlay skin-overlay" />
+        <div className="hero-shade skin-overlay" />
         <div className="container hero-content">
           <div className="update-badge"><span />{t.eyebrow}</div>
           <h1>{t.title}<br /><em> Wiki</em></h1>
