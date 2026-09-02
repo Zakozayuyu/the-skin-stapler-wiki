@@ -52,7 +52,7 @@ export default function Header({ locale }: { locale: Locale }) {
           <SiteSearch locale={locale} />
           <label className="language-select-wrap">
             <span className="sr-only">{labels.language}</span>
-            <select className="language-select" value={locale} onChange={(event) => changeLocale(event.target.value as Locale)}>
+            <select className="language-select" aria-label={labels.language} value={locale} onChange={(event) => changeLocale(event.target.value as Locale)}>
               {locales.map((option) => <option key={option} value={option}>{localeMeta[option].label}</option>)}
             </select>
           </label>
