@@ -13,12 +13,13 @@ export default function KeywordArticlePage({ slug }: { slug: KeywordArticleSlug 
   const related = keywordArticleRelations[slug];
   const path = `/guides/${slug}`;
   const image = keywordArticleImages[slug];
+  const publishedDate = `${article.date}T00:00:00Z`;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [{
       '@type': 'Article', headline: article.title, description: article.description, inLanguage: 'en',
       mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), keywords: article.keyword,
-      datePublished: '2026-08-20T00:00:00Z', dateModified: '2026-08-20T00:00:00Z',
+      datePublished: publishedDate, dateModified: publishedDate,
       image: absoluteUrl(articleMedia[image].src), author: articleAuthor, publisher: articlePublisher
     }, {
       '@type': 'BreadcrumbList', itemListElement: [

@@ -4,20 +4,33 @@ import HomePage from '@/components/HomePage';
 import { isLocale, locales, localizePath } from '@/lib/i18n';
 import { absoluteUrl, heroOgImage, openGraphLocale, pageAlternates, siteConfig } from '@/lib/seo';
 
-const meta = {
-  en: ['The Skin Stapler Wiki — Walkthrough, Puzzles & Endings', 'Explore The Skin Stapler with a spoiler-aware walkthrough, puzzle solutions, achievement help, character guides, endings, demo details, and Carrion City clues.'],
-  de: ['Komplettlösung, Rätsel & Enden', 'Spoilerbewusste Komplettlösung, Rätselhilfen, Erfolge, Enden, Demo-Informationen und Hinweise zu Carrion City für The Skin Stapler.'],
-  'pt-br': ['Detonado, puzzles e finais', 'Detonado com controle de spoilers, soluções de puzzles, conquistas, finais, informações da demo e pistas de Carrion City para The Skin Stapler.'],
-  es: ['Guía, puzles y finales', 'Guía con control de spoilers, soluciones de puzles, logros, finales, información de la demo y pistas de Carrion City para The Skin Stapler.']
-} as const;
+/**
+ * Locale home metadata. DE and ES Titles/Descriptions are frozen from the research document;
+ * PT-BR is a consistent analog (no PT-BR frozen entry was provided).
+ */
+const meta: Record<string, { title: string; description: string }> = {
+  de: {
+    title: 'The Skin Stapler Wiki — Figuren & Kassetten (2026)',
+    description: 'The Skin Stapler Wiki mit Figuren, Audiokassetten, Kapiteln, Erfolgen, Rätseln und spoilerarmen Walkthrough-Hinweisen für die Ermittlungen in Carrion City.'
+  },
+  'pt-br': {
+    title: 'The Skin Stapler Wiki — Personagens e Fitas (2026)',
+    description: 'Wiki de The Skin Stapler com personagens, fitas de áudio, capítulos, conquistas, puzzles e ajuda de detonado com avisos de spoiler para Carrion City.'
+  },
+  es: {
+    title: 'The Skin Stapler Wiki — Personajes y Cintas (2026)',
+    description: 'Wiki de The Skin Stapler con personajes, cintas de audio, capítulos, logros, puzles y ayuda de recorrido con avisos de spoilers para Carrion City.'
+  }
+};
 
 export function generateStaticParams() { return locales.filter((locale) => locale !== 'en').map((locale) => ({ locale })); }
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
+  const entry = meta[locale];
   return {
-    title: meta[locale][0], description: meta[locale][1], alternates: pageAlternates(locale, '/'),
-    openGraph: { type: 'website', siteName: siteConfig.name, title: meta[locale][0], description: meta[locale][1], url: absoluteUrl(localizePath(locale, '/')), locale: openGraphLocale(locale), images: [heroOgImage] }
+    title: { absolute: entry.title }, description: entry.description, alternates: pageAlternates(locale, '/'),
+    openGraph: { type: 'website', siteName: siteConfig.name, title: entry.title, description: entry.description, url: absoluteUrl(localizePath(locale, '/')), locale: openGraphLocale(locale), images: [heroOgImage] }
   };
 }
 

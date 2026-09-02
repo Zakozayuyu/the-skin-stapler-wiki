@@ -13,14 +13,14 @@ export const hasPublicSiteUrl = siteUrl.startsWith('https://') && !siteUrl.inclu
 export const siteConfig = {
   name: 'The Skin Stapler Wiki',
   shortName: 'Skin Stapler Wiki',
-  description: 'Use The Skin Stapler Wiki for chapter walkthroughs, puzzle answers, achievements, endings, character details, demo help, and Carrion City investigation tips.',
-  keywords: ['The Skin Stapler', 'Steam', 'wiki', 'walkthrough', 'puzzles', 'achievements', 'endings', 'horror', 'Carrion City'],
+  description: 'Explore The Skin Stapler with chapter walkthroughs, character pages, audio tapes, puzzle help, achievements, finale guidance, and Carrion City story notes.',
+  keywords: ['The Skin Stapler', 'wiki', 'characters', 'audio tapes', 'walkthrough', 'puzzles', 'achievements', 'chapters'],
   url: siteUrl,
   steam: 'https://store.steampowered.com/app/4310610/The_Skin_Stapler/',
   demo: 'https://store.steampowered.com/app/4343530/The_Skin_Stapler_Demo/',
   discord: 'https://discord.gg/TNPAcFJU7p',
-  youtube: 'https://www.youtube.com/@assembleteam',
-  trailer: 'https://www.youtube.com/watch?v=9cKUYGkAjyA',
+  youtube: 'https://www.youtube.com/@taintedpactgames',
+  trailer: 'https://www.youtube.com/watch?v=zhvdcczy_q8',
   twitter: 'https://x.com/TaintedPact',
   discussions: 'https://steamcommunity.com/app/4310610/discussions/'
 };

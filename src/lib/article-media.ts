@@ -128,5 +128,23 @@ export const articleMedia = {
       'pt-br': 'Um encontro com um cliente mostrado na galeria oficial do jogo.',
       es: 'Un encuentro con un cliente mostrado en la galería oficial del juego.'
     }
+  },
+  stitchedPortrait: {
+    src: '/images/official/stitched-portrait.webp', width: 1440, height: 810,
+    description: {
+      en: 'A stitched skin portrait hanging in a dark room from the official gallery.',
+      de: 'Ein genähtes Hautporträt in einem dunklen Raum aus der offiziellen Galerie.',
+      'pt-br': 'Um retrato de pele costurada pendurado em uma sala escura, da galeria oficial.',
+      es: 'Un retrato de piel cosida colgado en una sala oscura, de la galería oficial.'
+    }
+  },
+  cruiserNight: {
+    src: '/images/official/detective-cruiser.webp', width: 1440, height: 810,
+    description: {
+      en: 'Dick Slater and Robbie Knox in their cruiser during a night shift.',
+      de: 'Dick Slater und Robbie Knox in ihrem Streifenwagen während einer Nachtschicht.',
+      'pt-br': 'Dick Slater e Robbie Knox na viatura durante um turno noturno.',
+      es: 'Dick Slater y Robbie Knox en su patrulla durante un turno nocturno.'
+    }
   }
 } satisfies Record<string, ArticleMediaItem>;

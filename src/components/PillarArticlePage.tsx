@@ -15,11 +15,12 @@ type PillarArticlePageProps = {
   keyword: string;
   label: string;
   image: ArticleImageKey;
+  dateModified?: string;
   faq?: Array<{ question: string; answer: string }>;
   children: ReactNode;
 };
 
-export default function PillarArticlePage({ path, title, description, keyword, label, image, faq, children }: PillarArticlePageProps) {
+export default function PillarArticlePage({ path, title, description, keyword, label, image, dateModified = '2026-08-20', faq, children }: PillarArticlePageProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -31,8 +32,8 @@ export default function PillarArticlePage({ path, title, description, keyword, l
         mainEntityOfPage: absoluteUrl(path),
         url: absoluteUrl(path),
         keywords: keyword,
-        datePublished: '2026-08-20T00:00:00Z',
-        dateModified: '2026-08-20T00:00:00Z',
+        datePublished: `2026-08-20T00:00:00Z`,
+        dateModified: `${dateModified}T00:00:00Z`,
         image: absoluteUrl(articleMedia[image].src),
         author: articleAuthor,
         publisher: articlePublisher

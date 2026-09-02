@@ -26,6 +26,7 @@ export default function WalkthroughPage() {
   return (
     <PillarArticlePage
       path="/walkthrough"
+      dateModified="2026-09-03"
       title="The Skin Stapler Walkthrough: Full Game Chapter Guide"
       description="The Skin Stapler walkthrough follows the complete full-game route from Fefe’s apartment through CCPD, workplace chapters, Closing In, and The Flesh Pit."
       keyword="the skin stapler walkthrough"
@@ -51,6 +52,7 @@ export default function WalkthroughPage() {
       <h2 id="chapter-order">The Skin Stapler full walkthrough chapter order</h2>
       <p>The table below uses the chapter names and timestamps published with a complete no-commentary playthrough. Select a time to jump to that part of the video. The four <strong>Aftermath</strong> interludes and the <strong>Final Aftermath</strong> connect the playable locations, so do not skip them if you are following the story.</p>
       <p>Two independent full-game videos show the same broad route: opening apartment, CCPD, Quick Fix, Gutters End, later workplace viewpoints, the final investigation, and the Flesh Pit confrontation. Exact timestamps vary by player, but the location order is consistent.</p>
+      <p>The route lines up with official material too. Steam’s 16 achievement names attach to the same chapter labels — The Burrows Apartment, The Carrion City PD, The Aftermath Part 1–4, The Quick Fix, The Gutters End, Luna’s Cream Filled Donuts, The Underworld VHS, Lazar’s Blood Bank, The Final Aftermath, and The Closing In — and the publisher’s press round-up describes the structure as 14 short chapters played from alternating investigation and killing-spree viewpoints.</p>
 
       <div className="table-scroll">
         <table className="walkthrough-table">

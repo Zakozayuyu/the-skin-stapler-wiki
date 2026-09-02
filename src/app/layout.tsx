@@ -26,7 +26,7 @@ const oswald = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: { default: 'The Skin Stapler Wiki — Walkthrough, Puzzles & Endings', template: `%s | ${siteConfig.shortName}` },
+  title: { default: 'The Skin Stapler Wiki — Characters, Tapes & Guides (2026)', template: `%s | ${siteConfig.shortName}` },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
   applicationName: siteConfig.shortName,
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const jsonLd = { '@context': 'https://schema.org', '@graph': [
-    { ...articlePublisher, description: 'Explore The Skin Stapler with a spoiler-aware walkthrough, puzzle solutions, achievement help, character guides, endings, demo details, and Carrion City clues. The Skin Stapler Wiki is an independent fan guide to the horror game by Tainted Pact, published by Assemble Entertainment.', sameAs: [siteConfig.steam, siteConfig.discord, siteConfig.youtube, siteConfig.twitter, siteConfig.discussions], contactPoint: { '@type': 'ContactPoint', contactType: 'editorial', url: siteConfig.discussions, availableLanguage: ['English', 'German', 'Portuguese', 'Spanish'] } },
-    { '@type': 'WebSite', '@id': `${siteConfig.url}/#website`, name: siteConfig.name, url: siteConfig.url, description: siteConfig.description, inLanguage: ['en', 'de-DE', 'pt-BR', 'es'] },
+    { ...articlePublisher, description: siteConfig.description, sameAs: [siteConfig.steam, siteConfig.discord, siteConfig.youtube, siteConfig.twitter, siteConfig.discussions], contactPoint: { '@type': 'ContactPoint', contactType: 'editorial', url: siteConfig.discussions, availableLanguage: ['English', 'German', 'Portuguese', 'Spanish'] } },
+    { '@type': 'WebSite', '@id': `${siteConfig.url}/#website`, name: siteConfig.name, url: siteConfig.url, description: 'The Skin Stapler wiki for walkthrough help, characters, audio tapes, achievements, puzzles, chapters, finale help, and spoiler-aware Carrion City tips.', inLanguage: ['en', 'de-DE', 'pt-BR', 'es'] },
     { '@type': 'VideoGame', name: 'The Skin Stapler', url: siteConfig.steam, datePublished: gameFacts.releaseDate.value, operatingSystem: gameFacts.platform.value, applicationCategory: 'Game', genre: ['Action', 'Indie Horror'], author: { '@type': 'Organization', name: gameFacts.developer.value }, publisher: { '@type': 'Organization', name: gameFacts.publisher.value } }
   ] };
   return <html lang="en" className={`${inter.variable} ${oswald.variable}`} suppressHydrationWarning><head><link rel="alternate" type="application/rss+xml" title="The Skin Stapler Wiki RSS" href="/rss.xml" /><script dangerouslySetInnerHTML={{ __html: "const p=location.pathname;document.documentElement.lang=p.startsWith('/de')?'de-DE':p.startsWith('/pt-br')?'pt-BR':p.startsWith('/es')?'es':'en'" }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head><body>{children}</body><Script src="https://www.googletagmanager.com/gtag/js?id=G-XV8QD7VG81" strategy="lazyOnload" /><Script id="google-analytics" strategy="lazyOnload">{`window.dataLayer = window.dataLayer || [];

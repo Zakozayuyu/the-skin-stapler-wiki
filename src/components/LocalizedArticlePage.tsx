@@ -33,6 +33,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
   const t = ui[locale];
   const path = getLocalizedArticlePath(locale, article.id);
   const isGuide = !['walkthrough', 'ending', 'wiki', 'characters'].includes(article.id);
+  const isoDate = article.date ? `${article.date}T00:00:00Z` : '2026-08-20T00:00:00Z';
   const image = localizedArticleImages[article.id];
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -40,7 +41,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
       {
         '@type': 'Article', headline: article.title, description: article.description,
         inLanguage: localeMeta[locale].language, mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), keywords: article.keyword,
-        datePublished: '2026-08-20T00:00:00Z', dateModified: '2026-08-20T00:00:00Z',
+        datePublished: isoDate, dateModified: isoDate,
         image: absoluteUrl(articleMedia[image].src), author: articleAuthor, publisher: articlePublisher
       },
       {

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { localeMeta, locales, localizePath } from '@/lib/i18n';
 import { absoluteUrl } from '@/lib/seo';
-import { keywordArticleSlugs } from '@/lib/articles';
+import { keywordArticleSlugs, keywordArticles } from '@/lib/articles';
 import { localizedGuideSlugs } from '@/lib/localized-articles';
 export const dynamic = 'force-static';
 
@@ -14,10 +14,13 @@ const commonPaths = [
 // content update. Guide/hub content was reviewed on August 20; legal copy was
 // last materially updated in the August 15 metadata/privacy revision.
 const contentLastModified = new Date('2026-08-20T00:00:00Z');
+const septemberBatch = new Date('2026-09-03T00:00:00Z');
 const legalLastModified = new Date('2026-08-15T15:28:43+08:00');
 
 function lastModifiedForPath(path: string) {
-  return path === '/privacy' || path === '/terms' ? legalLastModified : contentLastModified;
+  if (path === '/privacy' || path === '/terms') return legalLastModified;
+  if (path === '/walkthrough') return septemberBatch;
+  return contentLastModified;
 }
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const englishOnlyPages = [
     { url: absoluteUrl('/about'), lastModified: contentLastModified, changeFrequency: 'yearly' as const, priority: 0.4 },
     ...keywordArticleSlugs.filter((slug) => !(slug in localizedGuideSlugs)).map((slug) => ({
-      url: absoluteUrl(`/guides/${slug}`), lastModified: contentLastModified, changeFrequency: 'monthly' as const, priority: 0.8
+      url: absoluteUrl(`/guides/${slug}`), lastModified: new Date(`${keywordArticles[slug].date}T00:00:00Z`), changeFrequency: 'monthly' as const, priority: 0.8
     }))
   ];
   return [...localizedPages, ...englishOnlyPages];

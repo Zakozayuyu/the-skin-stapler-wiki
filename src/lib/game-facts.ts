@@ -36,6 +36,12 @@ export const gameFacts = {
   steamAchievements: {
     value: 16, source: steam, verifiedAt: '2026-08-13', status: 'verified'
   },
+  steamReviews: {
+    value: '90% Positive', source: steam, verifiedAt: '2026-09-02', status: 'verified'
+  },
+  steamSalesMilestone: {
+    value: '10K+', source: 'https://x.com/TaintedPact', verifiedAt: '2026-09-02', status: 'verified'
+  },
   officialAudioLanguage: {
     value: 'English', source: steam, verifiedAt: '2026-08-13', status: 'verified'
   }
