@@ -5,7 +5,6 @@ import type { ArticleImageKey } from '@/lib/article-media';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, articleAuthor, articlePublisher } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
-import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
 
 type PillarArticlePageProps = {
@@ -73,9 +72,6 @@ export default function PillarArticlePage({ path, title, description, keyword, l
           <p>{description}</p>
         </header>
         <ArticleFigure image={image} preload />
-
-        {/* Native Banner #1 — after hero image, ~15-20% into the page */}
-        <NativeBannerAd slotId="pillar-top" />
 
         <div className="mdx-article keyword-article pillar-copy">
           {childArray.slice(0, midIndex)}

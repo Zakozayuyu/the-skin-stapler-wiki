@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
 import type { ReactNode } from 'react';
+import SocialBarAd from '@/components/SocialBarAd';
 import { gameFacts } from '@/lib/game-facts';
 import { articlePublisher, heroOgImage, siteConfig } from '@/lib/seo';
 import './globals.css';
@@ -51,7 +52,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     { '@type': 'WebSite', '@id': `${siteConfig.url}/#website`, name: siteConfig.name, url: siteConfig.url, description: 'The Skin Stapler wiki for walkthrough help, characters, audio tapes, achievements, puzzles, chapters, finale help, and spoiler-aware Carrion City tips.', inLanguage: ['en', 'de-DE', 'pt-BR', 'es'] },
     { '@type': 'VideoGame', name: 'The Skin Stapler', url: siteConfig.steam, datePublished: gameFacts.releaseDate.value, operatingSystem: gameFacts.platform.value, applicationCategory: 'Game', genre: ['Action', 'Indie Horror'], author: { '@type': 'Organization', name: gameFacts.developer.value }, publisher: { '@type': 'Organization', name: gameFacts.publisher.value } }
   ] };
-  return <html lang="en" className={`${inter.variable} ${oswald.variable}`} suppressHydrationWarning><head><link rel="alternate" type="application/rss+xml" title="The Skin Stapler Wiki RSS" href="/rss.xml" /><script dangerouslySetInnerHTML={{ __html: "const p=location.pathname;document.documentElement.lang=p.startsWith('/de')?'de-DE':p.startsWith('/pt-br')?'pt-BR':p.startsWith('/es')?'es':'en'" }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head><body>{children}</body><Script src="https://www.googletagmanager.com/gtag/js?id=G-XV8QD7VG81" strategy="lazyOnload" /><Script id="google-analytics" strategy="lazyOnload">{`window.dataLayer = window.dataLayer || [];
+  return <html lang="en" className={`${inter.variable} ${oswald.variable}`} suppressHydrationWarning><head><link rel="alternate" type="application/rss+xml" title="The Skin Stapler Wiki RSS" href="/rss.xml" /><script dangerouslySetInnerHTML={{ __html: "const p=location.pathname;document.documentElement.lang=p.startsWith('/de')?'de-DE':p.startsWith('/pt-br')?'pt-BR':p.startsWith('/es')?'es':'en'" }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head><body>{children}<SocialBarAd /></body><Script src="https://www.googletagmanager.com/gtag/js?id=G-XV8QD7VG81" strategy="lazyOnload" /><Script id="google-analytics" strategy="lazyOnload">{`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-XV8QD7VG81');`}</Script></html>;

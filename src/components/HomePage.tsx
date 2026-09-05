@@ -8,7 +8,6 @@ import { articleMedia } from '@/lib/article-media';
 import { homeContent } from '@/lib/content';
 import { homeFaq } from '@/lib/home-faq';
 import { absoluteUrl, siteConfig } from '@/lib/seo';
-import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
 
 const copy = {
@@ -176,8 +175,6 @@ export default function HomePage({ locale }: { locale: Locale }) {
           <section className="mechanics-section"><div className="section-heading left-heading"><span className="eyebrow">{t.mechEyebrow}</span><h2 className="section-title">{t.mechTitle}</h2></div><p className="section-intro">{t.mechIntro}</p><div className="mechanics-grid">{mechanics[locale].links.map(([href, mediaKey, title, description]) => { const media = articleMedia[mediaKey as keyof typeof articleMedia]; return <Link className="card mechanic-card" key={mediaKey} href={availableContentPath(locale, href)}><div className="mechanic-media"><Image src={media.src} alt={media.description[locale]} width={media.width} height={media.height} sizes="(max-width: 760px) 100vw, 50vw" loading="lazy" /></div><div className="mechanic-body"><h3>{title}</h3><p>{description}</p></div></Link>; })}</div></section>
 
           <section className="popular-guides"><div className="section-heading left-heading"><span className="eyebrow">{popularGuides[locale].eyebrow}</span><h2 className="section-title">{popularGuides[locale].title}</h2></div><div className="start-grid">{popularGuides[locale].links.map(([href, title, description]) => <Link className="card popular-guide-card" key={href} href={availableContentPath(locale, href)}><h3>{title}</h3><p>{description}</p><b>→</b></Link>)}</div></section>
-
-          <NativeBannerAd />
 
           <section className="about-section"><h2 className="section-title">{t.about}</h2><div className="home-mdx"><Intro /></div><div className="facts-grid">{stableFacts[locale].map(([label, value]) => <div className="card fact-card" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><Link href={localizePath(locale, '/guides')} className="btn-secondary">{t.explore}</Link></section>
 

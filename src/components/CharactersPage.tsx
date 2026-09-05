@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl } from '@/lib/seo';
-import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
 
 const characters = [
@@ -287,8 +286,6 @@ export default function CharactersPage() {
               ))}
             </div>
           </article>
-
-          <NativeBannerAd slotId="characters-top" />
 
           <section className="wiki-copy keyword-article">
             <h2>Character quick reference</h2>

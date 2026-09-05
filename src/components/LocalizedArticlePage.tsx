@@ -6,7 +6,6 @@ import type { LocalizedArticle } from '@/lib/localized-articles/types';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, articleAuthor, articlePublisher, siteConfig } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
-import NativeBannerAd from './NativeBannerAd';
 import SiteShell from './SiteShell';
 
 type ContentLocale = Exclude<Locale, 'en'>;
@@ -79,9 +78,6 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
             <p>{article.directAnswer}</p>
           </section>
           <ArticleFigure image={image} locale={locale} preload />
-
-          {/* Native Banner — after answer box + hero image, ~15-20% into the page */}
-          <NativeBannerAd slotId="localized-top" />
 
           {article.sections.map((section) => (
             <section key={section.title}>
