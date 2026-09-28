@@ -49,7 +49,7 @@ This is a reference site rather than a news blog. Every page answers one concret
 ## About this site
 
 - [About The Skin Stapler Wiki](https://theskinstapler.com/about): who maintains this fan project, our source policy, and how to contact us.
-- [Privacy Policy](https://theskinstapler.com/privacy): hosting logs, Google Analytics, and Adsterra advertising disclosures.
+- [Privacy Policy](https://theskinstapler.com/privacy): hosting logs and Google Analytics disclosures.
 - [Terms of Service](https://theskinstapler.com/terms): usage terms and disclaimer: not affiliated with Tainted Pact, Assemble Entertainment, Valve, or GOG.
 
 ## Localized versions

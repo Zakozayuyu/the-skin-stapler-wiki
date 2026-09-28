@@ -53,9 +53,7 @@ export default function PillarArticlePage({ path, title, description, keyword, l
     ]
   };
 
-  /* Split children at the midpoint so we can place an ad between halves.
-     This keeps the content visually continuous while giving the second
-     Native Banner roughly 50-60% visibility inside the article body. */
+  /* Keep the long article content in two styling groups. */
   const childArray = Children.toArray(children);
   const midIndex = Math.ceil(childArray.length / 2);
 
