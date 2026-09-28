@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     apple: [{ url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }]
   },
   openGraph: { type: 'website', siteName: siteConfig.name, title: siteConfig.name, description: siteConfig.description, images: [heroOgImage] },
-  twitter: { card: 'summary_large_image', title: siteConfig.name, description: siteConfig.description, images: ['/og-default.webp'] },
+  twitter: { card: 'summary_large_image', title: siteConfig.name, description: siteConfig.description, images: [heroOgImage.url] },
   alternates: { types: { 'application/rss+xml': '/rss.xml' } },
   verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const jsonLd = { '@context': 'https://schema.org', '@graph': [
-    { ...articlePublisher, description: siteConfig.description, sameAs: [siteConfig.steam, siteConfig.discord, siteConfig.youtube, siteConfig.twitter, siteConfig.discussions], contactPoint: { '@type': 'ContactPoint', contactType: 'editorial', url: siteConfig.discussions, availableLanguage: ['English', 'German', 'Portuguese', 'Spanish'] } },
+    { ...articlePublisher, description: siteConfig.description, contactPoint: { '@type': 'ContactPoint', contactType: 'editorial', email: siteConfig.contactEmail, availableLanguage: ['English', 'German', 'Portuguese', 'Spanish'] } },
     { '@type': 'WebSite', '@id': `${siteConfig.url}/#website`, name: siteConfig.name, url: siteConfig.url, description: 'The Skin Stapler wiki for walkthrough help, characters, audio tapes, achievements, puzzles, chapters, finale help, and spoiler-aware Carrion City tips.', inLanguage: ['en', 'de-DE', 'pt-BR', 'es'] },
     { '@type': 'VideoGame', name: 'The Skin Stapler', url: siteConfig.steam, datePublished: gameFacts.releaseDate.value, operatingSystem: gameFacts.platform.value, applicationCategory: 'Game', genre: ['Action', 'Indie Horror'], author: { '@type': 'Organization', name: gameFacts.developer.value }, publisher: { '@type': 'Organization', name: gameFacts.publisher.value } }
   ] };

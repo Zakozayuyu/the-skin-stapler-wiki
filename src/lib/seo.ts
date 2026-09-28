@@ -16,6 +16,7 @@ export const siteConfig = {
   description: 'Explore The Skin Stapler with chapter walkthroughs, character pages, audio tapes, puzzle help, achievements, finale guidance, and Carrion City story notes.',
   keywords: ['The Skin Stapler', 'wiki', 'characters', 'audio tapes', 'walkthrough', 'puzzles', 'achievements', 'chapters'],
   url: siteUrl,
+  contactEmail: '2542909344@qq.com',
   steam: 'https://store.steampowered.com/app/4310610/The_Skin_Stapler/',
   demo: 'https://store.steampowered.com/app/4343530/The_Skin_Stapler_Demo/',
   discord: 'https://discord.gg/TNPAcFJU7p',
@@ -70,5 +71,5 @@ export function openGraphImage(key: ArticleImageKey, locale: Locale = 'en') {
   return { url: media.src, width: media.width, height: media.height, alt: media.description[locale] };
 }
 
-/** Site-wide 1200×630 promotional artwork used as the fallback social image. */
-export const heroOgImage = { url: '/og-default.webp', width: 1200, height: 630, alt: 'The Skin Stapler promotional artwork featuring the killer, Dick Slater, and Robbie Knox' };
+/** Site-wide game screenshot used as the fallback social image. */
+export const heroOgImage = { url: '/images/official/detective-cruiser.webp', width: 1440, height: 810, alt: 'Night drive scene from The Skin Stapler' };

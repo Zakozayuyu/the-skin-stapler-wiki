@@ -153,10 +153,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
     <SiteShell locale={locale}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <section className="hero skin-hero">
-        <picture>
-          <source media="(max-width: 767px)" srcSet="/hero-mobile.webp" type="image/webp" width={640} height={858} />
-          <img src="/hero-hd.webp" alt="The Skin Stapler promotional artwork featuring the killer, Dick Slater, and Robbie Knox" width={1834} height={858} className="hero-image pixel-hero" fetchPriority="high" decoding="async" />
-        </picture>
+        <img src="/images/official/detective-cruiser.webp" alt="Night drive scene from The Skin Stapler" width={1440} height={810} className="hero-image pixel-hero" fetchPriority="high" decoding="async" />
         <div className="hero-shade skin-veil" />
         <div className="container hero-content">
           <div className="update-badge"><span />{t.eyebrow}</div>

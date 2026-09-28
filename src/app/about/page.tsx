@@ -22,8 +22,7 @@ export default function AboutPage() {
       },
       {
         ...articlePublisher,
-        sameAs: [siteConfig.steam, siteConfig.discord, siteConfig.youtube, siteConfig.twitter, siteConfig.discussions],
-        contactPoint: { '@type': 'ContactPoint', contactType: 'editorial', url: siteConfig.discussions, availableLanguage: ['English', 'German', 'Portuguese', 'Spanish'] }
+        contactPoint: { '@type': 'ContactPoint', contactType: 'editorial', email: siteConfig.contactEmail, availableLanguage: ['English', 'German', 'Portuguese', 'Spanish'] }
       },
       { '@type': 'BreadcrumbList', itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
@@ -55,7 +54,8 @@ export default function AboutPage() {
           </section>
           <section>
             <h2>How to contact us</h2>
-            <p>Questions, corrections, or source material can be raised through the official community channels we follow: <a href={siteConfig.discussions} target="_blank" rel="noreferrer">Steam Discussions</a> for the game or the developer&rsquo;s <a href={siteConfig.discord} target="_blank" rel="noreferrer">Discord server</a>. Unverified claims are flagged on the page where they appear so they can be checked against new evidence.</p>
+            <p>For corrections, source material, or privacy questions about this independent wiki, email <a href={`mailto:${siteConfig.contactEmail}`}>{siteConfig.contactEmail}</a>. We review claims against the sources listed above and mark details that cannot be verified.</p>
+            <p>For discussion about the game itself, visit the game&rsquo;s <a href={siteConfig.discussions} target="_blank" rel="noopener noreferrer">Steam Discussions</a> or the developer&rsquo;s <a href={siteConfig.discord} target="_blank" rel="noopener noreferrer">Discord server</a>. These channels are run by the game community, not by this wiki.</p>
           </section>
           <section>
             <h2>Reuse and citations</h2>
