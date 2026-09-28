@@ -11,14 +11,16 @@ const commonPaths = [
 ] as const;
 
 // Stable, source-owned dates prevent every deployment from looking like a
-// content update. Guide/hub content was reviewed on August 20; legal copy was
-// last materially updated in the August 15 metadata/privacy revision.
+// content update. Guide/hub content was reviewed on August 20; privacy copy
+// was updated for AdSense on September 28.
 const contentLastModified = new Date('2026-08-20T00:00:00Z');
 const septemberBatch = new Date('2026-09-03T00:00:00Z');
 const legalLastModified = new Date('2026-08-15T15:28:43+08:00');
+const privacyLastModified = new Date('2026-09-28T00:00:00+08:00');
 
 function lastModifiedForPath(path: string) {
-  if (path === '/privacy' || path === '/terms') return legalLastModified;
+  if (path === '/privacy') return privacyLastModified;
+  if (path === '/terms') return legalLastModified;
   if (path === '/walkthrough') return septemberBatch;
   return contentLastModified;
 }

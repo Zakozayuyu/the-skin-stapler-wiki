@@ -4,9 +4,9 @@ import LegalPage from '@/components/LegalPage';
 import { isLocale, locales, localizePath } from '@/lib/i18n';
 import { absoluteUrl, heroOgImage, openGraphLocale, pageAlternates, siteConfig } from '@/lib/seo';
 const copy = {
-  de: { title: 'Datenschutzerklärung', description: 'Datenschutzerklärung von The Skin Stapler Wiki zu Hosting-Protokollen und Google Analytics.' },
-  'pt-br': { title: 'Política de privacidade', description: 'Política de privacidade da The Skin Stapler Wiki sobre registros de hospedagem e Google Analytics.' },
-  es: { title: 'Política de privacidad', description: 'Política de privacidad de The Skin Stapler Wiki sobre registros de alojamiento y Google Analytics.' }
+  de: { title: 'Datenschutzerklärung', description: 'Datenschutzerklärung von The Skin Stapler Wiki zu Hosting-Protokollen, Google Analytics und AdSense.' },
+  'pt-br': { title: 'Política de privacidade', description: 'Política de privacidade da The Skin Stapler Wiki sobre registros de hospedagem, Google Analytics e AdSense.' },
+  es: { title: 'Política de privacidad', description: 'Política de privacidad de The Skin Stapler Wiki sobre registros de alojamiento, Google Analytics y AdSense.' }
 } as const;
 export function generateStaticParams() { return locales.filter((locale) => locale !== 'en').map((locale) => ({ locale })); }
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
