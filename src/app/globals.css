@@ -195,6 +195,13 @@ h1, h2, h3, h4 { font-family: var(--font-oswald), 'Arial Narrow', sans-serif; }
 .cheat-sheet { display: block; overflow: hidden; margin-top: 20px; border: 1px solid rgb(255 255 255 / 10%); border-radius: 8px; background: var(--surface); }
 .cheat-sheet img { width: 100%; height: auto; }
 .mdx-article small { display: block; margin-top: 12px; color: #6b7280; font-size: 12px; line-height: 1.625; }
+.beginner-guide-content > h2 { margin: 38px 0 16px; color: #fff; font-size: 36px; line-height: 1.12; }
+.beginner-guide-content > h2:first-child { margin-top: 0; }
+.beginner-guide-content > p { margin: 0 0 18px; color: #d1d5db; font-size: 16px; line-height: 1.78; }
+.beginner-guide-content > ol { margin: 0 0 22px; padding-left: 24px; color: #d1d5db; line-height: 1.7; }
+.beginner-guide-content > ol li { padding-left: 4px; margin-bottom: 10px; }
+.beginner-guide-content a { color: hsl(var(--nav-theme-light)); text-decoration: underline; text-underline-offset: 3px; }
+.beginner-guide-content strong { color: #fff; }
 .keyword-article h2 { margin: 42px 0 14px; color: #fff; font-size: 32px; line-height: 1.18; }
 .keyword-article h2:first-child { margin-top: 0; }
 .keyword-article p { margin: 0 0 18px; color: #d1d5db; font-size: 16px; line-height: 1.78; }
@@ -410,7 +417,7 @@ h1, h2, h3, h4 { font-family: var(--font-oswald), 'Arial Narrow', sans-serif; }
 }
 @media (max-width: 560px) {
   .section { padding-block: 52px; }
-  .section-title, .article-section > h2 { font-size: 30px; }
+  .section-title, .article-section > h2, .beginner-guide-content > h2 { font-size: 30px; }
   .button-row { flex-direction: column; }
   .button-row .btn-primary, .button-row .btn-secondary { width: 100%; }
   .feature-grid, .guide-grid, .tips-grid, .games-grid, .achievement-grid { grid-template-columns: 1fr; }

@@ -17,11 +17,14 @@ const contentLastModified = new Date('2026-08-20T00:00:00Z');
 const septemberBatch = new Date('2026-09-03T00:00:00Z');
 const legalLastModified = new Date('2026-08-15T15:28:43+08:00');
 const privacyLastModified = new Date('2026-09-28T00:00:00+08:00');
+const beginnerLastModified = new Date('2026-10-03T00:00:00+08:00');
+const contactLastModified = new Date('2026-10-03T00:00:00+08:00');
 
 function lastModifiedForPath(path: string) {
   if (path === '/privacy') return privacyLastModified;
   if (path === '/terms') return legalLastModified;
   if (path === '/walkthrough') return septemberBatch;
+  if (path === '/guides/beginner') return beginnerLastModified;
   return contentLastModified;
 }
 
@@ -38,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
   const englishOnlyPages = [
     { url: absoluteUrl('/about'), lastModified: contentLastModified, changeFrequency: 'yearly' as const, priority: 0.4 },
+    { url: absoluteUrl('/contact'), lastModified: contactLastModified, changeFrequency: 'yearly' as const, priority: 0.4 },
     ...keywordArticleSlugs.filter((slug) => !(slug in localizedGuideSlugs)).map((slug) => ({
       url: absoluteUrl(`/guides/${slug}`), lastModified: new Date(`${keywordArticles[slug].date}T00:00:00Z`), changeFrequency: 'monthly' as const, priority: 0.8
     }))
