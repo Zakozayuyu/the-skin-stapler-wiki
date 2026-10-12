@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl } from '@/lib/seo';
+import GameOverviewLink from './GameOverviewLink';
 import SiteShell from './SiteShell';
 
 const characters = [
@@ -253,6 +254,7 @@ export default function CharactersPage() {
           </aside>
 
           <article className="wiki-copy keyword-article">
+            <GameOverviewLink />
             <aside className="card answer-box">
               <strong>What this page covers</strong>
               <p>This is the character hub for The Skin Stapler. It lists every confirmed character with their role, location, playable status, and a link to a detailed guide where available. For voice actor credits and performer mappings, see the <Link href="/guides/the-skin-stapler-voice-actors">voice actors guide</Link>.</p>

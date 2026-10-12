@@ -136,6 +136,13 @@ const startCardRoutes: Record<string, string> = {
   puzzles: '/guides/the-skin-stapler-puzzle-solutions'
 };
 
+const startCardMedia = {
+  beginner: { src: '/images/start/beginner-guide.webp', description: articleMedia.cruiserNight.description },
+  walkthrough: { src: '/images/start/chapter-walkthrough.webp', description: articleMedia.chase.description },
+  characters: { src: '/images/start/characters.webp', description: articleMedia.police.description },
+  puzzles: { src: '/images/start/puzzle-solutions.webp', description: articleMedia.videoStore.description }
+};
+
 export default function HomePage({ locale }: { locale: Locale }) {
   const t = copy[locale];
   const Intro = homeContent[locale];
@@ -167,13 +174,16 @@ export default function HomePage({ locale }: { locale: Locale }) {
 
       <div className="container home-layout section">
         <div className="home-primary">
-          <section><div className="section-heading left-heading"><span className="eyebrow">{t.startEyebrow}</span><h2 className="section-title">{t.startTitle}</h2></div><div className="start-grid">{startCards[locale].map((card) => <Link className="card start-card" key={card.number} href={localizePath(locale, startCardRoutes[card.id] ?? '/guides')}><span>{card.number}</span><h3>{card.title}</h3><p>{card.description}</p></Link>)}</div></section>
+          <section id="start-here"><div className="section-heading left-heading"><span className="eyebrow">{t.startEyebrow}</span><h2 className="section-title">{t.startTitle}</h2></div><div className="start-grid">{startCards[locale].map((card) => {
+            const media = startCardMedia[card.id as keyof typeof startCardMedia];
+            return <Link className="card start-card" key={card.number} href={localizePath(locale, startCardRoutes[card.id] ?? '/guides')}><div className="start-card-media"><Image src={media.src} alt={media.description[locale]} width={960} height={540} sizes="(max-width: 560px) 100vw, 50vw" loading="lazy" /><span className="start-card-number">{card.number}</span></div><div className="start-card-body"><h3>{card.title}</h3><p>{card.description}</p></div></Link>;
+          })}</div></section>
+
+          <section className="about-section" id="game-overview"><h2 className="section-title">{t.about}</h2><div className="home-mdx"><Intro /></div><div className="facts-grid">{stableFacts[locale].map(([label, value]) => <div className="card fact-card" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><Link href={localizePath(locale, '/guides')} className="btn-secondary">{t.explore}</Link></section>
 
           <section className="mechanics-section"><div className="section-heading left-heading"><span className="eyebrow">{t.mechEyebrow}</span><h2 className="section-title">{t.mechTitle}</h2></div><p className="section-intro">{t.mechIntro}</p><div className="mechanics-grid">{mechanics[locale].links.map(([href, mediaKey, title, description]) => { const media = articleMedia[mediaKey as keyof typeof articleMedia]; return <Link className="card mechanic-card" key={mediaKey} href={availableContentPath(locale, href)}><div className="mechanic-media"><Image src={media.src} alt={media.description[locale]} width={media.width} height={media.height} sizes="(max-width: 760px) 100vw, 50vw" loading="lazy" /></div><div className="mechanic-body"><h3>{title}</h3><p>{description}</p></div></Link>; })}</div></section>
 
           <section className="popular-guides"><div className="section-heading left-heading"><span className="eyebrow">{popularGuides[locale].eyebrow}</span><h2 className="section-title">{popularGuides[locale].title}</h2></div><div className="start-grid">{popularGuides[locale].links.map(([href, title, description]) => <Link className="card popular-guide-card" key={href} href={availableContentPath(locale, href)}><h3>{title}</h3><p>{description}</p><b>→</b></Link>)}</div></section>
-
-          <section className="about-section"><h2 className="section-title">{t.about}</h2><div className="home-mdx"><Intro /></div><div className="facts-grid">{stableFacts[locale].map(([label, value]) => <div className="card fact-card" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><Link href={localizePath(locale, '/guides')} className="btn-secondary">{t.explore}</Link></section>
 
           <section className="about-section home-faq-section"><div className="section-heading left-heading"><span className="eyebrow">{t.faqEyebrow}</span><h2 className="section-title">{t.faqTitle}</h2></div><div className="faq-cards">{homeFaq[locale].map((item) => <div className="card" key={item.question}><h3>{item.question}</h3><p>{item.answer}</p></div>)}</div></section>
         </div>

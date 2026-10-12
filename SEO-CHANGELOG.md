@@ -189,3 +189,29 @@ To clear the penalty heuristics without touching brand mentions:
 - Added alt text to the header logo image (3/3 images now descriptive)
 
 Remaining open items are platform- or business-level, not repo-level: Cloudflare Content Signals block `Google-Extended`/`ClaudeBot` at the edge until the dashboard setting is changed, and no Knowledge-Graph pillar (Wikipedia/Wikidata) exists for an independent fan wiki to link.
+
+---
+
+## 2026-10-12 — Homepage game coverage and internal links
+
+Target query: `the skin stapler`. The user supplied a starting position of 9.3; ranking was not remeasured as part of this local change.
+
+### Changes
+
+- Expanded the English homepage's game overview from approximately 285 to 641 rendered words. Six sections cover the setting and story, gameplay, playable cast, full game and demo, PC requirements and language, and first-playthrough help.
+- Added 15 contextual links from the homepage body to existing character, gameplay, walkthrough, puzzle, tape, achievement and release guides. Plot outcomes and puzzle codes remain on the detailed pages.
+- Moved the game overview ahead of the mechanics and popular-guide cards and styled its headings and inline links for reading on desktop and mobile.
+- Added a shared `GameOverviewLink` paragraph to keyword articles, beginner guides, walkthrough and ending templates, character pages and guide hubs. All 120 applicable pages contain one visible `The Skin Stapler` anchor: 36 English pages point to `/`, and 28 pages per translated locale point to `/de`, `/es` or `/pt-br`. The shared localized article template also supplies this link on three translated wiki hubs.
+- Set the English homepage's sitemap `lastModified` to October 12, 2026, using the project's Asia/Shanghai date convention.
+
+Game facts were checked against the [Steam full-game page](https://store.steampowered.com/app/4310610/The_Skin_Stapler/), [official Steam demo](https://store.steampowered.com/app/4343530/The_Skin_Stapler_Demo/), [developer's itch.io description](https://taintedpact88.itch.io/the-skin-stapler), [GOG listing](https://www.gog.com/en/game/the_skin_stapler) and [Steam achievement list](https://steamcommunity.com/stats/4310610/achievements/). Character and chapter details use the existing sourced profiles and walkthrough. The homepage no longer asserts an unsupported current version number.
+
+### Verification
+
+- Production build and TypeScript checks passed; postbuild verified all 96 localized HTML language attributes.
+- ESLint: zero errors; three existing warnings in two QA scripts and the homepage hero image.
+- Checked 140 generated HTML documents: all 120 required return links are present, point to the correct homepage and have no `nofollow` attribute; 273 JSON-LD blocks parsed successfully.
+- Compared titles, H1s, canonicals and language attributes with the pre-change output: zero differences.
+- Final homepage has six game overview subheadings and 15 valid body link targets. The homepage sitemap date matches October 12 in Asia/Shanghai.
+- Inspected the desktop layout and the 390-pixel mobile layout; neither had horizontal overflow. Clicking the new Fefe guide link returned to the English homepage. The German Fefe guide links to `/de`.
+- `git diff --check` passed. These changes are local and have not been deployed.

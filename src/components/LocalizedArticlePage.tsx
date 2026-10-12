@@ -6,6 +6,7 @@ import type { LocalizedArticle } from '@/lib/localized-articles/types';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, articleAuthor, articlePublisher, siteConfig } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
+import GameOverviewLink from './GameOverviewLink';
 import SiteShell from './SiteShell';
 
 type ContentLocale = Exclude<Locale, 'en'>;
@@ -72,6 +73,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
           <h1>{article.title}</h1>
           <p>{article.description}</p>
         </header>
+        <GameOverviewLink locale={locale} />
         <div className="mdx-article keyword-article pillar-copy">
           <section className="answer-box card">
             <h2>{t.answer}</h2>

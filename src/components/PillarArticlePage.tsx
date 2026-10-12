@@ -5,6 +5,7 @@ import type { ArticleImageKey } from '@/lib/article-media';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, articleAuthor, articlePublisher } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
+import GameOverviewLink from './GameOverviewLink';
 import SiteShell from './SiteShell';
 
 type PillarArticlePageProps = {
@@ -69,6 +70,7 @@ export default function PillarArticlePage({ path, title, description, keyword, l
           <h1>{title}</h1>
           <p>{description}</p>
         </header>
+        <GameOverviewLink />
         <ArticleFigure image={image} preload />
 
         <div className="mdx-article keyword-article pillar-copy">

@@ -24,3 +24,16 @@ The homepage hero and fallback social preview now use `images/official/detective
 | `quick-fix-customer.webp` | Steam screenshot 12 |
 
 Visible captions link back to the official Steam page. The images remain property of their respective rights holders and are used here to illustrate an independent fan guide.
+
+## Homepage journey cards — 2026-10-12
+
+The four journey cards use official Steam screenshots from the user-provided `outputs/the-skin-stapler-images` collection. The collection's `image-manifest.csv` retains each original source URL and checksum.
+
+| Homepage card | Published asset | Original file in the collection |
+| --- | --- | --- |
+| Beginner Guide | `public/images/start/beginner-guide.webp` | `steam/images/screenshots/full/09.jpg` |
+| Chapter Walkthrough | `public/images/start/chapter-walkthrough.webp` | `steam/images/screenshots/full/06.jpg` |
+| Characters | `public/images/start/characters.webp` | `steam/images/screenshots/full/04.jpg` |
+| Puzzle Solutions | `public/images/start/puzzle-solutions.webp` | `steam/images/screenshots/full/12.jpg` |
+
+The published copies are 960 × 540 WebP images, totaling 127,994 bytes. All four homepage languages use the same images with localized alternative text, reserved 16:9 image space and lazy loading.
