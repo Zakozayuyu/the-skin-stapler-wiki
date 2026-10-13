@@ -294,6 +294,13 @@ h1, h2, h3, h4 { font-family: var(--font-oswald), 'Arial Narrow', sans-serif; }
 .footer-grid-wide { grid-template-columns: 2fr 1fr 1fr 1fr; }
 .blue-badge { background: hsl(var(--nav-theme) / 22%); color: hsl(var(--nav-theme-light)); }
 
+/* Advertisement slots (neutral wrapper: spacing plus a plain label only) */
+.ad-slot { margin: 32px 0; }
+.ad-slot-label { display: block; margin-bottom: 8px; color: #6f6c7d; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; }
+.ad-slot-mount { overflow: hidden; }
+.ad-slot-mount:empty { display: none; }
+.ad-slot iframe { max-width: 100%; }
+
 /* Pillar guides */
 .pillar-header { position: relative; border-bottom: 1px solid rgb(255 255 255 / 8%); padding-bottom: 32px; }
 .pillar-copy { scroll-behavior: smooth; }

@@ -8,6 +8,7 @@ import { articleMedia } from '@/lib/article-media';
 import { homeContent } from '@/lib/content';
 import { homeFaq } from '@/lib/home-faq';
 import { absoluteUrl, siteConfig } from '@/lib/seo';
+import NativeBanner from './NativeBanner';
 import SiteShell from './SiteShell';
 
 const copy = {
@@ -178,6 +179,8 @@ export default function HomePage({ locale }: { locale: Locale }) {
             const media = startCardMedia[card.id as keyof typeof startCardMedia];
             return <Link className="card start-card" key={card.number} href={localizePath(locale, startCardRoutes[card.id] ?? '/guides')}><div className="start-card-media"><Image src={media.src} alt={media.description[locale]} width={960} height={540} sizes="(max-width: 560px) 100vw, 50vw" loading="lazy" /><span className="start-card-number">{card.number}</span></div><div className="start-card-body"><h3>{card.title}</h3><p>{card.description}</p></div></Link>;
           })}</div></section>
+
+          <NativeBanner locale={locale} />
 
           <section className="about-section" id="game-overview"><h2 className="section-title">{t.about}</h2><div className="home-mdx"><Intro /></div><div className="facts-grid">{stableFacts[locale].map(([label, value]) => <div className="card fact-card" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><Link href={localizePath(locale, '/guides')} className="btn-secondary">{t.explore}</Link></section>
 

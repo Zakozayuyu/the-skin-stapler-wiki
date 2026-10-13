@@ -6,6 +6,7 @@ import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, articleAuthor, articlePublisher } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
 import GameOverviewLink from './GameOverviewLink';
+import NativeBanner from './NativeBanner';
 import SiteShell from './SiteShell';
 
 type PillarArticlePageProps = {
@@ -76,6 +77,8 @@ export default function PillarArticlePage({ path, title, description, keyword, l
         <div className="mdx-article keyword-article pillar-copy">
           {childArray.slice(0, midIndex)}
         </div>
+
+        <NativeBanner />
 
         <div className="mdx-article keyword-article pillar-copy">
           {childArray.slice(midIndex)}

@@ -4,6 +4,7 @@ import Script from 'next/script';
 import type { ReactNode } from 'react';
 import { gameFacts } from '@/lib/game-facts';
 import { articlePublisher, heroOgImage, siteConfig } from '@/lib/seo';
+import SocialBar from '@/components/SocialBar';
 import './globals.css';
 
 const inter = localFont({
@@ -54,5 +55,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return <html lang="en" className={`${inter.variable} ${oswald.variable}`} suppressHydrationWarning><head><link rel="alternate" type="application/rss+xml" title="The Skin Stapler Wiki RSS" href="/rss.xml" /><script dangerouslySetInnerHTML={{ __html: "const p=location.pathname;document.documentElement.lang=p.startsWith('/de')?'de-DE':p.startsWith('/pt-br')?'pt-BR':p.startsWith('/es')?'es':'en'" }} /><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} /></head><body>{children}</body><Script src="https://www.googletagmanager.com/gtag/js?id=G-XV8QD7VG81" strategy="lazyOnload" /><Script id="google-analytics" strategy="lazyOnload">{`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-XV8QD7VG81');`}</Script></html>;
+gtag('config', 'G-XV8QD7VG81');`}</Script><SocialBar /></html>;
 }
