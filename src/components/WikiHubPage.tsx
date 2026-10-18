@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
-import NativeBanner from './NativeBanner';
+import BannerSlot from './BannerSlot';
 import SiteShell from './SiteShell';
 
 const sections = [
@@ -96,6 +96,8 @@ export default function WikiHubPage() {
             <p>Tainted Pact developed the game, and Assemble Entertainment published it. The full Windows PC release launched on August 6, 2026, through Steam and GOG. Steam lists English interface, full audio, and subtitles as the official language support.</p>
             <p>The game is built as a short, authored horror story rather than an open world. Official copy emphasizes crime-scene investigation, light puzzles, unusual work shifts, multiple viewpoints, and tension over constant combat. Tainted Pact describes it as a game designed to be completed in one sitting.</p>
 
+            <BannerSlot />
+
             <h2>Where should new players start?</h2>
             <p>Start with the <Link href="/walkthrough">full walkthrough</Link> if you want the released chapter order and practical progression checks. It begins with Fefe’s apartment, then moves through CCPD, Quick Fix, Gutters End, Luna’s shop, Underworld VHS, Lazar’s Blood Bank, Closing In, and The Flesh Pit. Aftermath sections connect the playable locations to Slater’s investigation.</p>
             <p>If you want to avoid spoilers, use the <Link href="/guides/beginner">beginner guide</Link> and the gameplay reference first. The <Link href="/ending">ending page</Link> names the killer, explains the revenge motive, and covers Robbie and Slater’s outcomes. It is deliberately separated from the general guide hub so the final reveal is not exposed by accident.</p>
@@ -121,8 +123,6 @@ export default function WikiHubPage() {
             <p>This matters most for alternate endings, old cast lists, exact chapter labels, and post-launch changes. One fan wiki reports small epilogue differences based on tapes, but two matched runs were not available to confirm them. The wiki therefore documents one verified main ending and leaves the reported variants pending.</p>
             <p>Live player counts, review totals, prices, and discounts can change. They are not reused as permanent facts unless a dated launch snapshot is the subject of the page. Current commercial details should always be checked on Steam or GOG before purchase.</p>
           </article>
-
-          <NativeBanner />
 
           {sections.map((section) => <section className="wiki-section" key={section.title}>
             <div className="wiki-section-heading"><div><span>{section.eyebrow}</span><h2>{section.title}</h2></div><Link href="/guides">View all guides →</Link></div>

@@ -7,7 +7,7 @@ import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, articleAuthor, articlePublisher, siteConfig } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
 import GameOverviewLink from './GameOverviewLink';
-import NativeBanner from './NativeBanner';
+import BannerSlot from './BannerSlot';
 import SiteShell from './SiteShell';
 
 type ContentLocale = Exclude<Locale, 'en'>;
@@ -82,6 +82,8 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
           </section>
           <ArticleFigure image={image} locale={locale} preload />
 
+          <BannerSlot locale={locale} />
+
           {article.sections.map((section) => (
             <section key={section.title}>
               <h2>{section.title}</h2>
@@ -89,7 +91,6 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
               {section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
             </section>
           ))}
-          <NativeBanner locale={locale} />
           <section>
             <h2>{t.faq}</h2>
             <div className="faq-cards">

@@ -8,7 +8,7 @@ import { articleMedia } from '@/lib/article-media';
 import { homeContent } from '@/lib/content';
 import { homeFaq } from '@/lib/home-faq';
 import { absoluteUrl, siteConfig } from '@/lib/seo';
-import NativeBanner from './NativeBanner';
+import BannerSlot from './BannerSlot';
 import SiteShell from './SiteShell';
 
 const copy = {
@@ -180,11 +180,13 @@ export default function HomePage({ locale }: { locale: Locale }) {
             return <Link className="card start-card" key={card.number} href={localizePath(locale, startCardRoutes[card.id] ?? '/guides')}><div className="start-card-media"><Image src={media.src} alt={media.description[locale]} width={960} height={540} sizes="(max-width: 560px) 100vw, 50vw" loading="lazy" /><span className="start-card-number">{card.number}</span></div><div className="start-card-body"><h3>{card.title}</h3><p>{card.description}</p></div></Link>;
           })}</div></section>
 
-          <NativeBanner locale={locale} />
+          <BannerSlot locale={locale} />
 
           <section className="about-section" id="game-overview"><h2 className="section-title">{t.about}</h2><div className="home-mdx"><Intro /></div><div className="facts-grid">{stableFacts[locale].map(([label, value]) => <div className="card fact-card" key={label}><span>{label}</span><strong>{value}</strong></div>)}</div><Link href={localizePath(locale, '/guides')} className="btn-secondary">{t.explore}</Link></section>
 
           <section className="mechanics-section"><div className="section-heading left-heading"><span className="eyebrow">{t.mechEyebrow}</span><h2 className="section-title">{t.mechTitle}</h2></div><p className="section-intro">{t.mechIntro}</p><div className="mechanics-grid">{mechanics[locale].links.map(([href, mediaKey, title, description]) => { const media = articleMedia[mediaKey as keyof typeof articleMedia]; return <Link className="card mechanic-card" key={mediaKey} href={availableContentPath(locale, href)}><div className="mechanic-media"><Image src={media.src} alt={media.description[locale]} width={media.width} height={media.height} sizes="(max-width: 760px) 100vw, 50vw" loading="lazy" /></div><div className="mechanic-body"><h3>{title}</h3><p>{description}</p></div></Link>; })}</div></section>
+
+          <BannerSlot locale={locale} placement="home-lower" />
 
           <section className="popular-guides"><div className="section-heading left-heading"><span className="eyebrow">{popularGuides[locale].eyebrow}</span><h2 className="section-title">{popularGuides[locale].title}</h2></div><div className="start-grid">{popularGuides[locale].links.map(([href, title, description]) => <Link className="card popular-guide-card" key={href} href={availableContentPath(locale, href)}><h3>{title}</h3><p>{description}</p><b>→</b></Link>)}</div></section>
 
@@ -194,6 +196,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
         <aside className="home-sidebar" aria-label="The Skin Stapler resources">
           <section className="card sidebar-card"><h2>{t.official}</h2><div className="official-links">{officialLinks.map((link) => <a key={link.key} href={link.href} target="_blank" rel="noopener noreferrer"><span>{officialLabels[link.key]}</span><b>↗</b></a>)}</div></section>
           <section className="card sidebar-card language-note"><h2>{t.language}</h2><p>{localeMeta[locale].gameLanguageNote}</p></section>
+          <BannerSlot locale={locale} placement="home-sidebar" />
         </aside>
       </div>
 
