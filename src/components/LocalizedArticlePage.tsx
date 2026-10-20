@@ -7,7 +7,6 @@ import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, articleAuthor, articlePublisher, siteConfig } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
 import GameOverviewLink from './GameOverviewLink';
-import BannerSlot from './BannerSlot';
 import SiteShell from './SiteShell';
 
 type ContentLocale = Exclude<Locale, 'en'>;
@@ -81,8 +80,6 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
             <p>{article.directAnswer}</p>
           </section>
           <ArticleFigure image={image} locale={locale} preload />
-
-          <BannerSlot locale={locale} />
 
           {article.sections.map((section) => (
             <section key={section.title}>

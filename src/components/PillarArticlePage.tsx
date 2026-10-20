@@ -1,12 +1,11 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
-import { Children, isValidElement } from 'react';
+import { Children } from 'react';
 import type { ArticleImageKey } from '@/lib/article-media';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl, articleAuthor, articlePublisher } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
 import GameOverviewLink from './GameOverviewLink';
-import BannerSlot from './BannerSlot';
 import SiteShell from './SiteShell';
 
 type PillarArticlePageProps = {
@@ -55,10 +54,9 @@ export default function PillarArticlePage({ path, title, description, keyword, l
     ]
   };
 
-  /* Keep the answer, table of contents and first complete section together. */
+  /* Keep the long article content in two styling groups. */
   const childArray = Children.toArray(children);
-  const headings = childArray.flatMap((child, index) => isValidElement(child) && child.type === 'h2' ? [index] : []);
-  const midIndex = headings[1] ?? childArray.length;
+  const midIndex = Math.ceil(childArray.length / 2);
 
   return (
     <SiteShell locale="en">
@@ -78,8 +76,6 @@ export default function PillarArticlePage({ path, title, description, keyword, l
         <div className="mdx-article keyword-article pillar-copy">
           {childArray.slice(0, midIndex)}
         </div>
-
-        <BannerSlot />
 
         <div className="mdx-article keyword-article pillar-copy">
           {childArray.slice(midIndex)}

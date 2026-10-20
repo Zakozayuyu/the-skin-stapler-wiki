@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl } from '@/lib/seo';
 import ArticleFigure from './ArticleFigure';
-import BannerSlot from './BannerSlot';
 import SiteShell from './SiteShell';
 
 const sections = [
@@ -95,8 +94,6 @@ export default function WikiHubPage() {
             <p>The Skin Stapler is a single-player retro PSX grindhouse horror game set in Carrion City. Detective Dick Slater and rookie Robbie Knox investigate a killer who removes victims’ skin, staples it to nearby walls, and leaves distorted tapes behind. Other chapters place the player in the roles of civilians caught in the same case.</p>
             <p>Tainted Pact developed the game, and Assemble Entertainment published it. The full Windows PC release launched on August 6, 2026, through Steam and GOG. Steam lists English interface, full audio, and subtitles as the official language support.</p>
             <p>The game is built as a short, authored horror story rather than an open world. Official copy emphasizes crime-scene investigation, light puzzles, unusual work shifts, multiple viewpoints, and tension over constant combat. Tainted Pact describes it as a game designed to be completed in one sitting.</p>
-
-            <BannerSlot />
 
             <h2>Where should new players start?</h2>
             <p>Start with the <Link href="/walkthrough">full walkthrough</Link> if you want the released chapter order and practical progression checks. It begins with Fefe’s apartment, then moves through CCPD, Quick Fix, Gutters End, Luna’s shop, Underworld VHS, Lazar’s Blood Bank, Closing In, and The Flesh Pit. Aftermath sections connect the playable locations to Slater’s investigation.</p>

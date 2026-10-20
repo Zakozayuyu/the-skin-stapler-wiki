@@ -2,7 +2,6 @@ import Link from 'next/link';
 import { articleMedia } from '@/lib/article-media';
 import { absoluteUrl } from '@/lib/seo';
 import GameOverviewLink from './GameOverviewLink';
-import BannerSlot from './BannerSlot';
 import SiteShell from './SiteShell';
 
 const characters = [
@@ -274,8 +273,6 @@ export default function CharactersPage() {
                 </Link>
               ))}
             </div>
-
-            <BannerSlot />
 
             <h2>Supporting cast</h2>
             <p>The supporting cast includes characters who appear in specific locations, deliver dialogue, or play a role in the investigation without being primary playable viewpoints.</p>
