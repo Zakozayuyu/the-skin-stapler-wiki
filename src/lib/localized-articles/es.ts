@@ -24,21 +24,30 @@ export const esArticles: Record<BaseLocalizedArticleId, LocalizedArticle> = {
   ending: {
     id: 'ending', keyword: 'final de The Skin Stapler',
     title: 'Final de The Skin Stapler explicado: Historia completa',
-    description: 'El final de The Skin Stapler revela a Elias Crow, su venganza, el destino de Robbie y la decisión de Slater. Las variantes del epílogo siguen pendientes.',
+    description: 'El final de The Skin Stapler explicado en español: quién es Elias Crow, qué le pasa a Robbie y por qué Slater deja Carrion City. Incluye marcas de tiempo.',
     eyebrow: 'Spoilers importantes de la historia',
-    directAnswer: 'El Skin Stapler es Elias Crow, propietario del restaurante Flesh Pit. Quiere vengarse de Dick Slater porque este mató a su hermano Silus Kain; en el enfrentamiento final Robbie cae, Slater utiliza el arma de su compañero para matar a Elias y después abandona Carrion City.',
+    modifiedAt: '2026-11-23T02:53:43Z',
+    directAnswer: 'Elias Crow, dueño del restaurante The Flesh Pit, es el Skin Stapler. Busca vengarse de Dick Slater por la muerte de su hermano, Silus Kain. En el restaurante, Robbie cae y Slater usa el arma de su compañero para dispararle a Elias. Después abandona Carrion City. La escena deja sin aclarar si Elias sobrevive.',
     sections: [
-      { title: '¿Quién es el Skin Stapler?', paragraphs: ['La investigación conduce hasta Elias Crow y The Flesh Pit. Los diálogos de la versión completa revelan su nombre, su escondite y su motivo antes del último enfrentamiento.', 'La identidad no procede de una teoría creada a partir de la demo. Dos transcripciones independientes de partidas completas presentan la misma revelación.'] },
-      { title: 'Por qué Elias persigue a Dick Slater', paragraphs: ['Elias busca vengar a su hermano Silus Kain. Le recuerda a Slater que le arrebató a una persona importante y promete hacerle sufrir una pérdida equivalente.', 'Algunos subtítulos automáticos escriben el apellido como Kane. La grafía exacta de los créditos finales sigue pendiente de confirmar.'] },
-      { title: 'Qué ocurre con Robbie', paragraphs: ['Elias reduce y ata a los dos investigadores. Durante el forcejeo, Robbie queda derribado y le pide a Slater que use su arma.', 'Slater dispara a Elias y se despide de su compañero. Robbie no vuelve a levantarse antes de que termine la escena, y las palabras de Slater tratan la pérdida como definitiva.'] },
-      { title: 'Por qué Slater deja Carrion City', paragraphs: ['Resolver el caso no devuelve a Slater la confianza en la ciudad. Después de perder a Robbie, afirma que ya no seguirá intentando salvar Carrion City y se marcha.', 'El cierre es amargo, no una victoria limpia. Slater dispara a Elias, pero su estado final no se ve con claridad; el detective deja de creer que su trabajo pueda arreglar aquel lugar.'] },
-      { title: '¿Hay varios finales?', paragraphs: ['Las partidas completas consultadas confirman un desenlace principal. Una wiki de fans menciona cambios menores en el epílogo según las cintas escuchadas, aunque no aporta una comparación directa entre rutas.', 'Un vídeo de la demo publicado en febrero incluye “all endings” en el título, pero no documenta los finales de la versión completa de agosto. Cualquier variante adicional sigue pendiente de confirmar.'] }
+      { title: '¿Quién es el Skin Stapler?', paragraphs: ['Durante la investigación, Slater y Robbie relacionan a Elias Crow con The Flesh Pit, el restaurante al que se dirigen antes del enfrentamiento. Las cintas de las escenas del crimen ayudan a seguir el caso. El nombre del asesino y su relación con el local se revelan en los diálogos de la versión completa.'] },
+      { title: 'Por qué Elias persigue a Dick Slater', paragraphs: ['Elias quiere vengar la muerte de Silus Kain a manos de Slater. Al atacar a Robbie, convierte su amenaza en algo personal: quiere que el detective pierda a alguien cercano, como le ocurrió a él.', 'Algunos subtítulos automáticos escriben el apellido como Kane. La grafía exacta de los créditos finales sigue pendiente de confirmar.'] },
+      { title: 'Qué ocurre con Robbie y Elias en The Flesh Pit', paragraphs: ['Elias sorprende e inmoviliza a los dos detectives. Durante el forcejeo, Robbie cae y le indica a Slater que use su arma. Slater consigue el arma y dispara contra Elias.', 'Robbie no vuelve a levantarse antes del cambio de escena. La despedida de Slater da a entender que ha perdido a su compañero. En el caso de Elias, el último hecho que confirma la escena es el disparo. Su destino queda abierto.'] },
+      { title: 'Por qué Slater deja Carrion City', paragraphs: ['Tras despedirse de Robbie, Slater dice que ha terminado de intentar salvar Carrion City y se marcha. Así se cierra su parte de la historia: identifica al asesino, pero resolver el caso le cuesta a su compañero y le quita las ganas de seguir trabajando en la ciudad.'] },
+      { title: 'Cómo llegar al final y dónde ver la escena', paragraphs: ['Completa Final Aftermath y sigue por Closing In hasta The Flesh Pit. En la partida completa enlazada en las fuentes, el capítulo de The Flesh Pit empieza en 2:46:55 y la escena final, en 2:55:08. Los tiempos corresponden a ese vídeo.'], relatedArticle: { id: 'walkthrough', label: 'Consulta el orden de los capítulos en la guía completa' } },
+      { title: '¿Hay varios finales?', paragraphs: ['Las partidas completas consultadas muestran un desenlace principal en The Flesh Pit. Se han mencionado posibles cambios menores en el epílogo según las cintas escuchadas, pero siguen sin confirmarse con una comparación entre dos partidas de la versión completa.', 'Un vídeo de febrero de 2026 anuncia varios finales, pero corresponde a la etapa de la demo. Para comprobar un desenlace de la versión publicada en agosto, usa una partida de la campaña completa.'] }
     ],
     faq: [
       { question: '¿Quién es el asesino?', answer: 'Elias Crow, propietario de The Flesh Pit, es el Skin Stapler.' },
       { question: '¿Cuál es el motivo de Elias?', answer: 'Quiere vengar a su hermano Silus Kain, a quien mató Dick Slater.' },
       { question: '¿Muere Robbie?', answer: 'Robbie queda derribado, entrega su arma a Slater y no regresa. La despedida de Slater presenta su destino como definitivo.' },
-      { question: '¿Slater se queda en Carrion City?', answer: 'No. Después de matar a Elias, renuncia a salvar la ciudad y se marcha.' }
+      { question: '¿Muere Elias Crow?', answer: 'Slater le dispara en The Flesh Pit. La escena no aclara si Elias sobrevive.' },
+      { question: '¿Slater se queda en Carrion City?', answer: 'No. Después de disparar contra Elias y despedirse de Robbie, abandona la ciudad.' }
+    ],
+    sourcesHeading: 'Vídeos y fuentes',
+    sources: [
+      { label: 'Partida completa: inicio de The Flesh Pit (2:46:55)', url: 'https://www.youtube.com/watch?v=l9nNA07Ziko&t=10015s' },
+      { label: 'La misma partida: escena final (2:55:08)', url: 'https://www.youtube.com/watch?v=l9nNA07Ziko&t=10508s' },
+      { label: 'Steam: logros de Closing In y de la escena final', url: 'https://steamcommunity.com/achievements/4310610' }
     ]
   },
   wiki: {

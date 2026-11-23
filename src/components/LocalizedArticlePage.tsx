@@ -41,7 +41,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
       {
         '@type': 'Article', headline: article.title, description: article.description,
         inLanguage: localeMeta[locale].language, mainEntityOfPage: absoluteUrl(path), url: absoluteUrl(path), keywords: article.keyword,
-        datePublished: isoDate, dateModified: isoDate,
+        datePublished: isoDate, dateModified: article.modifiedAt ?? isoDate,
         image: absoluteUrl(articleMedia[image].src), author: articleAuthor, publisher: articlePublisher
       },
       {
@@ -86,6 +86,9 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
               <h2>{section.title}</h2>
               {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
               {section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
+              {section.relatedArticle && (
+                <p><Link href={getLocalizedArticlePath(locale, section.relatedArticle.id)}>{section.relatedArticle.label}</Link></p>
+              )}
             </section>
           ))}
           <section>
@@ -96,7 +99,7 @@ export default function LocalizedArticlePage({ locale, article }: { locale: Cont
           </section>
         </div>
         <aside className="card article-cta">
-          <h2>{t.sources}</h2><p>{t.sourceText}</p>
+          <h2>{article.sourcesHeading ?? t.sources}</h2><p>{t.sourceText}</p>
           {article.sources && <ul>{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label}</a></li>)}</ul>}
           <div className="button-row"><a href={siteConfig.steam} target="_blank" rel="noreferrer" className="btn-primary">{t.fullGame}</a><a href={siteConfig.demo} target="_blank" rel="noreferrer" className="btn-secondary">{t.demo}</a></div>
         </aside>

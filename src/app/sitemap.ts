@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { localeMeta, locales, localizePath, type Locale } from '@/lib/i18n';
 import { absoluteUrl } from '@/lib/seo';
 import { getKeywordArticle, keywordArticleSlugs, keywordArticles } from '@/lib/articles';
-import { localizedGuideSlugs } from '@/lib/localized-articles';
+import { getLocalizedArticle, localizedGuideSlugs, localizedPillarIds } from '@/lib/localized-articles';
 export const dynamic = 'force-static';
 
 const commonPaths = [
@@ -26,6 +26,12 @@ function lastModifiedForPath(path: string, locale: Locale) {
     if (path === '/') return homeLastModified;
     const article = path.startsWith('/guides/') ? getKeywordArticle(path.slice('/guides/'.length)) : undefined;
     if (article && 'modifiedAt' in article) return new Date(article.modifiedAt);
+  } else {
+    const id = path.startsWith('/guides/')
+      ? localizedGuideSlugs[path.slice('/guides/'.length) as keyof typeof localizedGuideSlugs]
+      : localizedPillarIds.find((pillar) => path === `/${pillar}`);
+    const modifiedAt = id ? getLocalizedArticle(locale, id)?.modifiedAt : undefined;
+    if (modifiedAt) return new Date(modifiedAt);
   }
   if (path === '/privacy') return privacyLastModified;
   if (path === '/terms') return legalLastModified;

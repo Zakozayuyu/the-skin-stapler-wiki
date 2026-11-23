@@ -28,9 +28,12 @@ export type LocalizedArticle = {
     title: string;
     paragraphs: string[];
     bullets?: string[];
+    relatedArticle?: { id: LocalizedArticleId; label: string };
   }>;
   faq: Array<{ question: string; answer: string }>;
   sources?: Array<{ label: string; url: string }>;
+  sourcesHeading?: string;
   /** Creation date (ISO yyyy-mm-dd). Defaults to 2026-08-20 when omitted. */
   date?: string;
+  modifiedAt?: string;
 };
