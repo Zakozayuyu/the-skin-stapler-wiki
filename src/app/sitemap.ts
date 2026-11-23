@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
-import { localeMeta, locales, localizePath } from '@/lib/i18n';
+import { localeMeta, locales, localizePath, type Locale } from '@/lib/i18n';
 import { absoluteUrl } from '@/lib/seo';
-import { keywordArticleSlugs, keywordArticles } from '@/lib/articles';
+import { getKeywordArticle, keywordArticleSlugs, keywordArticles } from '@/lib/articles';
 import { localizedGuideSlugs } from '@/lib/localized-articles';
 export const dynamic = 'force-static';
 
@@ -19,9 +19,14 @@ const legalLastModified = new Date('2026-08-15T15:28:43+08:00');
 const privacyLastModified = new Date('2026-10-12T00:00:00+08:00');
 const beginnerLastModified = new Date('2026-10-03T00:00:00+08:00');
 const contactLastModified = new Date('2026-10-03T00:00:00+08:00');
-const homeLastModified = new Date('2026-10-12T00:00:00+08:00');
+const homeLastModified = new Date('2026-11-23T02:39:43Z');
 
-function lastModifiedForPath(path: string) {
+function lastModifiedForPath(path: string, locale: Locale) {
+  if (locale === 'en') {
+    if (path === '/') return homeLastModified;
+    const article = path.startsWith('/guides/') ? getKeywordArticle(path.slice('/guides/'.length)) : undefined;
+    if (article && 'modifiedAt' in article) return new Date(article.modifiedAt);
+  }
   if (path === '/privacy') return privacyLastModified;
   if (path === '/terms') return legalLastModified;
   if (path === '/walkthrough') return septemberBatch;
@@ -34,7 +39,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const languages = Object.fromEntries(locales.map((locale) => [localeMeta[locale].language, absoluteUrl(localizePath(locale, path))]));
     return locales.map((locale) => ({
       url: absoluteUrl(localizePath(locale, path)),
-      lastModified: path === '/' && locale === 'en' ? homeLastModified : lastModifiedForPath(path),
+      lastModified: lastModifiedForPath(path, locale),
       changeFrequency: path.includes('privacy') || path.includes('terms') ? 'yearly' as const : path === '/' || path === '/wiki' ? 'weekly' as const : 'monthly' as const,
       priority: path === '/' ? 1 : path === '/wiki' ? 0.95 : path === '/guides' || path === '/walkthrough' || path === '/ending' ? 0.9 : 0.8,
       alternates: { languages: { ...languages, 'x-default': absoluteUrl(path) } }

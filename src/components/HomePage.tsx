@@ -13,8 +13,8 @@ import SiteShell from './SiteShell';
 const copy = {
   en: {
     eyebrow: 'Fan-Made Grindhouse Horror Wiki', title: 'The Skin Stapler',
-    hero: 'Track a grotesque serial killer through the neon-soaked decay of 1980s Carrion City as burned-out detective Dick Slater and a cast of other playable characters. Investigate crime scenes, solve grisly puzzles, survive ordinary shifts gone wrong, and follow the distorted audio tapes left behind by The Skin Stapler.',
-    primary: 'Start Beginner Guide', secondary: 'Browse Characters', tertiary: 'Explore All Guides', trailer: 'Official Release Trailer',
+    hero: 'The Skin Stapler is a single-player, PSX-style horror game set in 1980s Carrion City. Follow the case with our chapter walkthrough, character profiles, and puzzle solutions.',
+    primary: 'Read the Walkthrough', secondary: 'View on Steam', tertiary: 'Beginner Guide', trailer: 'Official Release Trailer',
     startEyebrow: 'Start Here', startTitle: 'Your Carrion City Journey', about: 'What is The Skin Stapler?', explore: 'Explore All Guides',
     mechEyebrow: 'Inside the Investigation', mechTitle: 'Core Mechanics',
     mechIntro: 'Four systems define a run through Carrion City: evidence-based crime-scene investigation, the killer\u2019s distorted audio tapes, multiple playable perspectives, and a grindhouse presentation built on PSX-style visuals and dark B-movie humor.',
@@ -166,7 +166,13 @@ export default function HomePage({ locale }: { locale: Locale }) {
           <div className="update-badge"><span />{t.eyebrow}</div>
           <h1>{t.title}</h1>
           <p>{t.hero}</p>
-          <div className="button-row hero-buttons"><Link href={localizePath(locale, '/guides/beginner')} className="btn-primary">{t.primary}</Link><Link href={localizePath(locale, '/characters')} className="btn-secondary">{t.secondary}</Link><Link href={localizePath(locale, '/guides')} className="btn-ghost">{t.tertiary}</Link></div>
+          <div className="button-row hero-buttons">
+            <Link href={localizePath(locale, locale === 'en' ? '/walkthrough' : '/guides/beginner')} className="btn-primary">{t.primary}</Link>
+            {locale === 'en'
+              ? <a href={siteConfig.steam} className="btn-secondary" target="_blank" rel="noreferrer">{t.secondary}</a>
+              : <Link href={localizePath(locale, '/characters')} className="btn-secondary">{t.secondary}</Link>}
+            <Link href={localizePath(locale, locale === 'en' ? '/guides/beginner' : '/guides')} className="btn-ghost">{t.tertiary}</Link>
+          </div>
           <a className="trailer-link" href={siteConfig.trailer} target="_blank" rel="noopener noreferrer">▶ {t.trailer}</a>
           <div className="stats-grid skin-stats">{heroStats[locale].map((stat) => <div key={stat}><strong>{stat}</strong></div>)}</div>
         </div>
