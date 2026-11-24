@@ -3,9 +3,9 @@ import GuidesPage from '@/components/GuidesPage';
 import { absoluteUrl, heroOgImage, localizedAlternates, siteConfig } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'The Skin Stapler Guides',
-  description: 'All The Skin Stapler guides in one place: walkthrough, puzzles, achievements, endings, voice cast, characters, demo, release date, and Steam details.',
+  title: { absolute: 'The Skin Stapler Guides: Walkthrough, Puzzles & Characters' },
+  description: 'Browse every The Skin Stapler guide: full walkthrough, puzzle solutions, achievements, characters, voice cast, demo, and release details.',
   alternates: localizedAlternates('/guides'),
-  openGraph: { type: 'website', siteName: siteConfig.name, title: 'The Skin Stapler Guides', description: 'Walkthrough, puzzles, achievements, endings, voice cast, characters, demo, release date, and Steam details.', url: absoluteUrl('/guides'), images: [heroOgImage] }
+  openGraph: { type: 'website', siteName: siteConfig.name, title: 'The Skin Stapler Guides: Walkthrough, Puzzles & Characters', description: 'Walkthrough, puzzle solutions, achievements, characters, voice cast, demo, and release details.', url: absoluteUrl('/guides'), images: [heroOgImage] }
 };
 export default function Page() { return <GuidesPage locale="en" />; }
