@@ -3,12 +3,12 @@ import EndingPage from '@/components/EndingPage';
 import { localizedAlternates, openGraphImage, siteConfig } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: { absolute: 'The Skin Stapler Ending Explained: Full Story' },
-  description: 'The Skin Stapler ending reveals the killer’s identity, motive, Robbie’s fate, Slater’s final choice, and what remains unconfirmed about alternate epilogues.',
-  keywords: ['the skin stapler ending', 'the skin stapler ending explained', 'the flesh pit ending', 'does the skin stapler have multiple endings'],
+  title: { absolute: 'The Skin Stapler Ending Explained: Elias Crow & Robbie' },
+  description: 'Elias Crow is the Skin Stapler. The ending reveals his revenge for Silus Kain, Robbie’s fate, Slater’s last choice, and what the Flesh Pit leaves open.',
+  keywords: ['the skin stapler ending', 'elias crow skin stapler', 'the skin stapler who is the killer', 'skin stapler ending explained', 'the flesh pit ending'],
   alternates: localizedAlternates('/ending'),
-  openGraph: { title: 'The Skin Stapler Ending Explained: Full Story', description: 'The killer’s identity, motive, Robbie’s fate, and Slater’s final choice.', url: '/ending', type: 'article', siteName: siteConfig.name, images: [openGraphImage('killer')] },
-  twitter: { card: 'summary_large_image', title: 'The Skin Stapler Ending Explained: Full Story', description: 'The verified finale and details still awaiting confirmation.', images: ['/images/official/killer-closeup.webp'] }
+  openGraph: { title: 'The Skin Stapler Ending Explained: Elias Crow & Robbie', description: 'Elias Crow is the killer. See his revenge, Robbie’s fate, and Slater’s final choice.', url: '/ending', type: 'article', siteName: siteConfig.name, images: [openGraphImage('killer')] },
+  twitter: { card: 'summary_large_image', title: 'The Skin Stapler Ending Explained: Elias Crow & Robbie', description: 'Elias Crow is the killer. See his revenge, Robbie’s fate, and Slater’s final choice.', images: ['/images/official/killer-closeup.webp'] }
 };
 
 export default function Page() { return <EndingPage />; }

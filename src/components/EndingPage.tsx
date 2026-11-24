@@ -12,23 +12,27 @@ export default function EndingPage() {
   return (
     <PillarArticlePage
       path="/ending"
-      title="The Skin Stapler Ending Explained: Full Story"
-      description="The Skin Stapler ending reveals the killer’s identity, motive, Robbie’s fate, Slater’s final choice, and what remains unconfirmed about alternate epilogues."
+      title="The Skin Stapler Ending Explained: Elias Crow & Robbie"
+      description="Elias Crow is the Skin Stapler. The ending reveals his revenge for Silus Kain, Robbie’s fate, Slater’s last choice, and what the Flesh Pit leaves open."
       keyword="the skin stapler ending"
       label="Ending"
       image="killer"
+      dateModified="2026-11-24"
+      updatedLabel="Updated November 2026"
+      lead={
+        <>
+          <div className="card warning-card ending-warning">
+            <span aria-hidden="true">!</span>
+            <div><strong>Major ending spoilers</strong><p>This page names the killer and describes the last confrontation. Finish <Link href="/walkthrough#finale">Closing In</Link> first if you want to see those reveals in the game.</p></div>
+          </div>
+          <aside className="card answer-box">
+            <strong>The direct answer</strong>
+            <p><strong>Elias Crow</strong> is the Skin Stapler and owner of the Flesh Pit barbecue restaurant. He targets Dick Slater because Slater killed his brother, Silus Kain. Elias captures Slater and Robbie Knox, Robbie is struck down, and Slater uses Robbie’s gun to shoot Elias before abandoning Carrion City. The footage does not clearly confirm whether Elias dies or is arrested.</p>
+          </aside>
+        </>
+      }
       faq={endingFaq}
     >
-      <div className="card warning-card ending-warning">
-        <span aria-hidden="true">!</span>
-        <div><strong>Major ending spoilers</strong><p>This page names the killer and describes the last confrontation. Finish <Link href="/walkthrough#finale">Closing In</Link> first if you want to see those reveals in the game.</p></div>
-      </div>
-
-      <aside className="card answer-box">
-        <strong>The direct answer</strong>
-        <p>The Skin Stapler is Elias Crow, owner of the Flesh Pit barbecue restaurant. He targets Dick Slater because Slater killed his brother, Silus Kain. Elias captures Slater and Robbie Knox, Robbie is struck down, and Slater uses Robbie’s gun to shoot Elias before abandoning Carrion City. The footage does not clearly confirm whether Elias dies or is arrested.</p>
-      </aside>
-
       <nav className="card article-toc" aria-label="On this page">
         <strong>On this page</strong>
         <a href="#identity">Who is the Skin Stapler?</a>

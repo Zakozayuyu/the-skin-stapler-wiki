@@ -16,11 +16,13 @@ type PillarArticlePageProps = {
   label: string;
   image: ArticleImageKey;
   dateModified?: string;
+  updatedLabel?: string;
+  lead?: ReactNode;
   faq?: Array<{ question: string; answer: string }>;
   children: ReactNode;
 };
 
-export default function PillarArticlePage({ path, title, description, keyword, label, image, dateModified = '2026-08-20', faq, children }: PillarArticlePageProps) {
+export default function PillarArticlePage({ path, title, description, keyword, label, image, dateModified = '2026-08-20', updatedLabel = 'Updated August 2026', lead, faq, children }: PillarArticlePageProps) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -66,11 +68,12 @@ export default function PillarArticlePage({ path, title, description, keyword, l
           <Link href="/">Home</Link><span>/</span><b>{label}</b>
         </nav>
         <header className="article-header pillar-header">
-          <div><span className="badge tier-badge">Full game</span><span className="badge blue-badge">Updated August 2026</span></div>
+          <div><span className="badge tier-badge">Full game</span><span className="badge blue-badge">{updatedLabel}</span></div>
           <h1>{title}</h1>
           <p>{description}</p>
         </header>
         <GameOverviewLink />
+        {lead && <div className="mdx-article keyword-article pillar-copy">{lead}</div>}
         <ArticleFigure image={image} preload />
 
         <div className="mdx-article keyword-article pillar-copy">
