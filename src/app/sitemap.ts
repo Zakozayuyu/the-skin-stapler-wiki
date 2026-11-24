@@ -60,9 +60,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const englishOnlyPages = [
     { url: absoluteUrl('/about'), lastModified: contentLastModified, changeFrequency: 'yearly' as const, priority: 0.4 },
     { url: absoluteUrl('/contact'), lastModified: contactLastModified, changeFrequency: 'yearly' as const, priority: 0.4 },
-    ...keywordArticleSlugs.filter((slug) => !(slug in localizedGuideSlugs)).map((slug) => ({
-      url: absoluteUrl(`/guides/${slug}`), lastModified: new Date(`${keywordArticles[slug].date}T00:00:00Z`), changeFrequency: 'monthly' as const, priority: 0.8
-    }))
+    ...keywordArticleSlugs.filter((slug) => !(slug in localizedGuideSlugs)).map((slug) => {
+      const article = keywordArticles[slug];
+      const lastModified = 'modifiedAt' in article ? new Date(article.modifiedAt) : new Date(`${article.date}T00:00:00Z`);
+      return { url: absoluteUrl(`/guides/${slug}`), lastModified, changeFrequency: 'monthly' as const, priority: 0.8 };
+    })
   ];
   return [...localizedPages, ...englishOnlyPages];
 }
