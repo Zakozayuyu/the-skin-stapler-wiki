@@ -10,7 +10,7 @@ export type SearchItem = {
 export const searchIndex: Record<Locale, SearchItem[]> = {
   en: [
     { href: '/', title: 'The Skin Stapler Wiki Home', description: 'Start with the main guide hub and official game facts.', keywords: ['home', 'game', 'wiki', 'carrion city'] },
-    { href: '/wiki', title: 'The Skin Stapler Wiki', description: 'Browse walkthroughs, characters, cast, scenes and release information.', keywords: ['wiki', 'hub', 'facts', 'developer'] },
+    { href: '/wiki', title: 'The Skin Stapler Wiki', description: 'Walkthrough, ending, characters, voice cast, puzzles and release information.', keywords: ['wiki', 'hub', 'walkthrough', 'characters', 'ending'] },
     { href: '/characters', title: 'The Skin Stapler Characters', description: 'Browse every confirmed character, role, location and playable status.', keywords: ['characters', 'cast', 'playable characters', 'roles'] },
     { href: '/walkthrough', title: 'Full Game Walkthrough', description: 'Follow every chapter from Fefe’s apartment to The Flesh Pit.', keywords: ['walkthrough', 'chapter', 'route', 'progress', 'stuck'] },
     { href: '/ending', title: 'Ending Explained', description: 'Understand the killer, motive and final confrontation.', keywords: ['ending', 'finale', 'killer', 'elias crow', 'spoilers'] },

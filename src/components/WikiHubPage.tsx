@@ -50,8 +50,8 @@ export default function WikiHubPage() {
     '@context': 'https://schema.org',
     '@graph': [{
       '@type': 'CollectionPage', name: 'The Skin Stapler Wiki',
-      description: 'The Skin Stapler wiki covers the verified walkthrough, ending, cast, characters, release date, demo scenes, official links, and facts awaiting confirmation.',
-      url: absoluteUrl('/wiki'), inLanguage: 'en', image: absoluteUrl(articleMedia.promo.src),
+      description: 'The Skin Stapler Wiki explains the full-game walkthrough, ending, characters, voice cast, and PC release. See the chapter order, puzzles, achievements, and Flesh Pit finale.',
+      url: absoluteUrl('/wiki'), inLanguage: 'en', dateModified: '2026-11-24T00:00:00Z', image: absoluteUrl(articleMedia.promo.src),
       hasPart: sections.flatMap((section) => section.links.map(([href, name]) => ({ '@type': 'WebPage', name, url: absoluteUrl(href) })))
     }, {
       '@type': 'BreadcrumbList', itemListElement: [
@@ -79,15 +79,15 @@ export default function WikiHubPage() {
             <nav className="breadcrumbs" aria-label="Breadcrumb"><Link href="/">Home</Link><span>/</span><b>Wiki</b></nav>
             <span className="eyebrow">Carrion City case files</span>
             <h1>The Skin Stapler Wiki</h1>
-            <p>The Skin Stapler wiki is an independent English guide to the full walkthrough, ending, characters, voice cast, release details, and Carrion City locations.</p>
+            <p>The Skin Stapler Wiki explains the full-game walkthrough, ending, characters, voice cast, and PC release. Use the chapter order, puzzle help, and Flesh Pit finale guides to follow the investigation.</p>
             <div className="wiki-quick-links"><Link href="/walkthrough">Start the walkthrough</Link><Link href="/ending">Ending explained</Link><Link href="/characters">All characters</Link><Link href="/guides">All guides</Link></div>
           </div>
         </section>
 
         <div className="container wiki-sections">
-          <aside className="card wiki-status"><div><span className="status-dot" /> <strong>Full game coverage</strong></div><p>Updated for the August 6, 2026 PC release. Unverified details are marked instead of being presented as canon.</p></aside>
+          <aside className="card wiki-status"><div><span className="status-dot" /> <strong>Full game coverage</strong></div><p>Updated November 2026 for the August 6, 2026 PC release. Unverified details are marked instead of being presented as canon.</p></aside>
           <article className="wiki-copy keyword-article">
-            <aside className="card answer-box"><strong>What this wiki covers</strong><p>Use this hub to follow the verified full-game route, understand the main ending, identify the cast and characters, check the PC release, and separate official facts from demo-era guesses. It is a fan-made reference, not an official Tainted Pact or Assemble Entertainment wiki.</p></aside>
+            <aside className="card answer-box"><strong>What this wiki covers</strong><p>Use this hub to find the full-game chapter order, the Elias Crow ending, confirmed characters and voice cast, and the Windows PC release. It also links puzzle, achievement, demo, and storefront guides. This is a fan-made reference, not an official Tainted Pact or Assemble Entertainment wiki.</p></aside>
             <ArticleFigure image="promo" />
 
             <h2>What is The Skin Stapler?</h2>

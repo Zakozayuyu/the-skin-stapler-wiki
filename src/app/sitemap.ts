@@ -21,11 +21,13 @@ const beginnerLastModified = new Date('2026-10-03T00:00:00+08:00');
 const contactLastModified = new Date('2026-10-03T00:00:00+08:00');
 const homeLastModified = new Date('2026-11-23T02:39:43Z');
 const endingLastModified = new Date('2026-11-24T00:00:00Z');
+const wikiLastModified = new Date('2026-11-24T00:00:00Z');
 
 function lastModifiedForPath(path: string, locale: Locale) {
   if (locale === 'en') {
     if (path === '/') return homeLastModified;
     if (path === '/ending') return endingLastModified;
+    if (path === '/wiki') return wikiLastModified;
     const article = path.startsWith('/guides/') ? getKeywordArticle(path.slice('/guides/'.length)) : undefined;
     if (article && 'modifiedAt' in article) return new Date(article.modifiedAt);
   } else {
