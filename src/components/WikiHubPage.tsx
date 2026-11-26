@@ -9,6 +9,7 @@ const sections = [
     title: 'Start Here', eyebrow: 'Essential guides',
     links: [
       ['/walkthrough', 'Full Game Walkthrough', 'Complete chapter order from the Burrows Apartments to The Flesh Pit.'],
+      ['/guides/the-skin-stapler-puzzle-solutions', 'Puzzle Solutions & Codes', 'Get help with the picture-frame lock, the Flesh Pit scale, and damaged tapes.'],
       ['/ending', 'Ending Explained', 'Spoiler-marked finale guide and current multiple-ending status.'],
       ['/guides/beginner', 'Beginner Guide', 'Controls, interaction basics, settings, and first-run tips.'],
       ['/guides/the-skin-stapler-gameplay', 'Gameplay Guide', 'Investigation, puzzles, viewpoints, combat, and playtime.']
@@ -51,7 +52,7 @@ export default function WikiHubPage() {
     '@graph': [{
       '@type': 'CollectionPage', name: 'The Skin Stapler Wiki',
       description: 'The Skin Stapler Wiki explains the full-game walkthrough, ending, characters, voice cast, and PC release. See the chapter order, puzzles, achievements, and Flesh Pit finale.',
-      url: absoluteUrl('/wiki'), inLanguage: 'en', dateModified: '2026-11-24T00:00:00Z', image: absoluteUrl(articleMedia.promo.src),
+      url: absoluteUrl('/wiki'), inLanguage: 'en', dateModified: '2026-11-26T07:39:40Z', image: absoluteUrl(articleMedia.promo.src),
       hasPart: sections.flatMap((section) => section.links.map(([href, name]) => ({ '@type': 'WebPage', name, url: absoluteUrl(href) })))
     }, {
       '@type': 'BreadcrumbList', itemListElement: [

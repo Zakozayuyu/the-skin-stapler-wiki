@@ -21,8 +21,8 @@ const beginnerLastModified = new Date('2026-10-03T00:00:00+08:00');
 const contactLastModified = new Date('2026-10-03T00:00:00+08:00');
 const homeLastModified = new Date('2026-11-23T02:39:43Z');
 const endingLastModified = new Date('2026-11-24T00:00:00Z');
-const wikiLastModified = new Date('2026-11-24T00:00:00Z');
-const guidesLastModified = new Date('2026-11-24T00:00:00Z');
+const wikiLastModified = new Date('2026-11-26T07:39:40Z');
+const guidesLastModified = new Date('2026-11-26T07:39:40Z');
 
 function lastModifiedForPath(path: string, locale: Locale) {
   if (locale === 'en') {
